@@ -807,9 +807,19 @@ input, button, select, textarea {
   cursor: pointer;
 }
 
+.filter-item input[type="radio"] {
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.filter-item label input:checked ~ span {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
 .color-dots-row {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -818,28 +828,44 @@ input, button, select, textarea {
   height: 24px;
   border-radius: 50%;
   cursor: pointer;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.15);
   display: inline-block;
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+.custom-radio:checked + .color-dot {
+  outline: 2px solid var(--text-dark);
+  outline-offset: 2px;
+  transform: scale(1.15);
 }
 
 .size-pill-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
+  max-width: 200px;
 }
 
 .size-btn {
   border: 1px solid var(--border-main);
   background: transparent;
-  padding: 4px 14px;
+  padding: 6px 10px;
   border-radius: 9999px;
   font-size: 12px;
   cursor: pointer;
+  text-align: center;
+  user-select: none;
+  transition: all 0.18s ease;
+  display: block;
 }
 
+.custom-radio:checked + .size-btn,
 .size-btn.active {
   background: var(--bg-dark);
   color: #ffffff;
   border-color: var(--bg-dark);
+  font-weight: 600;
 }
 
 .katalog-content {
