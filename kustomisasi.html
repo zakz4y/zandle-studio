@@ -76,34 +76,41 @@
           <span class="step-selected-value" id="valAroma">Lavender Bliss</span>
         </div>
         <div class="aroma-grid" id="aromaOptions">
-          <div class="aroma-option active" data-aroma="Lavender Bliss" data-meta="Menenangkan & Relaksasi">
+          <input type="radio" name="aroma" id="aroma-lavender" class="custom-radio" checked>
+          <label for="aroma-lavender" class="aroma-option">
             <span class="aroma-color-indicator" style="background: #cbb2fe;"></span>
             <div>
               <div class="aroma-name">Lavender Bliss</div>
               <div class="aroma-sub">Menenangkan & Relaksasi</div>
             </div>
-          </div>
-          <div class="aroma-option" data-aroma="Matcha Breeze" data-meta="Segar & Zen">
+          </label>
+
+          <input type="radio" name="aroma" id="aroma-matcha" class="custom-radio">
+          <label for="aroma-matcha" class="aroma-option">
             <span class="aroma-color-indicator" style="background: #a3b18a;"></span>
             <div>
               <div class="aroma-name">Matcha Breeze</div>
               <div class="aroma-sub">Segar & Zen</div>
             </div>
-          </div>
-          <div class="aroma-option" data-aroma="Citrus Sunrise" data-meta="Segar & Berenergi">
+          </label>
+
+          <input type="radio" name="aroma" id="aroma-citrus" class="custom-radio">
+          <label for="aroma-citrus" class="aroma-option">
             <span class="aroma-color-indicator" style="background: #fed7aa;"></span>
             <div>
               <div class="aroma-name">Citrus Sunrise</div>
               <div class="aroma-sub">Segar & Berenergi</div>
             </div>
-          </div>
-          <div class="aroma-option" data-aroma="Warm Vanilla" data-meta="Manis & Lembut">
+          </label>
+
+          <input type="radio" name="aroma" id="aroma-vanilla" class="custom-radio">
+          <label for="aroma-vanilla" class="aroma-option">
             <span class="aroma-color-indicator" style="background: #e2c2b3;"></span>
             <div>
               <div class="aroma-name">Warm Vanilla</div>
               <div class="aroma-sub">Manis & Lembut</div>
             </div>
-          </div>
+          </label>
         </div>
       </div>
 
@@ -116,11 +123,20 @@
           <span class="step-selected-value" id="valColor">Sage Green</span>
         </div>
         <div class="wax-color-dots" id="colorOptions">
-          <span class="wax-dot" data-name="Cream Natural" data-hex="#f4ece1" style="background: #f4ece1;" title="Cream Natural"></span>
-          <span class="wax-dot active" data-name="Sage Green" data-hex="#a3b18a" style="background: #a3b18a; outline: 2px solid #1a1a1a; outline-offset: 2px;" title="Sage Green"></span>
-          <span class="wax-dot" data-name="Ochre Yellow" data-hex="#e4c278" style="background: #e4c278;" title="Ochre Yellow"></span>
-          <span class="wax-dot" data-name="Terracotta Warm" data-hex="#e07a5f" style="background: #e07a5f;" title="Terracotta Warm"></span>
-          <span class="wax-dot" data-name="Deep Indigo" data-hex="#3d405b" style="background: #3d405b;" title="Deep Indigo"></span>
+          <input type="radio" name="color" id="color-cream" class="custom-radio">
+          <label for="color-cream" class="wax-dot" style="background: #f4ece1;" title="Cream Natural"></label>
+
+          <input type="radio" name="color" id="color-sage" class="custom-radio" checked>
+          <label for="color-sage" class="wax-dot" style="background: #a3b18a;" title="Sage Green"></label>
+
+          <input type="radio" name="color" id="color-ochre" class="custom-radio">
+          <label for="color-ochre" class="wax-dot" style="background: #e4c278;" title="Ochre Yellow"></label>
+
+          <input type="radio" name="color" id="color-terracotta" class="custom-radio">
+          <label for="color-terracotta" class="wax-dot" style="background: #e07a5f;" title="Terracotta Warm"></label>
+
+          <input type="radio" name="color" id="color-indigo" class="custom-radio">
+          <label for="color-indigo" class="wax-dot" style="background: #3d405b;" title="Deep Indigo"></label>
         </div>
       </div>
 
@@ -133,9 +149,14 @@
           <span class="step-selected-value" id="valSize">200ml (Hingga 45 Jam)</span>
         </div>
         <div class="size-boxes-row" id="sizeOptions">
-          <div class="size-select-card" data-size="100ml" data-time="~20 Jam" data-price="45000">100ml / ~20 Jam</div>
-          <div class="size-select-card" data-size="150ml" data-time="~32 Jam" data-price="60000">150ml / ~32 Jam</div>
-          <div class="size-select-card active" data-size="200ml" data-time="~45 Jam" data-price="75000">200ml / ~45 Jam</div>
+          <input type="radio" name="size" id="size-100" class="custom-radio">
+          <label for="size-100" class="size-select-card">100ml / ~20 Jam</label>
+
+          <input type="radio" name="size" id="size-150" class="custom-radio">
+          <label for="size-150" class="size-select-card">150ml / ~32 Jam</label>
+
+          <input type="radio" name="size" id="size-200" class="custom-radio" checked>
+          <label for="size-200" class="size-select-card">200ml / ~45 Jam</label>
         </div>
       </div>
 
@@ -161,7 +182,7 @@
             <span id="qtyVal" style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
             <button type="button" class="step-btn" id="btnQtyPlus">+</button>
           </div>
-          <button type="button" class="btn-primary" id="btnAddToCart">+ Tambah ke Keranjang</button>
+          <a href="keranjang.html" class="btn-primary" id="btnAddToCart" style="text-decoration: none;">+ Tambah ke Keranjang</a>
         </div>
       </div>
     </div>
