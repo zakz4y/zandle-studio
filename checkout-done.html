@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran Selesai — Zandle Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/icons/logo.png" alt="Zandle Studio">
+      <span>Zandle Studio</span>
+    </a>
+
+    <nav class="nav-center" id="navCenter">
+      <ul class="main-nav">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+        <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+        <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="searchBtn" title="Cari">
+        <img src="assets/icons/search.svg" alt="Search">
+      </button>
+      <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
+        <img src="assets/icons/cart.svg" alt="Cart">
+        <span class="cart-badge-count" id="navCartCount">0</span>
+      </a>
+      <div class="user-menu-wrapper">
+        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </button>
+        <div class="user-dropdown-menu" id="profileDropdownMenu">
+          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
+          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html" class="dropdown-item text-danger">Keluar</a>
+        </div>
+      </div>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="payment-done-container">
+    <div class="payment-done-card">
+      <div class="done-check-icon">
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" fill="#3D4B39" stroke="#3D4B39"/>
+          <path d="m8 12 2.5 2.5L16 9" stroke="#ffffff"/>
+        </svg>
+      </div>
+
+      <h1 class="done-title">PEMBAYARAN SELESAI</h1>
+
+      <div class="done-order-num-box">
+        <span class="done-order-label">No. Pesanan</span>
+        <span class="done-order-id">#1023</span>
+      </div>
+
+      <div class="done-order-details-block">
+        <h4 class="done-details-title">Detail Pesanan</h4>
+
+        <div class="done-item-row">
+          <div class="done-item-meta">
+            <span class="done-item-name">Custom Candle</span>
+            <span class="done-item-spec">Lavender | Krem | Reguler</span>
+          </div>
+          <span class="done-item-price">Rp 55.000</span>
+        </div>
+
+        <div class="done-item-row">
+          <div class="done-item-meta">
+            <span class="done-item-name">Custom Candle</span>
+            <span class="done-item-spec">Lavender | Krem | Reguler</span>
+          </div>
+          <span class="done-item-price">Rp 55.000</span>
+        </div>
+
+        <div class="done-item-row">
+          <div class="done-item-meta">
+            <span class="done-item-name">Custom Candle</span>
+            <span class="done-item-spec">Lavender | Krem | Reguler</span>
+          </div>
+          <span class="done-item-price">Rp 55.000</span>
+        </div>
+
+        <div class="done-summary-lines">
+          <div class="done-calc-row">
+            <span>Subtotal</span>
+            <span>Rp 680.000</span>
+          </div>
+          <div class="done-calc-row">
+            <span>Kirim</span>
+            <span>Rp 35.000</span>
+          </div>
+          <div class="done-calc-row total-calc-row">
+            <span>Total</span>
+            <span class="total-val">Rp 715.000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="done-action-buttons">
+        <a href="index.html" class="btn-payment-outline">Kembali ke Beranda</a>
+        <a href="riwayat.html" class="btn-payment-solid">Lihat Pesanan Saya</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="assets/icons/logo.png" alt="Logo">
+          <h4>Zandle Studio</h4>
+        </div>
+        <p class="footer-tagline">
+          Lilin aromaterapi custom dari Malang untuk<br>
+          seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">JELAJAHI</h5>
+        <ul class="footer-links">
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="kustomisasi.html">Kustomisasi</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">BANTUAN</h5>
+        <ul class="footer-links">
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">NEWSLETTER</h5>
+        <form class="newsletter-form" action="#" method="get">
+          <input type="email" placeholder="Email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Zandle Studio</span>
+      <span>Made with care in Malang</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

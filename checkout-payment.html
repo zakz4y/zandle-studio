@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran — Zandle Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/icons/logo.png" alt="Zandle Studio">
+      <span>Zandle Studio</span>
+    </a>
+
+    <nav class="nav-center" id="navCenter">
+      <ul class="main-nav">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+        <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+        <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="searchBtn" title="Cari">
+        <img src="assets/icons/search.svg" alt="Search">
+      </button>
+      <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
+        <img src="assets/icons/cart.svg" alt="Cart">
+        <span class="cart-badge-count" id="navCartCount">3</span>
+      </a>
+      <div class="user-menu-wrapper">
+        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </button>
+        <div class="user-dropdown-menu" id="profileDropdownMenu">
+          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
+          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html" class="dropdown-item text-danger">Keluar</a>
+        </div>
+      </div>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="payment-desktop-container">
+    <div class="payment-header-row">
+      <div class="payment-title-wrap">
+        <h1 class="payment-title">Pembayaran</h1>
+        <p class="payment-subtitle">Pesanan #1023</p>
+      </div>
+    </div>
+
+    <div class="payment-countdown-bar">
+      <span class="countdown-label">Batas Waktu</span>
+      <span class="countdown-timer">00:15:00</span>
+    </div>
+
+    <div class="payment-content-grid">
+      <div class="payment-qr-card">
+        <div class="qr-image-wrapper">
+          <svg viewBox="0 0 200 200" width="180" height="180" class="qr-svg-code">
+            <!-- QR Pattern SVG representation -->
+            <rect width="200" height="200" fill="#ffffff"/>
+            <!-- Position Detection Patterns -->
+            <rect x="20" y="20" width="40" height="40" fill="#1c1a17"/>
+            <rect x="28" y="28" width="24" height="24" fill="#ffffff"/>
+            <rect x="34" y="34" width="12" height="12" fill="#1c1a17"/>
+
+            <rect x="140" y="20" width="40" height="40" fill="#1c1a17"/>
+            <rect x="148" y="28" width="24" height="24" fill="#ffffff"/>
+            <rect x="154" y="34" width="12" height="12" fill="#1c1a17"/>
+
+            <rect x="20" y="140" width="40" height="40" fill="#1c1a17"/>
+            <rect x="28" y="148" width="24" height="24" fill="#ffffff"/>
+            <rect x="34" y="154" width="12" height="12" fill="#1c1a17"/>
+
+            <!-- Decorative data modules -->
+            <rect x="70" y="24" width="8" height="8" fill="#1c1a17"/>
+            <rect x="86" y="24" width="16" height="8" fill="#1c1a17"/>
+            <rect x="110" y="24" width="8" height="8" fill="#1c1a17"/>
+            <rect x="70" y="40" width="16" height="8" fill="#1c1a17"/>
+            <rect x="94" y="40" width="8" height="16" fill="#1c1a17"/>
+            <rect x="118" y="40" width="14" height="8" fill="#1c1a17"/>
+
+            <rect x="24" y="70" width="8" height="16" fill="#1c1a17"/>
+            <rect x="40" y="78" width="16" height="8" fill="#1c1a17"/>
+            <rect x="70" y="70" width="24" height="24" fill="#1c1a17"/>
+            <rect x="76" y="76" width="12" height="12" fill="#ffffff"/>
+            <rect x="102" y="70" width="16" height="8" fill="#1c1a17"/>
+            <rect x="126" y="70" width="8" height="24" fill="#1c1a17"/>
+            <rect x="150" y="78" width="24" height="8" fill="#1c1a17"/>
+
+            <rect x="30" y="102" width="16" height="8" fill="#1c1a17"/>
+            <rect x="54" y="94" width="8" height="24" fill="#1c1a17"/>
+            <rect x="70" y="102" width="8" height="16" fill="#1c1a17"/>
+            <rect x="86" y="110" width="24" height="8" fill="#1c1a17"/>
+            <rect x="118" y="102" width="16" height="16" fill="#1c1a17"/>
+            <rect x="142" y="110" width="8" height="8" fill="#1c1a17"/>
+            <rect x="158" y="94" width="16" height="16" fill="#1c1a17"/>
+
+            <rect x="70" y="134" width="16" height="8" fill="#1c1a17"/>
+            <rect x="94" y="142" width="8" height="24" fill="#1c1a17"/>
+            <rect x="110" y="134" width="24" height="8" fill="#1c1a17"/>
+            <rect x="142" y="142" width="16" height="8" fill="#1c1a17"/>
+            <rect x="166" y="134" width="8" height="16" fill="#1c1a17"/>
+
+            <rect x="70" y="166" width="8" height="16" fill="#1c1a17"/>
+            <rect x="86" y="174" width="16" height="8" fill="#1c1a17"/>
+            <rect x="118" y="158" width="16" height="16" fill="#1c1a17"/>
+            <rect x="142" y="166" width="32" height="8" fill="#1c1a17"/>
+          </svg>
+        </div>
+        <a href="#" class="btn-download-qr" onclick="alert('Kode QR berhasil diunduh'); return false;">Unduh Kode Qr</a>
+      </div>
+
+      <div class="payment-steps-card">
+        <h3 class="steps-heading">Cara Bayar</h3>
+        <div class="steps-flow-list">
+          <div class="step-flow-item">
+            <span class="step-number-circle">1</span>
+            <p class="step-flow-text">
+              <strong>Scan QR</strong> — Buka aplikasi pembayaran, lalu scan kode QR yang tersedia.
+            </p>
+          </div>
+          <div class="step-flow-item">
+            <span class="step-number-circle">2</span>
+            <p class="step-flow-text">
+              <strong>Konfirmasi</strong> — Periksa nominal dan konfirmasi pembayaran.
+            </p>
+          </div>
+          <div class="step-flow-item">
+            <span class="step-number-circle">3</span>
+            <p class="step-flow-text">
+              <strong>Selesai</strong> — Setelah pembayaran berhasil, kembali ke Zandle Studio dan cek status pesanan.
+            </p>
+          </div>
+        </div>
+
+        <div class="payment-summary-block">
+          <div class="pay-summary-line">
+            <span>Subtotal</span>
+            <span>Rp 680.000</span>
+          </div>
+          <div class="pay-summary-line">
+            <span>Kirim</span>
+            <span>Rp 35.000</span>
+          </div>
+          <div class="pay-summary-line total-line">
+            <span>Total</span>
+            <span class="total-accent">Rp 715.000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-action-row">
+      <a href="checkout.html" class="btn-payment-outline">Kembali</a>
+      <a href="checkout-done.html" class="btn-payment-solid">Konfirmasi Pembayaran</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="assets/icons/logo.png" alt="Logo">
+          <h4>Zandle Studio</h4>
+        </div>
+        <p class="footer-tagline">
+          Lilin aromaterapi custom dari Malang untuk<br>
+          seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">JELAJAHI</h5>
+        <ul class="footer-links">
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="kustomisasi.html">Kustomisasi</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">BANTUAN</h5>
+        <ul class="footer-links">
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">NEWSLETTER</h5>
+        <form class="newsletter-form" action="#" method="get">
+          <input type="email" placeholder="Email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Zandle Studio</span>
+      <span>Made with care in Malang</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

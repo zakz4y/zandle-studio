@@ -31,10 +31,18 @@
         <img src="assets/icons/cart.svg" alt="Cart">
         <span class="cart-badge-count" id="navCartCount">3</span>
       </a>
-      <a href="riwayat.html" class="user-badge" title="Profil Akun">
-        <img src="assets/icons/user.svg" alt="User">
-        <span>zakz4you</span>
-      </a>
+      <div class="user-menu-wrapper">
+        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </button>
+        <div class="user-dropdown-menu" id="profileDropdownMenu">
+          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
+          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html" class="dropdown-item text-danger">Keluar</a>
+        </div>
+      </div>
       <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -113,65 +121,77 @@
       </div>
 
       <div class="katalog-grid-3">
-        <div class="katalog-card">
-          <div class="katalog-card-img">
-            <img src="assets/images/katalog-candle1.png" alt="Lilin 1">
+        <a href="product01.html" class="katalog-card-link">
+          <div class="katalog-card">
+            <div class="katalog-card-img">
+              <img src="assets/images/candle-white.png" alt="Calm Lavender">
+            </div>
+            <div class="katalog-card-body">
+              <h3 class="katalog-card-title">Calm Lavender</h3>
+              <p class="katalog-card-price">Rp 45.000</p>
+            </div>
           </div>
-          <div class="katalog-card-body">
-            <h3 class="katalog-card-title">Lavender Bliss</h3>
-            <p class="katalog-card-price">Rp 65.000</p>
-          </div>
-        </div>
+        </a>
 
-        <div class="katalog-card">
-          <div class="katalog-card-img">
-            <img src="assets/images/katalog-candle2.png" alt="Lilin 2">
+        <a href="product02.html" class="katalog-card-link">
+          <div class="katalog-card">
+            <div class="katalog-card-img">
+              <img src="assets/images/candle-green.png" alt="Citrus Garden">
+            </div>
+            <div class="katalog-card-body">
+              <h3 class="katalog-card-title">Citrus Garden</h3>
+              <p class="katalog-card-price">Rp 75.000</p>
+            </div>
           </div>
-          <div class="katalog-card-body">
-            <h3 class="katalog-card-title">Lemon Grass Calm</h3>
-            <p class="katalog-card-price">Rp 70.000</p>
-          </div>
-        </div>
+        </a>
 
-        <div class="katalog-card">
-          <div class="katalog-card-img">
-            <img src="assets/images/katalog-candle3.png" alt="Lilin 3">
+        <a href="product03.html" class="katalog-card-link">
+          <div class="katalog-card">
+            <div class="katalog-card-img">
+              <img src="assets/images/candle-yellow.png" alt="Warm Vanilla Coffee">
+            </div>
+            <div class="katalog-card-body">
+              <h3 class="katalog-card-title">Warm Vanilla Coffee</h3>
+              <p class="katalog-card-price">Rp 120.000</p>
+            </div>
           </div>
-          <div class="katalog-card-body">
-            <h3 class="katalog-card-title">Cinnamon Warmth</h3>
-            <p class="katalog-card-price">Rp 65.000</p>
-          </div>
-        </div>
+        </a>
 
-        <div class="katalog-card">
-          <div class="katalog-card-img">
-            <img src="assets/images/candle-white.png" alt="Lilin 4">
+        <a href="product01.html" class="katalog-card-link">
+          <div class="katalog-card">
+            <div class="katalog-card-img">
+              <img src="assets/images/katalog-candle1.png" alt="Lavender Bliss">
+            </div>
+            <div class="katalog-card-body">
+              <h3 class="katalog-card-title">Lavender Bliss</h3>
+              <p class="katalog-card-price">Rp 65.000</p>
+            </div>
           </div>
-          <div class="katalog-card-body">
-            <h3 class="katalog-card-title">Pure Soy Signature</h3>
-            <p class="katalog-card-price">Rp 25.000</p>
-          </div>
-        </div>
+        </a>
 
-        <div class="katalog-card">
-          <div class="katalog-card-img">
-            <img src="assets/images/candle-green.png" alt="Lilin 5">
+        <a href="product02.html" class="katalog-card-link">
+          <div class="katalog-card">
+            <div class="katalog-card-img">
+              <img src="assets/images/katalog-candle2.png" alt="Lemon Grass Calm">
+            </div>
+            <div class="katalog-card-body">
+              <h3 class="katalog-card-title">Lemon Grass Calm</h3>
+              <p class="katalog-card-price">Rp 70.000</p>
+            </div>
           </div>
-          <div class="katalog-card-body">
-            <h3 class="katalog-card-title">Matcha Breeze</h3>
-            <p class="katalog-card-price">Rp 50.000</p>
-          </div>
-        </div>
+        </a>
 
-        <div class="katalog-card">
-          <div class="katalog-card-img">
-            <img src="assets/images/candle-yellow.png" alt="Lilin 6">
+        <a href="product03.html" class="katalog-card-link">
+          <div class="katalog-card">
+            <div class="katalog-card-img">
+              <img src="assets/images/katalog-candle3.png" alt="Cinnamon Warmth">
+            </div>
+            <div class="katalog-card-body">
+              <h3 class="katalog-card-title">Cinnamon Warmth</h3>
+              <p class="katalog-card-price">Rp 65.000</p>
+            </div>
           </div>
-          <div class="katalog-card-body">
-            <h3 class="katalog-card-title">Citrus Therapy</h3>
-            <p class="katalog-card-price">Rp 70.000</p>
-          </div>
-        </div>
+        </a>
       </div>
 
       <div class="pagination">

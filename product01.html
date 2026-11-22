@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calm Lavender — Zandle Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/icons/logo.png" alt="Zandle Studio">
+      <span>Zandle Studio</span>
+    </a>
+
+    <nav class="nav-center" id="navCenter">
+      <ul class="main-nav">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="katalog.html" class="nav-link active">Katalog</a></li>
+        <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+        <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="searchBtn" title="Cari">
+        <img src="assets/icons/search.svg" alt="Search">
+      </button>
+      <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
+        <img src="assets/icons/cart.svg" alt="Cart">
+        <span class="cart-badge-count" id="navCartCount">3</span>
+      </a>
+      <div class="user-menu-wrapper">
+        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </button>
+        <div class="user-dropdown-menu" id="profileDropdownMenu">
+          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
+          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html" class="dropdown-item text-danger">Keluar</a>
+        </div>
+      </div>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="product-breadcrumb-wrap">
+    <div class="product-breadcrumb-inner">
+      <a href="katalog.html" class="crumb-parent">Katalog</a>
+      <span class="crumb-separator">›</span>
+      <span class="crumb-current">Calm Lavender</span>
+    </div>
+  </div>
+
+  <main class="product-detail-layout">
+    <div class="product-gallery-side">
+      <div class="product-main-visual">
+        <img src="assets/images/candle-white.png" alt="Calm Lavender" id="mainProductImg">
+        <div class="product-gallery-controls">
+          <button type="button" class="gallery-nav-arrow" aria-label="Sebelumnya">‹</button>
+          <div class="gallery-dots-row">
+            <span class="gallery-dot active">1</span>
+            <span class="gallery-dot">2</span>
+            <span class="gallery-dot">3</span>
+          </div>
+          <button type="button" class="gallery-nav-arrow" aria-label="Selanjutnya">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-info-side">
+      <h1 class="product-detail-title">Calm Lavender</h1>
+      <div class="product-detail-price">Rp 45.000</div>
+      <div class="product-stock-status">Stock Tersedia</div>
+      <hr class="product-divider">
+
+      <h3 class="product-desc-heading">Deskripsi Produk</h3>
+      <div class="product-specs-pills">
+        <span class="spec-pill">Krem</span>
+        <span class="spec-pill">Lavender</span>
+        <span class="spec-pill">Mini</span>
+      </div>
+      <p class="product-detail-desc">
+        Rasakan ketenangan ekstra di sela kesibukan Anda. Sentuhan aroma lavender yang merelaksasi pikiran berpadu sempurna dengan warna krem klasik dalam ukuran mini, sangat praktis untuk dicoba pertama kali atau dibawa saat bepergian.
+      </p>
+
+      <div class="product-action-buttons">
+        <a href="keranjang.html" class="btn-detail-cart">+ Tambah ke Keranjang</a>
+        <a href="checkout.html" class="btn-detail-buy">Beli Sekarang</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="products-section related-section">
+    <div class="section-header-row related-header">
+      <h2 class="section-title-bold" style="font-size: 20px;">Anda mungkin juga menyukai</h2>
+    </div>
+
+    <div class="products-grid-3">
+      <a href="product02.html" class="katalog-card-link">
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="assets/images/candle-green.png" alt="Citrus Garden">
+          </div>
+          <div class="product-info">
+            <div class="tag-list">
+              <span class="tag-pill">Daily Fresh</span>
+              <span class="tag-pill">150ml</span>
+            </div>
+            <h3 class="product-title">Citrus Garden</h3>
+            <div class="product-bottom-row">
+              <span class="product-price">Rp 75.000</span>
+              <span class="btn-cart-sm">+ Keranjang</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="product03.html" class="katalog-card-link">
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="assets/images/candle-yellow.png" alt="Warm Vanilla Coffee">
+          </div>
+          <div class="product-info">
+            <div class="tag-list">
+              <span class="tag-pill">Therapy</span>
+              <span class="tag-pill">200ml</span>
+            </div>
+            <h3 class="product-title">Warm Vanilla Coffee</h3>
+            <div class="product-bottom-row">
+              <span class="product-price">Rp 120.000</span>
+              <span class="btn-cart-sm">+ Keranjang</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="product01.html" class="katalog-card-link">
+        <div class="product-card">
+          <div class="product-thumb">
+            <img src="assets/images/candle-white.png" alt="Calm Lavender">
+          </div>
+          <div class="product-info">
+            <div class="tag-list">
+              <span class="tag-pill">Signature</span>
+              <span class="tag-pill">200ml</span>
+            </div>
+            <h3 class="product-title">Calm Lavender</h3>
+            <div class="product-bottom-row">
+              <span class="product-price">Rp 45.000</span>
+              <span class="btn-cart-sm">+ Keranjang</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="assets/icons/logo.png" alt="Logo">
+          <h4>Zandle Studio</h4>
+        </div>
+        <p class="footer-tagline">
+          Lilin aromaterapi custom dari Malang untuk<br>
+          seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">JELAJAHI</h5>
+        <ul class="footer-links">
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="kustomisasi.html">Kustomisasi</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">BANTUAN</h5>
+        <ul class="footer-links">
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">NEWSLETTER</h5>
+        <form class="newsletter-form" action="#" method="get">
+          <input type="email" placeholder="Email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Zandle Studio</span>
+      <span>Made with care in Malang</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -31,10 +31,18 @@
         <img src="assets/icons/cart.svg" alt="Cart">
         <span class="cart-badge-count" id="navCartCount">3</span>
       </a>
-      <a href="riwayat.html" class="user-badge" title="Profil Akun">
-        <img src="assets/icons/user.svg" alt="User">
-        <span>zakz4you</span>
-      </a>
+      <div class="user-menu-wrapper">
+        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </button>
+        <div class="user-dropdown-menu" id="profileDropdownMenu">
+          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
+          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html" class="dropdown-item text-danger">Keluar</a>
+        </div>
+      </div>
       <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -68,24 +76,13 @@
       </div>
     </div>
 
-    <div class="about-image-col about-two-boxes">
-      <div class="about-photo-card">
-        <div class="photo-img-wrap">
-          <img src="assets/images/about-collage.png" alt="Proses Pembuatan Lilin Studio">
+    <div class="about-image-col">
+      <div class="about-2box-mosaic" aria-label="Foto Lilin Zandle Studio">
+        <div class="mosaic-box box-left">
+          <img src="assets/images/about-collage.png" alt="Zandle Studio Art">
         </div>
-        <div class="photo-card-label">
-          <span class="photo-tag">Studio Malang</span>
-          <h4>Proses Hand-Poured Teliti</h4>
-        </div>
-      </div>
-
-      <div class="about-photo-card">
-        <div class="photo-img-wrap">
-          <img src="assets/images/banner-candle.png" alt="Koleksi Lilin Aromaterapi">
-        </div>
-        <div class="photo-card-label">
-          <span class="photo-tag">Bahan Alami</span>
-          <h4>100% Soy Wax & Minyak Nabati</h4>
+        <div class="mosaic-box box-right">
+          <img src="assets/images/about-collage.png" alt="Zandle Studio Candles">
         </div>
       </div>
     </div>
