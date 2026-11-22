@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beranda — Studio Sumbu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1E1A15; --linen:#F4EEE0; --paper:#FBF8F1;
+  --moss:#4B5940; --moss-dark:#38412F;
+  --honey:#D19A44; --honey-bright:#E8B968; --plum:#6B4258;
+  --rust:#B4553B;
+  --line: rgba(30,26,21,0.14); --line-dark: rgba(244,238,224,0.16);
+  --shadow: 0 18px 40px -18px rgba(30,26,21,0.35);
+  --radius: 18px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--ink);color:var(--linen);font-family:'Karla',sans-serif;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;margin:0;line-height:1.08;}
+p{margin:0;}
+a{color:inherit;}
+.mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.02em;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.16em;font-size:0.72rem;opacity:0.72;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+.wrap-narrow{max-width:760px;margin:0 auto;padding:0 32px;}
+@media(max-width:640px){ .wrap,.wrap-narrow{padding:0 20px;} }
+@media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;} }
+
+/* ---------- NAV ---------- */
+nav.topnav{position:sticky;top:0;z-index:40;background:rgba(30,26,21,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark);}
+nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px;}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;text-decoration:none;color:var(--linen);flex:none;}
+.brand .flame-mark{width:20px;height:26px;display:block;}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0;flex:1;}
+.nav-links a{text-decoration:none;font-size:0.9rem;color:var(--linen);opacity:0.75;transition:opacity 0.2s ease;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{opacity:1;}
+.nav-links a.active{color:var(--honey-bright);}
+.nav-actions{display:flex;align-items:center;gap:10px;flex:none;}
+.icon-pill{display:flex;align-items:center;gap:8px;background:var(--linen);color:var(--ink);border-radius:999px;padding:9px 16px 9px 14px;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;border:none;cursor:pointer;text-decoration:none;}
+.icon-pill svg{width:14px;height:14px;}
+.icon-pill.ghost{background:transparent;color:var(--linen);border:1px solid var(--line-dark);}
+@media(max-width:860px){ .nav-links{display:none;} }
+
+/* ---------- BUTTONS ---------- */
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--moss);color:#fff;border:none;border-radius:14px;padding:15px 22px;font-family:'Karla',sans-serif;font-weight:700;font-size:0.96rem;cursor:pointer;transition:background 0.18s ease,transform 0.15s ease;text-decoration:none;}
+.btn-primary:hover{background:var(--moss-dark);transform:translateY(-1px);}
+.btn-primary:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+.btn-primary:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+.btn-secondary{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:14px;padding:13px 20px;font-family:'Karla',sans-serif;font-weight:600;font-size:0.9rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;}
+.btn-secondary:hover{border-color:var(--moss);}
+.btn-secondary:focus-visible{outline:2px solid var(--moss);outline-offset:2px;}
+.btn-dark{background:var(--ink);color:var(--linen);border:1px solid var(--line-dark);border-radius:14px;padding:13px 20px;font-weight:600;font-size:0.9rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;}
+.btn-dark:hover{background:#28221B;}
+.btn-link{background:none;border:none;color:var(--moss-dark);font-weight:700;cursor:pointer;text-decoration:underline;font-size:0.88rem;padding:0;}
+.btn-danger-link{background:none;border:none;color:var(--rust);cursor:pointer;font-size:0.8rem;text-decoration:underline;padding:0;}
+
+/* ---------- SECTIONS / PANELS ---------- */
+.section-dark{background:linear-gradient(180deg,#1E1A15 0%,#221D17 60%,#1B1712 100%);padding:64px 0 80px;}
+.section-linen{background:var(--linen);color:var(--ink);padding:72px 0;}
+.section-paper{background:var(--paper);color:var(--ink);padding:72px 0;border-top:1px solid var(--line);}
+.page-head{max-width:640px;margin-bottom:44px;}
+.page-head .eyebrow{color:var(--honey-bright);margin-bottom:12px;display:block;}
+.page-head.on-light .eyebrow{color:var(--moss-dark);}
+.page-head h1{font-size:clamp(1.9rem,3.6vw,2.7rem);}
+.page-head p.lead{margin-top:14px;font-size:1rem;line-height:1.6;opacity:0.78;max-width:520px;}
+
+.panel{background:var(--paper);color:var(--ink);border-radius:24px;padding:34px;box-shadow:var(--shadow);}
+@media(max-width:640px){ .panel{padding:24px 20px;} }
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;}
+
+/* ---------- FORMS ---------- */
+label.field-label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;opacity:0.6;margin-bottom:8px;}
+input[type="text"],input[type="email"],input[type="password"],input[type="tel"],textarea,select{
+  width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+  font-family:'Karla',sans-serif;font-size:0.94rem;background:#fff;color:var(--ink);
+}
+textarea{resize:vertical;min-height:80px;}
+input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--moss);outline-offset:1px;}
+.form-row{margin-bottom:20px;}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:520px){ .form-grid-2{grid-template-columns:1fr;} }
+.hint{font-size:0.76rem;opacity:0.55;margin-top:6px;}
+.error-text{font-size:0.78rem;color:var(--rust);margin-top:6px;display:none;}
+.form-row.invalid input,.form-row.invalid textarea{border-color:var(--rust);}
+.form-row.invalid .error-text{display:block;}
+
+/* radio/checkbox pill */
+.radio-card{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;}
+.radio-card input{margin-top:3px;}
+.radio-card.checked{border-color:var(--moss);background:#EEF1E7;}
+.radio-card .rt{font-weight:700;font-size:0.92rem;}
+.radio-card .rs{font-size:0.8rem;opacity:0.65;margin-top:2px;}
+
+/* pill/swatch buttons (customizer) */
+.swatch-row{display:flex;flex-wrap:wrap;gap:10px;}
+.scent-btn{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 13px;cursor:pointer;font-family:'Karla',sans-serif;font-size:0.86rem;display:flex;align-items:center;gap:8px;transition:border-color 0.15s ease,transform 0.15s ease;}
+.scent-btn .dot{width:11px;height:11px;border-radius:50%;flex:none;}
+.scent-btn:hover{transform:translateY(-1px);}
+.scent-btn[aria-pressed="true"]{border-color:var(--moss);background:#EEF1E7;font-weight:600;}
+.color-swatch{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.12);padding:0;}
+.color-swatch[aria-pressed="true"]{border-color:var(--ink);}
+.pill-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;font-size:0.84rem;font-family:'Karla',sans-serif;transition:border-color 0.15s ease;}
+.pill-btn[aria-pressed="true"]{border-color:var(--moss);background:var(--moss);color:#fff;font-weight:600;}
+.pill-btn small{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;opacity:0.7;margin-top:2px;}
+.pill-btn[aria-pressed="true"] small{opacity:0.85;}
+.qty-row{display:flex;align-items:center;gap:14px;}
+.qty-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:1.1rem;line-height:1;display:flex;align-items:center;justify-content:center;}
+.qty-value{font-family:'IBM Plex Mono',monospace;font-size:1rem;min-width:22px;text-align:center;}
+.divider{height:1px;background:var(--line);margin:26px 0;}
+
+/* price */
+.price-row{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px;}
+.price-row .label{font-size:0.8rem;opacity:0.65;}
+.price-row .amount{font-family:'IBM Plex Mono',monospace;font-size:1.5rem;font-weight:500;}
+.spec-table{width:100%;border-collapse:collapse;}
+.spec-table tr{border-bottom:1px solid var(--line);}
+.spec-table tr:last-child{border-bottom:none;}
+.spec-table td{padding:12px 0;font-size:0.92rem;}
+.spec-table td:first-child{opacity:0.6;width:42%;}
+.spec-table td:last-child{font-weight:600;text-align:right;}
+
+/* badges */
+.badge{display:inline-flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 10px;border-radius:999px;letter-spacing:0.02em;}
+.badge.pending{background:#F3E2C4;color:#5A430F;}
+.badge.paid{background:#DCE6D2;color:var(--moss-dark);}
+.badge.shipped{background:#D9E4EC;color:#2C4A63;}
+.badge.done{background:#D6EAD8;color:#25552B;}
+
+/* cart line */
+.cart-item{display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);}
+.cart-item:last-child{border-bottom:none;}
+.mini-jar{width:76px;height:76px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#211C16;position:relative;overflow:hidden;flex:none;}
+.mini-jar .flame{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:10px;height:14px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle,#FBF3D8,#E8B968 70%);}
+.mini-jar .wax{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:44px;height:36px;border-radius:8px 8px 4px 4px;}
+
+/* empty state */
+.empty-state{text-align:center;padding:70px 24px;border:1px dashed var(--line);border-radius:20px;}
+.empty-state h3{margin-bottom:10px;}
+.empty-state p{opacity:0.65;margin-bottom:22px;}
+
+/* footer */
+footer.site{background:var(--ink);color:var(--linen);padding:52px 0 34px;}
+.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:32px;border-bottom:1px solid var(--line-dark);}
+.footer-top .brand{font-size:1.3rem;}
+.footer-top p{max-width:280px;font-size:0.85rem;opacity:0.6;margin-top:10px;line-height:1.55;}
+.footer-links{display:flex;gap:48px;flex-wrap:wrap;}
+.footer-links div h5{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.55;margin-bottom:12px;}
+.footer-links ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+.footer-links a{text-decoration:none;font-size:0.86rem;opacity:0.8;}
+.footer-bottom{display:flex;justify-content:space-between;padding-top:22px;font-size:0.76rem;opacity:0.5;flex-wrap:wrap;gap:8px;}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:var(--linen);padding:14px 22px;border-radius:12px;font-size:0.86rem;box-shadow:0 12px 30px -10px rgba(0,0,0,0.5);opacity:0;pointer-events:none;transition:all 0.3s ease;z-index:80;display:flex;align-items:center;gap:10px;}
+.toast.show{opacity:1;transform:translate(-50%,0);}
+.toast .tick{color:var(--honey-bright);}
+
+
+.hero{position:relative;padding:76px 0 90px;background:radial-gradient(60% 50% at 82% 8%, rgba(209,154,68,0.10), transparent 60%),linear-gradient(180deg,#1E1A15 0%,#221D17 60%,#1B1712 100%);overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center;}
+@media(max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.3rem);}
+.hero h1 .accent{color:var(--honey-bright);font-style:italic;font-weight:500;}
+.hero p.lead{margin-top:18px;font-size:1.06rem;line-height:1.6;color:rgba(244,238,224,0.78);max-width:480px;}
+.hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;}
+.hero-visual{position:relative;border-radius:24px;border:1px solid var(--line-dark);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0) 40%),#211C16;padding:30px;min-height:360px;display:flex;align-items:center;justify-content:center;}
+.hero-visual .glow{position:absolute;inset:0;margin:auto;width:280px;height:280px;border-radius:50%;filter:blur(50px);opacity:0.5;background:radial-gradient(circle,#8B7BA8,transparent 70%);}
+.hero-visual svg{position:relative;z-index:2;width:180px;}
+
+.steps-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:860px){ .steps-strip{grid-template-columns:1fr;} }
+.step-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;}
+.step-card .num{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--moss-dark);border:1px solid var(--line);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.step-card h4{font-size:1rem;margin-bottom:6px;}
+.step-card p{font-size:0.87rem;opacity:0.72;line-height:1.55;}
+
+.preset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:900px){ .preset-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:600px){ .preset-grid{grid-template-columns:1fr;} }
+.preset-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;}
+.preset-card .swatch{width:38px;height:38px;border-radius:50%;}
+.preset-card h3{font-size:1.05rem;}
+.preset-card p{font-size:0.86rem;opacity:0.72;line-height:1.5;}
+.preset-card .cta{margin-top:6px;}
+.section-foot-cta{text-align:center;margin-top:40px;}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="wrap">
+    <a href="landing.html" class="brand"><svg class="flame-mark" viewBox="0 0 20 26" fill="none">
+<path d="M10 1C10 1 4 8.5 4 14.5C4 18.6 6.7 22 10 22C13.3 22 16 18.6 16 14.5C16 8.5 10 1 10 1Z" fill="#D19A44"/>
+<path d="M10 10C10 10 7.5 13.7 7.5 16.6C7.5 18.8 8.6 20.5 10 20.5C11.4 20.5 12.5 18.8 12.5 16.6C12.5 13.7 10 10 10 10Z" fill="#F4EEE0"/>
+</svg>Studio Sumbu</a>
+    <ul class="nav-links"><li><a href="landing.html" class="active">Beranda</a></li><li><a href="katalog.html">Katalog</a></li><li><a href="kustomisasi.html">Racik Sendiri</a></li><li><a href="riwayat.html">Riwayat Pesanan</a></li></ul>
+    <div class="nav-actions">
+      <a href="keranjang.html" class="icon-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M1 1h3l2.6 13.4a2 2 0 0 0 2 1.6h9.4a2 2 0 0 0 2-1.6L21 6H5"/></svg><span id="navCartCount">0</span></a>
+      <a href="login.html" class="icon-pill ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span id="navAcctLabel">Akun</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--honey-bright);display:block;margin-bottom:14px;">Studio Sumbu</span>
+      <h1>Racik lilin aromaterapi <span class="accent">versimu sendiri</span>, lihat hasilnya sebelum dipesan.</h1>
+      <p class="lead">Pilih aroma, warna, ukuran, dan wadah — pratinjau menyala mengikuti setiap pilihanmu. Kami yang menuangkan lilinnya di studio, satu per satu, sesuai racikan yang kamu susun.</p>
+      <div class="hero-cta">
+        <a href="kustomisasi.html" class="btn-primary">Mulai Racik Lilin</a>
+        <a href="katalog.html" class="btn-secondary" style="border-color:var(--line-dark);color:var(--linen);">Lihat Katalog</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glow"></div>
+      <svg viewBox="0 0 220 260" fill="none">
+        <ellipse cx="110" cy="230" rx="58" ry="14" fill="#0000"/>
+        <rect x="60" y="120" width="100" height="100" rx="14" fill="#2B241C" stroke="rgba(244,238,224,0.18)"/>
+        <ellipse cx="110" cy="120" rx="50" ry="10" fill="#F1E8D3"/>
+        <rect x="107" y="86" width="6" height="34" rx="3" fill="#5C4A32"/>
+        <path d="M110 60C110 60 96 78 96 92C96 101 102 108 110 108C118 108 124 101 124 92C124 78 110 60 110 60Z" fill="#E8B968"/>
+        <path d="M110 78C110 78 103 88 103 95C103 100 106 104 110 104C114 104 117 100 117 95C117 88 110 78 110 78Z" fill="#FBF3D8"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="section-linen">
+  <div class="wrap">
+    <div class="page-head on-light">
+      <span class="eyebrow">Kenapa racik sendiri</span>
+      <h2>Dari pesan chat yang bolak-balik, jadi satu tampilan yang bisa kamu lihat sendiri.</h2>
+    </div>
+    <div class="steps-strip">
+      <div class="step-card"><div class="num mono">1</div><h4>Kamu racik di layar</h4><p>Pilih aroma, warna, ukuran, dan wadah — pratinjau menyala mengikuti setiap pilihan.</p></div>
+      <div class="step-card"><div class="num mono">2</div><h4>Cek harga & spesifikasi</h4><p>Rincian harga dan detail racikan tersusun jelas sebelum kamu checkout.</p></div>
+      <div class="step-card"><div class="num mono">3</div><h4>Kami tuang di studio</h4><p>Lilin dituang dan dikemas sesuai racikanmu, siap dikirim ke tempatmu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-paper">
+  <div class="wrap">
+    <div class="page-head on-light">
+      <span class="eyebrow">Racikan Rekomendasi</span>
+      <h2>Belum tahu mau mulai dari mana? Coba salah satu racikan favorit ini.</h2>
+    </div>
+    <div class="preset-grid" id="presetGrid"></div>
+    <div class="section-foot-cta"><a href="katalog.html" class="btn-dark">Lihat Semua Katalog</a></div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="landing.html" class="brand">Studio Sumbu</a>
+        <p>Lilin aromaterapi rumahan, dituang dan dilabeli tangan di setiap pesanan — dari studio kecil di rumah kami.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h5>Jelajah</h5>
+          <ul>
+            <li><a href="katalog.html">Katalog</a></li>
+            <li><a href="kustomisasi.html">Racik Sendiri</a></li>
+            <li><a href="riwayat.html">Riwayat Pesanan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Akun</h5>
+          <ul>
+            <li><a href="login.html">Masuk / Daftar</a></li>
+            <li><a href="keranjang.html">Keranjang</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Studio Sumbu. Dibuat dengan sepenuh hati.</span>
+      <span>Dituang di rumah, dikirim dengan hati-hati.</span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast"><span class="tick">&check;</span><span id="toastMsg"></span></div>
+<script>
+
+/* ---------- shared product data ---------- */
+const SCENTS = [
+  { id:'lavender', name:'Lavender Tidur', family:'Floral', glow:'#8B7BA8', premium:0, desc:'Aroma lavender lembut yang menenangkan pikiran, cocok sebelum tidur.' },
+  { id:'cendana', name:'Kayu Cendana', family:'Woody', glow:'#A97A50', premium:8000, desc:'Aroma kayu hangat dan earthy, pas menemani waktu kerja atau meditasi.' },
+  { id:'bergamot', name:'Jeruk Bergamot', family:'Citrus', glow:'#E3A83B', premium:3000, desc:'Aroma jeruk segar yang membangkitkan energi di pagi hari.' },
+  { id:'kopi', name:'Kopi Gula Aren', family:'Gourmand', glow:'#6B4A34', premium:5000, desc:'Aroma kopi hangat berpadu manis gula aren, seperti ngopi sore hari.' },
+  { id:'melati', name:'Melati Malam', family:'Floral', glow:'#C9A0C0', premium:4000, desc:'Aroma melati lembut yang seolah mekar begitu lilin dinyalakan malam hari.' },
+  { id:'serai', name:'Serai Wangi', family:'Herbal', glow:'#7C9A5E', premium:0, desc:'Aroma serai segar dan alami, menenangkan sekaligus mengusir nyamuk.' },
+];
+const WAX_COLORS = [
+  { id:'ivory', name:'Ivory Alami', hex:'#F1E8D3' },
+  { id:'sage', name:'Sage Lembut', hex:'#8B9A7B' },
+  { id:'terracotta', name:'Terracotta Senja', hex:'#C97B58' },
+  { id:'charcoal', name:'Charcoal Malam', hex:'#3B3530' },
+  { id:'rose', name:'Dusty Rose', hex:'#C79797' },
+  { id:'butter', name:'Butter Kuning', hex:'#E8C468' },
+];
+const SIZES = [
+  { id:'mini', name:'Mini', meta:'100g', price:45000 },
+  { id:'reguler', name:'Reguler', meta:'200g', price:75000 },
+  { id:'jumbo', name:'Jumbo', meta:'350g', price:120000 },
+];
+const VESSELS = [
+  { id:'glass', name:'Gelas Kaca Bening', price:0 },
+  { id:'ceramic', name:'Toples Keramik', price:15000 },
+  { id:'tin', name:'Kaleng Vintage', price:10000 },
+];
+const PRESETS = [
+  { id:'malam-tenang', name:'Malam Tenang', scent:'lavender', wax:'ivory', size:'reguler', vessel:'glass', label:'Untuk siapa saja yang butuh tenang.', desc:'Kombinasi paling laris untuk menutup hari — lavender lembut di gelas kaca bening.' },
+  { id:'meja-fokus', name:'Meja Kerja Fokus', scent:'cendana', wax:'charcoal', size:'reguler', vessel:'ceramic', label:'Nyalakan, lalu mulai fokus.', desc:'Aroma kayu hangat dalam toples keramik gelap, betah menemani jam kerja panjang.' },
+  { id:'pagi-energi', name:'Pagi Energi', scent:'bergamot', wax:'butter', size:'mini', vessel:'glass', label:'Selamat pagi, semangat baru.', desc:'Jeruk bergamot segar ukuran mini — pas untuk meja kecil di dekat jendela.' },
+  { id:'sore-ngopi', name:'Sore Ngopi', scent:'kopi', wax:'terracotta', size:'jumbo', vessel:'tin', label:'Aroma kopi sore yang bikin betah.', desc:'Kopi gula aren dalam ukuran jumbo, tahan menyala sepanjang sore santai.' },
+  { id:'kamar-estetik', name:'Kamar Estetik', scent:'melati', wax:'rose', size:'reguler', vessel:'ceramic', label:'Mekar begitu dinyalakan.', desc:'Melati malam berpadu dusty rose dalam toples keramik, manis dipandang di rak kamar.' },
+  { id:'usir-nyamuk', name:'Usir Nyamuk Santai', scent:'serai', wax:'sage', size:'reguler', vessel:'glass', label:'Santai sore, nyamuk minggir.', desc:'Serai wangi yang menenangkan sekaligus mengusir nyamuk saat santai di teras.' },
+];
+const byId = (arr,id) => arr.find(x=>x.id===id);
+const fmt = n => 'Rp' + Math.round(n).toLocaleString('id-ID');
+function priceOf(cfg){
+  const scent=byId(SCENTS,cfg.scent), size=byId(SIZES,cfg.size), vessel=byId(VESSELS,cfg.vessel);
+  return (size.price + scent.premium + vessel.price) * (cfg.qty||1);
+}
+function unitPriceOf(cfg){
+  const scent=byId(SCENTS,cfg.scent), size=byId(SIZES,cfg.size), vessel=byId(VESSELS,cfg.vessel);
+  return size.price + scent.premium + vessel.price;
+}
+
+/* ---------- storage-backed store (persistent artifact storage, with graceful fallback) ---------- */
+const Store = {
+  async get(key, fallback){
+    try{
+      if(!window.storage) return fallback;
+      const r = await window.storage.get(key);
+      return r ? JSON.parse(r.value) : fallback;
+    }catch(e){ return fallback; }
+  },
+  async set(key, value){
+    try{ if(window.storage) await window.storage.set(key, JSON.stringify(value)); }catch(e){}
+  }
+};
+
+async function getCart(){ return await Store.get('cart_items', []); }
+async function setCart(items){ await Store.set('cart_items', items); await syncNavCart(); }
+async function addToCartConfig(cfg){
+  const items = await getCart();
+  items.push({
+    lineId: 'l' + Date.now() + Math.floor(Math.random()*1000),
+    scent: cfg.scent, wax: cfg.wax, size: cfg.size, vessel: cfg.vessel,
+    label: cfg.label || '', qty: cfg.qty || 1, unitPrice: unitPriceOf(cfg),
+  });
+  await setCart(items);
+}
+async function cartTotal(){
+  const items = await getCart();
+  return items.reduce((sum,it)=> sum + it.unitPrice*it.qty, 0);
+}
+async function getSession(){ return await Store.get('session', null); }
+async function syncNavCart(){
+  const items = await getCart();
+  const count = items.reduce((s,it)=>s+it.qty,0);
+  const el = document.getElementById('navCartCount');
+  if(el) el.textContent = count;
+  const session = await getSession();
+  const acct = document.getElementById('navAcctLabel');
+  if(acct && session && session.name) acct.textContent = session.name.split(' ')[0];
+}
+document.addEventListener('DOMContentLoaded', syncNavCart);
+
+/* ---------- toast ---------- */
+function showToast(msg){
+  const toast=document.getElementById('toast'), toastMsg=document.getElementById('toastMsg');
+  if(!toast) return;
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(()=> toast.classList.remove('show'), 2600);
+}
+function jarSwatch(cfg){
+  const wax = byId(WAX_COLORS, cfg.wax);
+  return `<div class="mini-jar"><div class="flame"></div><div class="wax" style="background:${wax.hex}"></div></div>`;
+}
+
+
+const grid = document.getElementById('presetGrid');
+PRESETS.slice(0,3).forEach(p => {
+  const scent = byId(SCENTS, p.scent);
+  const div = document.createElement('div');
+  div.className = 'preset-card';
+  div.innerHTML = `
+    <div class="swatch" style="background:${scent.glow}"></div>
+    <h3>${p.name}</h3>
+    <p>${p.desc}</p>
+    <div class="cta"><a href="kustomisasi.html?preset=${p.id}" class="btn-secondary">Kustomisasi Ini</a></div>
+  `;
+  grid.appendChild(div);
+});
+
+</script>
+</body>
+</html>

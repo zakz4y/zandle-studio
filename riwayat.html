@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pesanan Saya — Zandle Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/icons/logo.png" alt="Zandle Studio">
+      <span>Zandle Studio</span>
+    </a>
+
+    <div class="header-right">
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+          <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+          <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="katalog.html" class="btn-icon" title="Cari">
+          <img src="assets/icons/search.svg" alt="Search">
+        </a>
+        <a href="keranjang.html" class="btn-icon" title="Keranjang">
+          <img src="assets/icons/cart.svg" alt="Cart">
+        </a>
+        <a href="riwayat.html" class="user-badge" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ACCOUNT WORKSPACE -->
+  <div class="account-layout">
+    <!-- DARK SIDEBAR -->
+    <aside class="account-sidebar">
+      <div class="account-brand">
+        <img src="assets/icons/logo.png" alt="Logo">
+        <span>Dashboard Akun</span>
+      </div>
+
+      <ul class="account-menu">
+        <li><a href="riwayat.html" class="active">Pesanan Saya</a></li>
+        <li><a href="katalog.html">Katalog Produk</a></li>
+        <li><a href="kustomisasi.html">Kustomisasi Lilin</a></li>
+        <li><a href="keranjang.html">Keranjang Belanja</a></li>
+        <li><a href="login.html" style="margin-top: 40px; color: #f87171;">Keluar (Logout)</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT AREA -->
+    <main class="account-content">
+      <h1 class="page-big-title" style="font-size: 42px;">Riwayat Pesanan</h1>
+      <p class="page-subtitle">Pantau status pembuatan lilin buatan tangan dan pengiriman ke rumah Anda</p>
+
+      <!-- STATUS TABS -->
+      <div class="tab-filter-row">
+        <button type="button" class="tab-pill active">Semua</button>
+        <button type="button" class="tab-pill">Sedang Dibuat</button>
+        <button type="button" class="tab-pill">Dikirim</button>
+        <button type="button" class="tab-pill">Selesai</button>
+        <button type="button" class="tab-pill">Dibatalkan</button>
+      </div>
+
+      <!-- ORDERS TABLE -->
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>KODE PESANAN</th>
+            <th>TANGGAL</th>
+            <th>RINCIAN ITEM</th>
+            <th>TOTAL</th>
+            <th>STATUS</th>
+            <th style="text-align: right;">TINDAKAN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="font-family: var(--font-mono);">#ZS-8921</strong></td>
+            <td>18 Nov 2024</td>
+            <td>
+              <strong>1x Lilin Custom (Sage Green)</strong><br>
+              <span style="font-size: 12px; color: var(--text-body);">Lavender Bliss • 200ml • "Untuk Kamu"</span>
+            </td>
+            <td><strong>Rp 75.000</strong></td>
+            <td><span class="status-badge dibuat">Sedang Dibuat</span></td>
+            <td style="text-align: right;"><a href="#" class="btn-outline" style="padding: 6px 14px; font-size: 12px;">Detail</a></td>
+          </tr>
+
+          <tr>
+            <td><strong style="font-family: var(--font-mono);">#ZS-8402</strong></td>
+            <td>10 Nov 2024</td>
+            <td>
+              <strong>1x Matcha Breeze, 1x Pure Soy</strong><br>
+              <span style="font-size: 12px; color: var(--text-body);">Paket Relaksasi Sore</span>
+            </td>
+            <td><strong>Rp 75.000</strong></td>
+            <td><span class="status-badge dikirim">Dikirim</span></td>
+            <td style="text-align: right;"><a href="#" class="btn-outline" style="padding: 6px 14px; font-size: 12px;">Lacak Resi</a></td>
+          </tr>
+
+          <tr>
+            <td><strong style="font-family: var(--font-mono);">#ZS-7890</strong></td>
+            <td>25 Okt 2024</td>
+            <td>
+              <strong>2x Citrus Therapy</strong><br>
+              <span style="font-size: 12px; color: var(--text-body);">Ukuran 200ml Glass Jar</span>
+            </td>
+            <td><strong>Rp 140.000</strong></td>
+            <td><span class="status-badge selesai">Selesai</span></td>
+            <td style="text-align: right;"><a href="kustomisasi.html" class="btn-outline" style="padding: 6px 14px; font-size: 12px;">Beli Lagi</a></td>
+          </tr>
+
+          <tr>
+            <td><strong style="font-family: var(--font-mono);">#ZS-6540</strong></td>
+            <td>14 Okt 2024</td>
+            <td>
+              <strong>1x Lilin Custom (Natural White)</strong><br>
+              <span style="font-size: 12px; color: var(--text-body);">Warm Vanilla • 100ml</span>
+            </td>
+            <td><strong>Rp 55.000</strong></td>
+            <td><span class="status-badge dibatalkan">Dibatalkan</span></td>
+            <td style="text-align: right;"><a href="#" class="btn-outline" style="padding: 6px 14px; font-size: 12px;">Detail</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="assets/icons/logo.png" alt="Logo">
+          <h4>Zandle Studio</h4>
+        </div>
+        <p class="footer-tagline">
+          Lilin aromaterapi custom dari Malang untuk<br>
+          seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">JELAJAHI</h5>
+        <ul class="footer-links">
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="kustomisasi.html">Kustomisasi</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">BANTUAN</h5>
+        <ul class="footer-links">
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">NEWSLETTER</h5>
+        <form class="newsletter-form" action="#" method="get">
+          <input type="email" placeholder="Email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Zandle Studio</span>
+      <span>Made with care in Malang</span>
+    </div>
+  </footer>
+
+</body>
+</html>

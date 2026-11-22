@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout — Zandle Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/icons/logo.png" alt="Zandle Studio">
+      <span>Zandle Studio</span>
+    </a>
+
+    <div class="header-right">
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+          <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+          <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="katalog.html" class="btn-icon" title="Cari">
+          <img src="assets/icons/search.svg" alt="Search">
+        </a>
+        <a href="keranjang.html" class="btn-icon" title="Keranjang">
+          <img src="assets/icons/cart.svg" alt="Cart">
+        </a>
+        <a href="riwayat.html" class="user-badge" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TITLE BLOCK -->
+  <div class="katalog-header-block">
+    <h1 class="page-big-title">Checkout</h1>
+    <p class="page-subtitle">Lengkapi detail pengiriman dan selesaikan pembayaran pesanan Anda</p>
+  </div>
+
+  <!-- CHECKOUT CONTENT -->
+  <div class="checkout-layout">
+    <!-- FORMS COLUMN -->
+    <div class="checkout-forms-col">
+      <!-- 1. ALAMAT -->
+      <div class="checkout-card">
+        <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">1. Alamat Pengiriman</h3>
+
+        <div class="form-group">
+          <label class="form-label">Nama Penerima</label>
+          <input type="text" class="form-input" value="Zacky Achmad" required>
+        </div>
+
+        <div style="display: flex; gap: 20px;">
+          <div class="form-group" style="flex: 1;">
+            <label class="form-label">Nomor WhatsApp / HP</label>
+            <input type="tel" class="form-input" value="081234567890" required>
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label class="form-label">Kode Pos</label>
+            <input type="text" class="form-input" value="65141" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Alamat Lengkap</label>
+          <textarea class="form-textarea" placeholder="Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Catatan untuk Penjual / Kurir (Opsional)</label>
+          <input type="text" class="form-input" placeholder="Contoh: Titipkan di pos satpam jika tidak ada orang di rumah">
+        </div>
+      </div>
+
+      <!-- 2. METODE PENGIRIMAN -->
+      <div class="checkout-card">
+        <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">2. Opsi Pengiriman</h3>
+
+        <label class="payment-method-box active">
+          <input type="radio" name="shipping" checked>
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">Reguler (JNE / J&T Express)</div>
+            <div style="font-size: 12px; color: var(--text-body);">Estimasi sampai 2 - 3 hari kerja</div>
+          </div>
+          <div style="font-weight: 600;">Rp 15.000</div>
+        </label>
+
+        <label class="payment-method-box">
+          <input type="radio" name="shipping">
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">Next Day (SiCepat BEST)</div>
+            <div style="font-size: 12px; color: var(--text-body);">Estimasi sampai 1 hari kerja</div>
+          </div>
+          <div style="font-weight: 600;">Rp 25.000</div>
+        </label>
+      </div>
+
+      <!-- 3. PEMBAYARAN -->
+      <div class="checkout-card">
+        <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">3. Metode Pembayaran</h3>
+
+        <label class="payment-method-box active">
+          <input type="radio" name="payment" checked>
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">BCA Virtual Account</div>
+            <div style="font-size: 12px; color: var(--text-body);">Verifikasi otomatis dalam hitungan menit</div>
+          </div>
+        </label>
+
+        <label class="payment-method-box">
+          <input type="radio" name="payment">
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">QRIS (GoPay, OVO, ShopeePay, Dana)</div>
+            <div style="font-size: 12px; color: var(--text-body);">Pindai kode QR instan</div>
+          </div>
+        </label>
+
+        <label class="payment-method-box">
+          <input type="radio" name="payment">
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">Mandiri Virtual Account</div>
+            <div style="font-size: 12px; color: var(--text-body);">Transfer dari seluruh e-banking Mandiri</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- SUMMARY COLUMN -->
+    <div class="checkout-aside-col">
+      <div class="cart-summary-card">
+        <h3 class="summary-title">Ringkasan Pesanan</h3>
+
+        <div style="margin-bottom: 20px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span>1x Lilin Custom (Sage Green)</span>
+            <span style="font-weight: 600;">Rp 75.000</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span>1x Matcha Breeze (150ml)</span>
+            <span style="font-weight: 600;">Rp 50.000</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>1x Pure Soy Signature (200ml)</span>
+            <span style="font-weight: 600;">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="summary-row">
+          <span style="color: var(--text-body);">Subtotal Produk</span>
+          <span style="font-weight: 600;">Rp 150.000</span>
+        </div>
+        <div class="summary-row">
+          <span style="color: var(--text-body);">Biaya Pengiriman</span>
+          <span style="font-weight: 600;">Rp 15.000</span>
+        </div>
+        <div class="summary-row">
+          <span style="color: var(--text-body);">Biaya Layanan</span>
+          <span style="font-weight: 600;">Rp 1.000</span>
+        </div>
+
+        <div class="summary-row total-row">
+          <span>Total Pembayaran</span>
+          <span style="color: var(--color-brown-text); font-size: 20px;">Rp 166.000</span>
+        </div>
+
+        <a href="riwayat.html" class="btn-primary" style="width: 100%; margin-top: 28px; text-align: center;">Bayar Pesanan Sekarang</a>
+
+        <p style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 14px;">
+          Dengan menekan tombol, Anda menyetujui Ketentuan Layanan Zandle Studio.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="assets/icons/logo.png" alt="Logo">
+          <h4>Zandle Studio</h4>
+        </div>
+        <p class="footer-tagline">
+          Lilin aromaterapi custom dari Malang untuk<br>
+          seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">JELAJAHI</h5>
+        <ul class="footer-links">
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="kustomisasi.html">Kustomisasi</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">BANTUAN</h5>
+        <ul class="footer-links">
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">NEWSLETTER</h5>
+        <form class="newsletter-form" action="#" method="get">
+          <input type="email" placeholder="Email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Zandle Studio</span>
+      <span>Made with care in Malang</span>
+    </div>
+  </footer>
+
+</body>
+</html>

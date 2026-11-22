@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Keranjang Belanja — Zandle Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/icons/logo.png" alt="Zandle Studio">
+      <span>Zandle Studio</span>
+    </a>
+
+    <div class="header-right">
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+          <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+          <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="katalog.html" class="btn-icon" title="Cari">
+          <img src="assets/icons/search.svg" alt="Search">
+        </a>
+        <a href="keranjang.html" class="btn-icon" title="Keranjang" style="border-color: var(--text-dark);">
+          <img src="assets/icons/cart.svg" alt="Cart">
+        </a>
+        <a href="riwayat.html" class="user-badge" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TITLE BLOCK -->
+  <div class="katalog-header-block">
+    <h1 class="page-big-title">Keranjang Belanja</h1>
+    <p class="page-subtitle">Periksa kembali pilihan lilin kesayangan Anda sebelum checkout</p>
+  </div>
+
+  <!-- CART LAYOUT -->
+  <div class="cart-layout">
+    <!-- ITEMS LIST -->
+    <div class="cart-items-col">
+      <!-- Item 1: Custom -->
+      <div class="cart-item-row">
+        <div class="cart-item-info">
+          <div class="cart-item-thumb">
+            <img src="assets/images/candle-green.png" alt="Custom Candle">
+          </div>
+          <div class="cart-item-meta">
+            <h4>Lilin Custom — Sage Green</h4>
+            <p>Aroma: Lavender Bliss • 200ml • Label: "Untuk Kamu"</p>
+            <p style="font-weight: 600; color: var(--text-dark); margin-top: 4px;">Rp 75.000</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <div class="quantity-stepper">
+            <button type="button" class="step-btn">-</button>
+            <span style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
+            <button type="button" class="step-btn">+</button>
+          </div>
+          <span style="font-weight: 600; font-size: 15px; min-width: 90px; text-align: right;">Rp 75.000</span>
+          <a href="#" style="color: var(--text-muted); font-size: 18px; padding: 4px;">✕</a>
+        </div>
+      </div>
+
+      <!-- Item 2: Matcha -->
+      <div class="cart-item-row">
+        <div class="cart-item-info">
+          <div class="cart-item-thumb">
+            <img src="assets/images/candle-green.png" alt="Matcha Candle">
+          </div>
+          <div class="cart-item-meta">
+            <h4>Matcha Breeze</h4>
+            <p>Signature Daily Fresh • 150ml</p>
+            <p style="font-weight: 600; color: var(--text-dark); margin-top: 4px;">Rp 50.000</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <div class="quantity-stepper">
+            <button type="button" class="step-btn">-</button>
+            <span style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
+            <button type="button" class="step-btn">+</button>
+          </div>
+          <span style="font-weight: 600; font-size: 15px; min-width: 90px; text-align: right;">Rp 50.000</span>
+          <a href="#" style="color: var(--text-muted); font-size: 18px; padding: 4px;">✕</a>
+        </div>
+      </div>
+
+      <!-- Item 3: Pure Soy -->
+      <div class="cart-item-row">
+        <div class="cart-item-info">
+          <div class="cart-item-thumb">
+            <img src="assets/images/candle-white.png" alt="Lavender Candle">
+          </div>
+          <div class="cart-item-meta">
+            <h4>Pure Soy Signature</h4>
+            <p>Natural White • 200ml</p>
+            <p style="font-weight: 600; color: var(--text-dark); margin-top: 4px;">Rp 25.000</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <div class="quantity-stepper">
+            <button type="button" class="step-btn">-</button>
+            <span style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
+            <button type="button" class="step-btn">+</button>
+          </div>
+          <span style="font-weight: 600; font-size: 15px; min-width: 90px; text-align: right;">Rp 25.000</span>
+          <a href="#" style="color: var(--text-muted); font-size: 18px; padding: 4px;">✕</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <a href="katalog.html" style="font-size: 14px; font-weight: 600; color: var(--text-dark);">← Lanjut Belanja Lilin</a>
+      </div>
+    </div>
+
+    <!-- SUMMARY CARD -->
+    <div class="cart-summary-col">
+      <div class="cart-summary-card">
+        <h3 class="summary-title">Ringkasan Pesanan</h3>
+
+        <div class="summary-row">
+          <span style="color: var(--text-body);">Subtotal (3 Barang)</span>
+          <span style="font-weight: 600;">Rp 150.000</span>
+        </div>
+        <div class="summary-row">
+          <span style="color: var(--text-body);">Estimasi Pengiriman</span>
+          <span style="font-weight: 600;">Rp 15.000</span>
+        </div>
+
+        <form class="promo-form" action="#" method="get">
+          <input type="text" placeholder="Kode Promo" class="promo-input">
+          <button type="submit" class="promo-btn">Gunakan</button>
+        </form>
+
+        <div class="summary-row total-row">
+          <span>Total Akhir</span>
+          <span style="color: var(--color-brown-text);">Rp 165.000</span>
+        </div>
+
+        <a href="checkout.html" class="btn-primary" style="width: 100%; margin-top: 24px; text-align: center;">Lanjut ke Checkout →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="assets/icons/logo.png" alt="Logo">
+          <h4>Zandle Studio</h4>
+        </div>
+        <p class="footer-tagline">
+          Lilin aromaterapi custom dari Malang untuk<br>
+          seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">JELAJAHI</h5>
+        <ul class="footer-links">
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="kustomisasi.html">Kustomisasi</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">BANTUAN</h5>
+        <ul class="footer-links">
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">NEWSLETTER</h5>
+        <form class="newsletter-form" action="#" method="get">
+          <input type="email" placeholder="Email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Zandle Studio</span>
+      <span>Made with care in Malang</span>
+    </div>
+  </footer>
+
+</body>
+</html>

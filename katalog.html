@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Katalog Produk — Zandle Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/icons/logo.png" alt="Zandle Studio">
+      <span>Zandle Studio</span>
+    </a>
+
+    <div class="header-right">
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="katalog.html" class="nav-link active">Katalog</a></li>
+          <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+          <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="katalog.html" class="btn-icon" title="Cari">
+          <img src="assets/icons/search.svg" alt="Search">
+        </a>
+        <a href="keranjang.html" class="btn-icon" title="Keranjang">
+          <img src="assets/icons/cart.svg" alt="Cart">
+        </a>
+        <a href="riwayat.html" class="user-badge" title="Profil Akun">
+          <img src="assets/icons/user.svg" alt="User">
+          <span>zakz4you</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TITLE BLOCK -->
+  <div class="katalog-header-block">
+    <h1 class="page-big-title">Semua Lilin</h1>
+    <p class="page-subtitle">Pilihan lilin aromaterapi buatan tangan untuk setiap suasana</p>
+  </div>
+
+  <!-- KATALOG CONTENT & FILTER -->
+  <div class="katalog-layout">
+    <!-- SIDEBAR FILTER -->
+    <aside class="filter-sidebar">
+      <div class="filter-top-row">
+        <span class="filter-heading">FILTER</span>
+        <a href="katalog.html" style="font-size: 11px; color: var(--text-muted);">Reset</a>
+      </div>
+
+      <div>
+        <h4 class="filter-group-title">KATEGORI</h4>
+        <ul class="filter-list">
+          <li class="filter-item">
+            <label><input type="radio" name="kat" checked> <span>Semua</span></label>
+            <span style="color: var(--text-muted); font-size: 12px;">(9)</span>
+          </li>
+          <li class="filter-item">
+            <label><input type="radio" name="kat"> <span>Floral</span></label>
+            <span style="color: var(--text-muted); font-size: 12px;">(3)</span>
+          </li>
+          <li class="filter-item">
+            <label><input type="radio" name="kat"> <span>Citrus & Fresh</span></label>
+            <span style="color: var(--text-muted); font-size: 12px;">(2)</span>
+          </li>
+          <li class="filter-item">
+            <label><input type="radio" name="kat"> <span>Warm & Spicy</span></label>
+            <span style="color: var(--text-muted); font-size: 12px;">(2)</span>
+          </li>
+          <li class="filter-item">
+            <label><input type="radio" name="kat"> <span>Woody</span></label>
+            <span style="color: var(--text-muted); font-size: 12px;">(2)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="filter-group-title">WARNA LILIN</h4>
+        <div class="color-dots-row">
+          <span class="color-dot" style="background: #e7dfd5;"></span>
+          <span class="color-dot" style="background: #e4c278;"></span>
+          <span class="color-dot" style="background: #a3b18a;"></span>
+          <span class="color-dot" style="background: #e07a5f;"></span>
+          <span class="color-dot" style="background: #3d405b;"></span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="filter-group-title">UKURAN</h4>
+        <div class="size-pill-row">
+          <button type="button" class="size-btn active">Semua</button>
+          <button type="button" class="size-btn">100ml</button>
+          <button type="button" class="size-btn">150ml</button>
+          <button type="button" class="size-btn">200ml</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- PRODUCT GRID -->
+    <main class="katalog-content">
+      <div class="katalog-topbar">
+        <span class="katalog-count">Menampilkan 6 dari 9 lilin</span>
+        <select class="katalog-sort">
+          <option>Terbaru</option>
+          <option>Harga: Rendah ke Tinggi</option>
+          <option>Harga: Tinggi ke Rendah</option>
+          <option>Paling Populer</option>
+        </select>
+      </div>
+
+      <div class="katalog-grid-3">
+        <!-- Item 1 -->
+        <div class="katalog-card">
+          <div class="katalog-card-img">
+            <img src="assets/images/katalog-candle1.png" alt="Lilin 1">
+          </div>
+          <div class="katalog-card-body">
+            <h3 class="katalog-card-title">Lavender Bliss</h3>
+            <p class="katalog-card-price">Rp 65.000</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="katalog-card">
+          <div class="katalog-card-img">
+            <img src="assets/images/katalog-candle2.png" alt="Lilin 2">
+          </div>
+          <div class="katalog-card-body">
+            <h3 class="katalog-card-title">Lemon Grass Calm</h3>
+            <p class="katalog-card-price">Rp 70.000</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="katalog-card">
+          <div class="katalog-card-img">
+            <img src="assets/images/katalog-candle3.png" alt="Lilin 3">
+          </div>
+          <div class="katalog-card-body">
+            <h3 class="katalog-card-title">Cinnamon Warmth</h3>
+            <p class="katalog-card-price">Rp 65.000</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="katalog-card">
+          <div class="katalog-card-img">
+            <img src="assets/images/candle-white.png" alt="Lilin 4">
+          </div>
+          <div class="katalog-card-body">
+            <h3 class="katalog-card-title">Pure Soy Signature</h3>
+            <p class="katalog-card-price">Rp 25.000</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="katalog-card">
+          <div class="katalog-card-img">
+            <img src="assets/images/candle-green.png" alt="Lilin 5">
+          </div>
+          <div class="katalog-card-body">
+            <h3 class="katalog-card-title">Matcha Breeze</h3>
+            <p class="katalog-card-price">Rp 50.000</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="katalog-card">
+          <div class="katalog-card-img">
+            <img src="assets/images/candle-yellow.png" alt="Lilin 6">
+          </div>
+          <div class="katalog-card-body">
+            <h3 class="katalog-card-title">Citrus Therapy</h3>
+            <p class="katalog-card-price">Rp 70.000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <a href="katalog.html" class="page-btn active">1</a>
+        <a href="katalog.html" class="page-btn">2</a>
+        <a href="katalog.html" class="page-btn">→</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="assets/icons/logo.png" alt="Logo">
+          <h4>Zandle Studio</h4>
+        </div>
+        <p class="footer-tagline">
+          Lilin aromaterapi custom dari Malang untuk<br>
+          seluruh Indonesia.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">JELAJAHI</h5>
+        <ul class="footer-links">
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="kustomisasi.html">Kustomisasi</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">BANTUAN</h5>
+        <ul class="footer-links">
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-col-title">NEWSLETTER</h5>
+        <form class="newsletter-form" action="#" method="get">
+          <input type="email" placeholder="Email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">→</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Zandle Studio</span>
+      <span>Made with care in Malang</span>
+    </div>
+  </footer>
+
+</body>
+</html>
