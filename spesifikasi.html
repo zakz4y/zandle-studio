@@ -30,7 +30,7 @@ a{color:inherit;}
 @media(max-width:640px){ .wrap,.wrap-narrow{padding:0 20px;} }
 @media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;} }
 
-/* ---------- NAV ---------- */
+
 nav.topnav{position:sticky;top:0;z-index:40;background:rgba(30,26,21,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark);}
 nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px;}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;text-decoration:none;color:var(--linen);flex:none;}
@@ -45,7 +45,7 @@ nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;h
 .icon-pill.ghost{background:transparent;color:var(--linen);border:1px solid var(--line-dark);}
 @media(max-width:860px){ .nav-links{display:none;} }
 
-/* ---------- BUTTONS ---------- */
+
 .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--moss);color:#fff;border:none;border-radius:14px;padding:15px 22px;font-family:'Karla',sans-serif;font-weight:700;font-size:0.96rem;cursor:pointer;transition:background 0.18s ease,transform 0.15s ease;text-decoration:none;}
 .btn-primary:hover{background:var(--moss-dark);transform:translateY(-1px);}
 .btn-primary:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
@@ -58,7 +58,7 @@ nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;h
 .btn-link{background:none;border:none;color:var(--moss-dark);font-weight:700;cursor:pointer;text-decoration:underline;font-size:0.88rem;padding:0;}
 .btn-danger-link{background:none;border:none;color:var(--rust);cursor:pointer;font-size:0.8rem;text-decoration:underline;padding:0;}
 
-/* ---------- SECTIONS / PANELS ---------- */
+
 .section-dark{background:linear-gradient(180deg,#1E1A15 0%,#221D17 60%,#1B1712 100%);padding:64px 0 80px;}
 .section-linen{background:var(--linen);color:var(--ink);padding:72px 0;}
 .section-paper{background:var(--paper);color:var(--ink);padding:72px 0;border-top:1px solid var(--line);}
@@ -72,7 +72,7 @@ nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;h
 @media(max-width:640px){ .panel{padding:24px 20px;} }
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;}
 
-/* ---------- FORMS ---------- */
+
 label.field-label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;opacity:0.6;margin-bottom:8px;}
 input[type="text"],input[type="email"],input[type="password"],input[type="tel"],textarea,select{
   width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;
@@ -88,14 +88,14 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px soli
 .form-row.invalid input,.form-row.invalid textarea{border-color:var(--rust);}
 .form-row.invalid .error-text{display:block;}
 
-/* radio/checkbox pill */
+
 .radio-card{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;}
 .radio-card input{margin-top:3px;}
 .radio-card.checked{border-color:var(--moss);background:#EEF1E7;}
 .radio-card .rt{font-weight:700;font-size:0.92rem;}
 .radio-card .rs{font-size:0.8rem;opacity:0.65;margin-top:2px;}
 
-/* pill/swatch buttons (customizer) */
+
 .swatch-row{display:flex;flex-wrap:wrap;gap:10px;}
 .scent-btn{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 13px;cursor:pointer;font-family:'Karla',sans-serif;font-size:0.86rem;display:flex;align-items:center;gap:8px;transition:border-color 0.15s ease,transform 0.15s ease;}
 .scent-btn .dot{width:11px;height:11px;border-radius:50%;flex:none;}
@@ -112,7 +112,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px soli
 .qty-value{font-family:'IBM Plex Mono',monospace;font-size:1rem;min-width:22px;text-align:center;}
 .divider{height:1px;background:var(--line);margin:26px 0;}
 
-/* price */
+
 .price-row{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px;}
 .price-row .label{font-size:0.8rem;opacity:0.65;}
 .price-row .amount{font-family:'IBM Plex Mono',monospace;font-size:1.5rem;font-weight:500;}
@@ -123,26 +123,26 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px soli
 .spec-table td:first-child{opacity:0.6;width:42%;}
 .spec-table td:last-child{font-weight:600;text-align:right;}
 
-/* badges */
+
 .badge{display:inline-flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 10px;border-radius:999px;letter-spacing:0.02em;}
 .badge.pending{background:#F3E2C4;color:#5A430F;}
 .badge.paid{background:#DCE6D2;color:var(--moss-dark);}
 .badge.shipped{background:#D9E4EC;color:#2C4A63;}
 .badge.done{background:#D6EAD8;color:#25552B;}
 
-/* cart line */
+
 .cart-item{display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);}
 .cart-item:last-child{border-bottom:none;}
 .mini-jar{width:76px;height:76px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#211C16;position:relative;overflow:hidden;flex:none;}
 .mini-jar .flame{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:10px;height:14px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle,#FBF3D8,#E8B968 70%);}
 .mini-jar .wax{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:44px;height:36px;border-radius:8px 8px 4px 4px;}
 
-/* empty state */
+
 .empty-state{text-align:center;padding:70px 24px;border:1px dashed var(--line);border-radius:20px;}
 .empty-state h3{margin-bottom:10px;}
 .empty-state p{opacity:0.65;margin-bottom:22px;}
 
-/* footer */
+
 footer.site{background:var(--ink);color:var(--linen);padding:52px 0 34px;}
 .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:32px;border-bottom:1px solid var(--line-dark);}
 .footer-top .brand{font-size:1.3rem;}
@@ -153,7 +153,7 @@ footer.site{background:var(--ink);color:var(--linen);padding:52px 0 34px;}
 .footer-links a{text-decoration:none;font-size:0.86rem;opacity:0.8;}
 .footer-bottom{display:flex;justify-content:space-between;padding-top:22px;font-size:0.76rem;opacity:0.5;flex-wrap:wrap;gap:8px;}
 
-/* toast */
+
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);color:var(--linen);padding:14px 22px;border-radius:12px;font-size:0.86rem;box-shadow:0 12px 30px -10px rgba(0,0,0,0.5);opacity:0;pointer-events:none;transition:all 0.3s ease;z-index:80;display:flex;align-items:center;gap:10px;}
 .toast.show{opacity:1;transform:translate(-50%,0);}
 .toast .tick{color:var(--honey-bright);}
@@ -265,7 +265,7 @@ footer.site{background:var(--ink);color:var(--linen);padding:52px 0 34px;}
 <div class="toast" id="toast"><span class="tick">&check;</span><span id="toastMsg"></span></div>
 <script>
 
-/* ---------- shared product data ---------- */
+
 const SCENTS = [
   { id:'lavender', name:'Lavender Tidur', family:'Floral', glow:'#8B7BA8', premium:0, desc:'Aroma lavender lembut yang menenangkan pikiran, cocok sebelum tidur.' },
   { id:'cendana', name:'Kayu Cendana', family:'Woody', glow:'#A97A50', premium:8000, desc:'Aroma kayu hangat dan earthy, pas menemani waktu kerja atau meditasi.' },
@@ -311,7 +311,7 @@ function unitPriceOf(cfg){
   return size.price + scent.premium + vessel.price;
 }
 
-/* ---------- storage-backed store (persistent artifact storage, with graceful fallback) ---------- */
+
 const Store = {
   async get(key, fallback){
     try{
@@ -352,7 +352,7 @@ async function syncNavCart(){
 }
 document.addEventListener('DOMContentLoaded', syncNavCart);
 
-/* ---------- toast ---------- */
+
 function showToast(msg){
   const toast=document.getElementById('toast'), toastMsg=document.getElementById('toastMsg');
   if(!toast) return;

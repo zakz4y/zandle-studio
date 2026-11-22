@@ -2,44 +2,45 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tentang Kami — Zandle Studio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <a href="index.html" class="brand-logo">
       <img src="assets/icons/logo.png" alt="Zandle Studio">
       <span>Zandle Studio</span>
     </a>
 
-    <div class="header-right">
-      <nav>
-        <ul class="main-nav">
-          <li><a href="index.html" class="nav-link">Beranda</a></li>
-          <li><a href="katalog.html" class="nav-link">Katalog</a></li>
-          <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
-          <li><a href="about.html" class="nav-link active">Tentang Kami</a></li>
-        </ul>
-      </nav>
+    <nav class="nav-center" id="navCenter">
+      <ul class="main-nav">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+        <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+        <li><a href="about.html" class="nav-link active">Tentang Kami</a></li>
+      </ul>
+    </nav>
 
-      <div class="header-actions">
-        <a href="katalog.html" class="btn-icon" title="Cari">
-          <img src="assets/icons/search.svg" alt="Search">
-        </a>
-        <a href="keranjang.html" class="btn-icon" title="Keranjang">
-          <img src="assets/icons/cart.svg" alt="Cart">
-        </a>
-        <a href="riwayat.html" class="user-badge" title="Profil Akun">
-          <img src="assets/icons/user.svg" alt="User">
-          <span>zakz4you</span>
-        </a>
-      </div>
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="searchBtn" title="Cari">
+        <img src="assets/icons/search.svg" alt="Search">
+      </button>
+      <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
+        <img src="assets/icons/cart.svg" alt="Cart">
+        <span class="cart-badge-count" id="navCartCount">3</span>
+      </a>
+      <a href="riwayat.html" class="user-badge" title="Profil Akun">
+        <img src="assets/icons/user.svg" alt="User">
+        <span>zakz4you</span>
+      </a>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- ABOUT HERO SECTION -->
   <section class="about-hero">
     <div class="about-text-col">
       <p class="about-eyebrow">TENTANG ZANDLE STUDIO</p>
@@ -67,12 +68,29 @@
       </div>
     </div>
 
-    <div class="about-image-col">
-      <img src="assets/images/about-collage.png" alt="Zandle Studio Crafting Process">
+    <div class="about-image-col about-two-boxes">
+      <div class="about-photo-card">
+        <div class="photo-img-wrap">
+          <img src="assets/images/about-collage.png" alt="Proses Pembuatan Lilin Studio">
+        </div>
+        <div class="photo-card-label">
+          <span class="photo-tag">Studio Malang</span>
+          <h4>Proses Hand-Poured Teliti</h4>
+        </div>
+      </div>
+
+      <div class="about-photo-card">
+        <div class="photo-img-wrap">
+          <img src="assets/images/banner-candle.png" alt="Koleksi Lilin Aromaterapi">
+        </div>
+        <div class="photo-card-label">
+          <span class="photo-tag">Bahan Alami</span>
+          <h4>100% Soy Wax & Minyak Nabati</h4>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- BRAND VALUES SECTION -->
   <section class="value-section" id="faq">
     <h2 class="section-label-center">NILAI UTAMA KAMI</h2>
     <div class="value-cards-grid">
@@ -114,7 +132,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-col footer-col-brand">
@@ -137,12 +154,12 @@
         </ul>
       </div>
 
-      <div class="footer-col" id="kontak">
+      <div class="footer-col">
         <h5 class="footer-col-title">BANTUAN</h5>
         <ul class="footer-links">
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#pengiriman">Pengiriman</a></li>
-          <li><a href="#kontak">Kontak</a></li>
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="about.html#pengiriman">Pengiriman</a></li>
+          <li><a href="about.html#kontak">Kontak</a></li>
         </ul>
       </div>
 
@@ -161,5 +178,19 @@
     </div>
   </footer>
 
+  <div class="search-modal-backdrop" id="searchModal">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <img src="assets/icons/search.svg" alt="Search">
+        <input type="text" class="search-modal-input" id="searchInput" placeholder="Cari lilin aromaterapi, wangi, atau kategori...">
+        <button type="button" class="search-modal-close" id="searchClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="search-modal-body">
+        <div class="search-results-list" id="searchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -2,44 +2,45 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zandle Studio Lilin Aromaterapi Custom</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <a href="index.html" class="brand-logo">
       <img src="assets/icons/logo.png" alt="Zandle Studio">
       <span>Zandle Studio</span>
     </a>
 
-    <div class="header-right">
-      <nav>
-        <ul class="main-nav">
-          <li><a href="index.html" class="nav-link active">Beranda</a></li>
-          <li><a href="katalog.html" class="nav-link">Katalog</a></li>
-          <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
-          <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
-        </ul>
-      </nav>
+    <nav class="nav-center" id="navCenter">
+      <ul class="main-nav">
+        <li><a href="index.html" class="nav-link active">Beranda</a></li>
+        <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+        <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+        <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+    </nav>
 
-      <div class="header-actions">
-        <a href="katalog.html" class="btn-icon" title="Cari">
-          <img src="assets/icons/search.svg" alt="Search">
-        </a>
-        <a href="keranjang.html" class="btn-icon" title="Keranjang">
-          <img src="assets/icons/cart.svg" alt="Cart">
-        </a>
-        <a href="riwayat.html" class="user-badge" title="Profil Akun">
-          <img src="assets/icons/user.svg" alt="User">
-          <span>zakz4you</span>
-        </a>
-      </div>
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="searchBtn" title="Cari">
+        <img src="assets/icons/search.svg" alt="Search">
+      </button>
+      <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
+        <img src="assets/icons/cart.svg" alt="Cart">
+        <span class="cart-badge-count" id="navCartCount">3</span>
+      </a>
+      <a href="riwayat.html" class="user-badge" title="Profil Akun">
+        <img src="assets/icons/user.svg" alt="User">
+        <span>zakz4you</span>
+      </a>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
   <section class="hero-section">
     <h1 class="hero-title">ZANDLE STUDIO</h1>
     <p class="hero-subtitle">
@@ -65,7 +66,6 @@
     </div>
   </section>
 
-  <!-- VALUE PROPOSITIONS -->
   <section class="value-section">
     <h2 class="section-label-center">MENGAPA HARUS ZANDLE STUDIO ?</h2>
     
@@ -108,7 +108,6 @@
     </div>
   </section>
 
-  <!-- BEST SELLER PRODUCTS -->
   <section class="products-section">
     <div class="section-header-row">
       <h2 class="section-title-bold">PRODUK TERLARIS</h2>
@@ -116,7 +115,6 @@
     </div>
 
     <div class="products-grid-3">
-      <!-- Product 1 -->
       <div class="product-card">
         <div class="product-thumb">
           <img src="assets/images/candle-white.png" alt="Lavender Candle">
@@ -134,7 +132,6 @@
         </div>
       </div>
 
-      <!-- Product 2 -->
       <div class="product-card">
         <div class="product-thumb">
           <img src="assets/images/candle-green.png" alt="Matcha Candle">
@@ -152,7 +149,6 @@
         </div>
       </div>
 
-      <!-- Product 3 -->
       <div class="product-card">
         <div class="product-thumb">
           <img src="assets/images/candle-yellow.png" alt="Yellow Jeruk Aromaterapi">
@@ -172,7 +168,6 @@
     </div>
   </section>
 
-  <!-- CUSTOMIZER BANNER -->
   <section class="customizer-banner">
     <div class="banner-content">
       <p class="banner-eyebrow">HANYA ADA DI ZANDLE STUDIO</p>
@@ -187,12 +182,53 @@
       <a href="kustomisasi.html" class="btn-primary">Kustomisasi Sekarang</a>
     </div>
 
-    <div class="banner-image">
-      <img src="assets/images/banner-candle.png" alt="Kustomisasi Lilin">
+    <div class="banner-4box-grid">
+      <div class="banner-box-item">
+        <div class="banner-box-thumb">
+          <img src="assets/images/candle-white.png" alt="Pilihan Aroma">
+        </div>
+        <div class="banner-box-meta">
+          <span class="banner-step-pill">LANGKAH 01</span>
+          <h4 class="banner-box-title">Pilihan Aroma</h4>
+          <p class="banner-box-desc">Lavender, Matcha, Vanilla & Citrus</p>
+        </div>
+      </div>
+
+      <div class="banner-box-item">
+        <div class="banner-box-thumb">
+          <img src="assets/images/candle-green.png" alt="Warna Lilin">
+        </div>
+        <div class="banner-box-meta">
+          <span class="banner-step-pill">LANGKAH 02</span>
+          <h4 class="banner-box-title">Warna Lilin Alami</h4>
+          <p class="banner-box-desc">Sage Green, Ochre, Indigo & Terracotta</p>
+        </div>
+      </div>
+
+      <div class="banner-box-item">
+        <div class="banner-box-thumb">
+          <img src="assets/images/candle-yellow.png" alt="Ukuran Wadah">
+        </div>
+        <div class="banner-box-meta">
+          <span class="banner-step-pill">LANGKAH 03</span>
+          <h4 class="banner-box-title">Ukuran Wadah</h4>
+          <p class="banner-box-desc">Gelas Kaca 100ml, 150ml hingga 200ml</p>
+        </div>
+      </div>
+
+      <div class="banner-box-item">
+        <div class="banner-box-thumb">
+          <img src="assets/images/katalog-candle1.png" alt="Label Personal">
+        </div>
+        <div class="banner-box-meta">
+          <span class="banner-step-pill">LANGKAH 04</span>
+          <h4 class="banner-box-title">Label Personal</h4>
+          <p class="banner-box-desc">Bebas kustom nama atau ucapan hangat</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-col footer-col-brand">
@@ -239,5 +275,19 @@
     </div>
   </footer>
 
+  <div class="search-modal-backdrop" id="searchModal">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <img src="assets/icons/search.svg" alt="Search">
+        <input type="text" class="search-modal-input" id="searchInput" placeholder="Cari lilin aromaterapi, wangi, atau kategori...">
+        <button type="button" class="search-modal-close" id="searchClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="search-modal-body">
+        <div class="search-results-list" id="searchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

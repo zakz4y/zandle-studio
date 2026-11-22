@@ -2,98 +2,96 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kustomisasi Lilin — Zandle Studio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <a href="index.html" class="brand-logo">
       <img src="assets/icons/logo.png" alt="Zandle Studio">
       <span>Zandle Studio</span>
     </a>
 
-    <div class="header-right">
-      <nav>
-        <ul class="main-nav">
-          <li><a href="index.html" class="nav-link">Beranda</a></li>
-          <li><a href="katalog.html" class="nav-link">Katalog</a></li>
-          <li><a href="kustomisasi.html" class="nav-link active">Kustomisasi</a></li>
-          <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
-        </ul>
-      </nav>
+    <nav class="nav-center" id="navCenter">
+      <ul class="main-nav">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+        <li><a href="kustomisasi.html" class="nav-link active">Kustomisasi</a></li>
+        <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+    </nav>
 
-      <div class="header-actions">
-        <a href="katalog.html" class="btn-icon" title="Cari">
-          <img src="assets/icons/search.svg" alt="Search">
-        </a>
-        <a href="keranjang.html" class="btn-icon" title="Keranjang">
-          <img src="assets/icons/cart.svg" alt="Cart">
-        </a>
-        <a href="riwayat.html" class="user-badge" title="Profil Akun">
-          <img src="assets/icons/user.svg" alt="User">
-          <span>zakz4you</span>
-        </a>
-      </div>
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="searchBtn" title="Cari">
+        <img src="assets/icons/search.svg" alt="Search">
+      </button>
+      <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
+        <img src="assets/icons/cart.svg" alt="Cart">
+        <span class="cart-badge-count" id="navCartCount">3</span>
+      </a>
+      <a href="riwayat.html" class="user-badge" title="Profil Akun">
+        <img src="assets/icons/user.svg" alt="User">
+        <span>zakz4you</span>
+      </a>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- CUSTOMIZATION STUDIO -->
   <div class="custom-layout">
-    <!-- PREVIEW COLUMN -->
     <div class="custom-preview-col">
       <h2 class="preview-title">Studio Kustomisasi</h2>
       <div class="preview-box">
         <div class="candle-mockup-wrap">
           <div class="candle-mockup-flame"></div>
-          <div class="candle-mockup-body" style="background: #a3b18a; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
-            <div style="background: rgba(255,255,255,0.9); padding: 12px 24px; border-radius: 6px; text-align: center; border: 1px solid rgba(0,0,0,0.1); width: 140px;">
+          <div class="candle-mockup-body" id="candlePreviewBody" style="background: #a3b18a; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; transition: background 0.3s ease;">
+            <div style="background: rgba(255,255,255,0.92); padding: 12px 24px; border-radius: 6px; text-align: center; border: 1px solid rgba(0,0,0,0.1); width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
               <span style="display: block; font-size: 9px; letter-spacing: 1px; color: #78716c;">ZANDLE STUDIO</span>
-              <strong style="display: block; font-family: var(--font-serif); font-size: 14px; margin-top: 4px; color: #1a1a1a;">Untuk Kamu</strong>
+              <strong id="candlePreviewLabel" style="display: block; font-family: var(--font-serif); font-size: 14px; margin-top: 4px; color: #1a1a1a; word-break: break-word;">Untuk Kamu</strong>
             </div>
           </div>
         </div>
-        <p style="margin-top: 24px; font-size: 12px; color: var(--text-body);">Pratinjau Lilin 200ml • Sage Green • Lavender</p>
+        <p id="candlePreviewMeta" style="margin-top: 24px; font-size: 12px; color: var(--text-body); text-align: center;">Pratinjau Lilin 200ml • Sage Green • Lavender Bliss</p>
       </div>
     </div>
 
-    <!-- FORM STEPS COLUMN -->
     <div class="custom-form-col">
       <h2 class="form-main-heading">Rancang Lilin Impianmu</h2>
 
-      <!-- STEP 1: AROMA -->
       <div class="custom-step-card">
         <div class="step-card-header">
           <div>
             <span class="step-eyebrow">LANGKAH 01</span>
             <h3 class="step-title">Pilih Aroma</h3>
           </div>
-          <span class="step-selected-value">Lavender Bliss</span>
+          <span class="step-selected-value" id="valAroma">Lavender Bliss</span>
         </div>
-        <div class="aroma-grid">
-          <div class="aroma-option active">
+        <div class="aroma-grid" id="aromaOptions">
+          <div class="aroma-option active" data-aroma="Lavender Bliss" data-meta="Menenangkan & Relaksasi">
             <span class="aroma-color-indicator" style="background: #cbb2fe;"></span>
             <div>
               <div class="aroma-name">Lavender Bliss</div>
               <div class="aroma-sub">Menenangkan & Relaksasi</div>
             </div>
           </div>
-          <div class="aroma-option">
+          <div class="aroma-option" data-aroma="Matcha Breeze" data-meta="Segar & Zen">
             <span class="aroma-color-indicator" style="background: #a3b18a;"></span>
             <div>
               <div class="aroma-name">Matcha Breeze</div>
               <div class="aroma-sub">Segar & Zen</div>
             </div>
           </div>
-          <div class="aroma-option">
+          <div class="aroma-option" data-aroma="Citrus Sunrise" data-meta="Segar & Berenergi">
             <span class="aroma-color-indicator" style="background: #fed7aa;"></span>
             <div>
               <div class="aroma-name">Citrus Sunrise</div>
               <div class="aroma-sub">Segar & Berenergi</div>
             </div>
           </div>
-          <div class="aroma-option">
+          <div class="aroma-option" data-aroma="Warm Vanilla" data-meta="Manis & Lembut">
             <span class="aroma-color-indicator" style="background: #e2c2b3;"></span>
             <div>
               <div class="aroma-name">Warm Vanilla</div>
@@ -103,71 +101,66 @@
         </div>
       </div>
 
-      <!-- STEP 2: WARNA -->
       <div class="custom-step-card">
         <div class="step-card-header">
           <div>
             <span class="step-eyebrow">LANGKAH 02</span>
             <h3 class="step-title">Pilih Warna Lilin</h3>
           </div>
-          <span class="step-selected-value">Sage Green</span>
+          <span class="step-selected-value" id="valColor">Sage Green</span>
         </div>
-        <div class="wax-color-dots">
-          <span class="wax-dot" style="background: #f4ece1;" title="Cream Natural"></span>
-          <span class="wax-dot active" style="background: #a3b18a; outline: 2px solid #1a1a1a; outline-offset: 2px;" title="Sage Green"></span>
-          <span class="wax-dot" style="background: #e4c278;" title="Ochre Yellow"></span>
-          <span class="wax-dot" style="background: #e07a5f;" title="Terracotta Warm"></span>
-          <span class="wax-dot" style="background: #3d405b;" title="Deep Indigo"></span>
+        <div class="wax-color-dots" id="colorOptions">
+          <span class="wax-dot" data-name="Cream Natural" data-hex="#f4ece1" style="background: #f4ece1;" title="Cream Natural"></span>
+          <span class="wax-dot active" data-name="Sage Green" data-hex="#a3b18a" style="background: #a3b18a; outline: 2px solid #1a1a1a; outline-offset: 2px;" title="Sage Green"></span>
+          <span class="wax-dot" data-name="Ochre Yellow" data-hex="#e4c278" style="background: #e4c278;" title="Ochre Yellow"></span>
+          <span class="wax-dot" data-name="Terracotta Warm" data-hex="#e07a5f" style="background: #e07a5f;" title="Terracotta Warm"></span>
+          <span class="wax-dot" data-name="Deep Indigo" data-hex="#3d405b" style="background: #3d405b;" title="Deep Indigo"></span>
         </div>
       </div>
 
-      <!-- STEP 3: UKURAN -->
       <div class="custom-step-card">
         <div class="step-card-header">
           <div>
             <span class="step-eyebrow">LANGKAH 03</span>
             <h3 class="step-title">Pilih Ukuran Wadah</h3>
           </div>
-          <span class="step-selected-value">200ml (Hingga 45 Jam)</span>
+          <span class="step-selected-value" id="valSize">200ml (Hingga 45 Jam)</span>
         </div>
-        <div class="size-boxes-row">
-          <div class="size-select-card">100ml / ~20 Jam</div>
-          <div class="size-select-card">150ml / ~32 Jam</div>
-          <div class="size-select-card active">200ml / ~45 Jam</div>
+        <div class="size-boxes-row" id="sizeOptions">
+          <div class="size-select-card" data-size="100ml" data-time="~20 Jam" data-price="45000">100ml / ~20 Jam</div>
+          <div class="size-select-card" data-size="150ml" data-time="~32 Jam" data-price="60000">150ml / ~32 Jam</div>
+          <div class="size-select-card active" data-size="200ml" data-time="~45 Jam" data-price="75000">200ml / ~45 Jam</div>
         </div>
       </div>
 
-      <!-- STEP 4: LABEL PERSONAL -->
       <div class="custom-step-card">
         <div class="step-card-header">
           <div>
             <span class="step-eyebrow">LANGKAH 04</span>
             <h3 class="step-title">Label Personal</h3>
           </div>
-          <span class="step-selected-value">Teks Kustom</span>
+          <span class="step-selected-value" id="valLabel">Untuk Kamu</span>
         </div>
-        <input type="text" class="custom-input-text" value="Untuk Kamu" placeholder="Masukkan teks custom di label lilin...">
+        <input type="text" class="custom-input-text" id="labelInput" value="Untuk Kamu" maxlength="28" placeholder="Masukkan teks custom di label lilin...">
       </div>
 
-      <!-- STEP 5: JUMLAH & HARGA -->
       <div class="custom-bottom-action">
         <div>
           <span style="font-size: 12px; color: var(--text-body); display: block; margin-bottom: 4px;">Total Harga:</span>
-          <span class="total-price-large">Rp 75.000</span>
+          <span class="total-price-large" id="totalPriceText">Rp 75.000</span>
         </div>
-        <div style="display: flex; gap: 20px; align-items: center;">
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
           <div class="quantity-stepper">
-            <button type="button" class="step-btn">-</button>
-            <span style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
-            <button type="button" class="step-btn">+</button>
+            <button type="button" class="step-btn" id="btnQtyMinus">-</button>
+            <span id="qtyVal" style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
+            <button type="button" class="step-btn" id="btnQtyPlus">+</button>
           </div>
-          <a href="keranjang.html" class="btn-primary">+ Tambah ke Keranjang</a>
+          <button type="button" class="btn-primary" id="btnAddToCart">+ Tambah ke Keranjang</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-col footer-col-brand">
@@ -214,5 +207,141 @@
     </div>
   </footer>
 
+  <div class="search-modal-backdrop" id="searchModal">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <img src="assets/icons/search.svg" alt="Search">
+        <input type="text" class="search-modal-input" id="searchInput" placeholder="Cari lilin aromaterapi, wangi, atau kategori...">
+        <button type="button" class="search-modal-close" id="searchClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="search-modal-body">
+        <div class="search-results-list" id="searchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    (function() {
+      let state = {
+        aroma: 'Lavender Bliss',
+        colorName: 'Sage Green',
+        colorHex: '#a3b18a',
+        size: '200ml',
+        sizeTime: '~45 Jam',
+        unitPrice: 75000,
+        label: 'Untuk Kamu',
+        qty: 1
+      };
+
+      const candleBody = document.getElementById('candlePreviewBody');
+      const candleLabel = document.getElementById('candlePreviewLabel');
+      const candleMeta = document.getElementById('candlePreviewMeta');
+      const totalPriceText = document.getElementById('totalPriceText');
+      const qtyVal = document.getElementById('qtyVal');
+      const valAroma = document.getElementById('valAroma');
+      const valColor = document.getElementById('valColor');
+      const valSize = document.getElementById('valSize');
+      const valLabel = document.getElementById('valLabel');
+      const labelInput = document.getElementById('labelInput');
+
+      function updatePreview() {
+        if (candleBody) candleBody.style.background = state.colorHex;
+        if (candleLabel) candleLabel.textContent = state.label || 'Zandle Studio';
+        if (candleMeta) {
+          candleMeta.textContent = 'Pratinjau Lilin ' + state.size + ' • ' + state.colorName + ' • ' + state.aroma;
+        }
+        const total = state.unitPrice * state.qty;
+        if (totalPriceText) totalPriceText.textContent = 'Rp ' + total.toLocaleString('id-ID');
+        if (qtyVal) qtyVal.textContent = state.qty;
+        if (valAroma) valAroma.textContent = state.aroma;
+        if (valColor) valColor.textContent = state.colorName;
+        if (valSize) valSize.textContent = state.size + ' (' + state.sizeTime + ')';
+        if (valLabel) valLabel.textContent = state.label || '-';
+      }
+
+      const aromaCards = document.querySelectorAll('.aroma-option');
+      aromaCards.forEach(card => {
+        card.addEventListener('click', () => {
+          aromaCards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+          state.aroma = card.getAttribute('data-aroma');
+          updatePreview();
+        });
+      });
+
+      const waxDots = document.querySelectorAll('.wax-dot');
+      waxDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          waxDots.forEach(d => {
+            d.classList.remove('active');
+            d.style.outline = 'none';
+          });
+          dot.classList.add('active');
+          dot.style.outline = '2px solid #1a1a1a';
+          dot.style.outlineOffset = '2px';
+          state.colorName = dot.getAttribute('data-name');
+          state.colorHex = dot.getAttribute('data-hex');
+          updatePreview();
+        });
+      });
+
+      const sizeCards = document.querySelectorAll('.size-select-card');
+      sizeCards.forEach(card => {
+        card.addEventListener('click', () => {
+          sizeCards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+          state.size = card.getAttribute('data-size');
+          state.sizeTime = card.getAttribute('data-time');
+          state.unitPrice = parseInt(card.getAttribute('data-price'), 10) || 75000;
+          updatePreview();
+        });
+      });
+
+      if (labelInput) {
+        labelInput.addEventListener('input', (e) => {
+          state.label = e.target.value.trim();
+          updatePreview();
+        });
+      }
+
+      const btnMinus = document.getElementById('btnQtyMinus');
+      const btnPlus = document.getElementById('btnQtyPlus');
+      if (btnMinus) {
+        btnMinus.addEventListener('click', () => {
+          if (state.qty > 1) {
+            state.qty--;
+            updatePreview();
+          }
+        });
+      }
+      if (btnPlus) {
+        btnPlus.addEventListener('click', () => {
+          state.qty++;
+          updatePreview();
+        });
+      }
+
+      const btnAddToCart = document.getElementById('btnAddToCart');
+      if (btnAddToCart) {
+        btnAddToCart.addEventListener('click', () => {
+          const badge = document.getElementById('navCartCount');
+          if (badge) {
+            const cur = parseInt(badge.textContent, 10) || 0;
+            badge.textContent = cur + state.qty;
+          }
+          btnAddToCart.textContent = '✓ Berhasil Ditambahkan!';
+          btnAddToCart.style.background = '#2e7d32';
+          showToast('Lilin kustom (' + state.colorName + ', ' + state.size + ') masuk ke keranjang!');
+          setTimeout(() => {
+            btnAddToCart.textContent = '+ Tambah ke Keranjang';
+            btnAddToCart.style.background = '';
+          }, 1800);
+        });
+      }
+
+      updatePreview();
+    })();
+  </script>
 </body>
 </html>

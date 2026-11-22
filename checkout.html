@@ -2,54 +2,52 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout — Zandle Studio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <a href="index.html" class="brand-logo">
       <img src="assets/icons/logo.png" alt="Zandle Studio">
       <span>Zandle Studio</span>
     </a>
 
-    <div class="header-right">
-      <nav>
-        <ul class="main-nav">
-          <li><a href="index.html" class="nav-link">Beranda</a></li>
-          <li><a href="katalog.html" class="nav-link">Katalog</a></li>
-          <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
-          <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
-        </ul>
-      </nav>
+    <nav class="nav-center" id="navCenter">
+      <ul class="main-nav">
+        <li><a href="index.html" class="nav-link">Beranda</a></li>
+        <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+        <li><a href="kustomisasi.html" class="nav-link">Kustomisasi</a></li>
+        <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+    </nav>
 
-      <div class="header-actions">
-        <a href="katalog.html" class="btn-icon" title="Cari">
-          <img src="assets/icons/search.svg" alt="Search">
-        </a>
-        <a href="keranjang.html" class="btn-icon" title="Keranjang">
-          <img src="assets/icons/cart.svg" alt="Cart">
-        </a>
-        <a href="riwayat.html" class="user-badge" title="Profil Akun">
-          <img src="assets/icons/user.svg" alt="User">
-          <span>zakz4you</span>
-        </a>
-      </div>
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="searchBtn" title="Cari">
+        <img src="assets/icons/search.svg" alt="Search">
+      </button>
+      <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
+        <img src="assets/icons/cart.svg" alt="Cart">
+        <span class="cart-badge-count" id="navCartCount">3</span>
+      </a>
+      <a href="riwayat.html" class="user-badge" title="Profil Akun">
+        <img src="assets/icons/user.svg" alt="User">
+        <span>zakz4you</span>
+      </a>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- TITLE BLOCK -->
   <div class="katalog-header-block">
     <h1 class="page-big-title">Checkout</h1>
     <p class="page-subtitle">Lengkapi detail pengiriman dan selesaikan pembayaran pesanan Anda</p>
   </div>
 
-  <!-- CHECKOUT CONTENT -->
   <div class="checkout-layout">
-    <!-- FORMS COLUMN -->
     <div class="checkout-forms-col">
-      <!-- 1. ALAMAT -->
       <div class="checkout-card">
         <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">1. Alamat Pengiriman</h3>
 
@@ -58,12 +56,12 @@
           <input type="text" class="form-input" value="Zacky Achmad" required>
         </div>
 
-        <div style="display: flex; gap: 20px;">
-          <div class="form-group" style="flex: 1;">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 220px;">
             <label class="form-label">Nomor WhatsApp / HP</label>
             <input type="tel" class="form-input" value="081234567890" required>
           </div>
-          <div class="form-group" style="flex: 1;">
+          <div class="form-group" style="flex: 1; min-width: 140px;">
             <label class="form-label">Kode Pos</label>
             <input type="text" class="form-input" value="65141" required>
           </div>
@@ -71,7 +69,7 @@
 
         <div class="form-group">
           <label class="form-label">Alamat Lengkap</label>
-          <textarea class="form-textarea" placeholder="Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur"></textarea>
+          <textarea class="form-textarea" placeholder="Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur">Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur</textarea>
         </div>
 
         <div class="form-group">
@@ -80,12 +78,11 @@
         </div>
       </div>
 
-      <!-- 2. METODE PENGIRIMAN -->
       <div class="checkout-card">
         <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">2. Opsi Pengiriman</h3>
 
-        <label class="payment-method-box active">
-          <input type="radio" name="shipping" checked>
+        <label class="payment-method-box active shipping-option" data-cost="15000">
+          <input type="radio" name="shipping" value="15000" checked>
           <div style="flex: 1;">
             <div style="font-weight: 600;">Reguler (JNE / J&T Express)</div>
             <div style="font-size: 12px; color: var(--text-body);">Estimasi sampai 2 - 3 hari kerja</div>
@@ -93,8 +90,8 @@
           <div style="font-weight: 600;">Rp 15.000</div>
         </label>
 
-        <label class="payment-method-box">
-          <input type="radio" name="shipping">
+        <label class="payment-method-box shipping-option" data-cost="25000">
+          <input type="radio" name="shipping" value="25000">
           <div style="flex: 1;">
             <div style="font-weight: 600;">Next Day (SiCepat BEST)</div>
             <div style="font-size: 12px; color: var(--text-body);">Estimasi sampai 1 hari kerja</div>
@@ -103,37 +100,136 @@
         </label>
       </div>
 
-      <!-- 3. PEMBAYARAN -->
       <div class="checkout-card">
         <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">3. Metode Pembayaran</h3>
 
-        <label class="payment-method-box active">
-          <input type="radio" name="payment" checked>
+        <label class="payment-method-box active payment-choice" data-type="qris">
+          <input type="radio" name="payment" value="qris" checked>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; display: flex; align-items: center; gap: 8px;">
+              <span>QRIS Instan (GoPay, OVO, ShopeePay, BCA, Dana)</span>
+              <span class="qris-tag-badge">Rekomendasi</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-body);">Pindai langsung dengan semua aplikasi m-banking & e-wallet</div>
+          </div>
+        </label>
+
+        <div class="qris-detail-box" id="qrisDetailBox">
+          <div class="qris-header-row">
+            <div>
+              <span class="qris-brand-title">QRIS</span>
+              <span style="font-size: 11px; color: var(--text-body); margin-left: 8px;">Quick Response Code Indonesian Standard</span>
+            </div>
+            <span class="qris-tag-badge">Verifikasi Otomatis</span>
+          </div>
+
+          <div class="qris-content-grid">
+            <div class="qris-code-wrap">
+              <svg viewBox="0 0 160 160" width="100%" height="100%">
+                <rect width="160" height="160" fill="#ffffff"/>
+                <rect x="10" y="10" width="40" height="40" fill="#000000"/>
+                <rect x="16" y="16" width="28" height="28" fill="#ffffff"/>
+                <rect x="22" y="22" width="16" height="16" fill="#000000"/>
+
+                <rect x="110" y="10" width="40" height="40" fill="#000000"/>
+                <rect x="116" y="16" width="28" height="28" fill="#ffffff"/>
+                <rect x="122" y="22" width="16" height="16" fill="#000000"/>
+
+                <rect x="10" y="110" width="40" height="40" fill="#000000"/>
+                <rect x="16" y="116" width="28" height="28" fill="#ffffff"/>
+                <rect x="22" y="22" width="16" height="16" fill="#000000"/>
+
+                <rect x="60" y="15" width="8" height="8" fill="#000000"/>
+                <rect x="75" y="15" width="8" height="8" fill="#000000"/>
+                <rect x="90" y="15" width="8" height="8" fill="#000000"/>
+                <rect x="60" y="30" width="16" height="8" fill="#000000"/>
+                <rect x="85" y="30" width="12" height="12" fill="#000000"/>
+
+                <rect x="15" y="60" width="8" height="16" fill="#000000"/>
+                <rect x="30" y="60" width="16" height="8" fill="#000000"/>
+                <rect x="30" y="75" width="8" height="16" fill="#000000"/>
+
+                <rect x="60" y="60" width="40" height="40" rx="8" fill="#582f0e"/>
+                <circle cx="80" cy="80" r="12" fill="#ffffff"/>
+                <text x="80" y="84" font-size="10" font-family="sans-serif" font-weight="bold" fill="#582f0e" text-anchor="middle">ZS</text>
+
+                <rect x="110" y="60" width="10" height="10" fill="#000000"/>
+                <rect x="130" y="60" width="15" height="8" fill="#000000"/>
+                <rect x="115" y="80" width="15" height="15" fill="#000000"/>
+                <rect x="140" y="80" width="10" height="10" fill="#000000"/>
+
+                <rect x="60" y="110" width="12" height="12" fill="#000000"/>
+                <rect x="80" y="115" width="16" height="8" fill="#000000"/>
+                <rect x="105" y="110" width="8" height="20" fill="#000000"/>
+                <rect x="120" y="115" width="15" height="8" fill="#000000"/>
+                <rect x="140" y="110" width="10" height="10" fill="#000000"/>
+                <rect x="60" y="135" width="20" height="8" fill="#000000"/>
+                <rect x="90" y="130" width="10" height="15" fill="#000000"/>
+                <rect x="115" y="135" width="30" height="10" fill="#000000"/>
+              </svg>
+            </div>
+
+            <div class="qris-instructions">
+              <div class="qris-merchant-info">
+                <h4>ZANDLE STUDIO MALANG</h4>
+                <p>NMID: ID1024589201928</p>
+              </div>
+
+              <div class="qris-timer-box">
+                <span>⏱</span>
+                <span>Bayar dalam <strong id="qrisTimer">14:59</strong></span>
+              </div>
+
+              <ol class="qris-steps-list">
+                <li>Buka aplikasi BCA Mobile, GoPay, OVO, Dana, ShopeePay, atau m-Banking Anda.</li>
+                <li>Pilih menu <strong>Scan / Bayar QRIS</strong>.</li>
+                <li>Arahkan kamera ke QR code di atas, pastikan nominal sesuai.</li>
+              </ol>
+
+              <div class="qris-actions-row">
+                <button type="button" class="qris-btn-sm" id="btnDownloadQr">Unduh QR Code</button>
+                <button type="button" class="qris-btn-sm primary" id="btnCheckQrisPaid">Saya Sudah Bayar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <label class="payment-method-box payment-choice" data-type="bca">
+          <input type="radio" name="payment" value="bca">
           <div style="flex: 1;">
             <div style="font-weight: 600;">BCA Virtual Account</div>
             <div style="font-size: 12px; color: var(--text-body);">Verifikasi otomatis dalam hitungan menit</div>
           </div>
         </label>
 
-        <label class="payment-method-box">
-          <input type="radio" name="payment">
-          <div style="flex: 1;">
-            <div style="font-weight: 600;">QRIS (GoPay, OVO, ShopeePay, Dana)</div>
-            <div style="font-size: 12px; color: var(--text-body);">Pindai kode QR instan</div>
+        <div class="va-detail-box" id="bcaDetailBox" style="display: none;">
+          <div style="font-size: 13px; color: var(--text-dark); font-weight: 600;">Nomor Virtual Account BCA:</div>
+          <div class="va-number-row">
+            <span class="va-code">8271 0812 3456 7890</span>
+            <button type="button" class="va-copy-btn" data-code="8271081234567890">Salin No. VA</button>
           </div>
-        </label>
+          <div style="font-size: 11px; color: var(--text-body);">Batas waktu transfer: 24 jam setelah pesanan dibuat.</div>
+        </div>
 
-        <label class="payment-method-box">
-          <input type="radio" name="payment">
+        <label class="payment-method-box payment-choice" data-type="mandiri">
+          <input type="radio" name="payment" value="mandiri">
           <div style="flex: 1;">
             <div style="font-weight: 600;">Mandiri Virtual Account</div>
             <div style="font-size: 12px; color: var(--text-body);">Transfer dari seluruh e-banking Mandiri</div>
           </div>
         </label>
+
+        <div class="va-detail-box" id="mandiriDetailBox" style="display: none;">
+          <div style="font-size: 13px; color: var(--text-dark); font-weight: 600;">Nomor Virtual Account Mandiri:</div>
+          <div class="va-number-row">
+            <span class="va-code">8890 0812 3456 7890</span>
+            <button type="button" class="va-copy-btn" data-code="8890081234567890">Salin No. VA</button>
+          </div>
+          <div style="font-size: 11px; color: var(--text-body);">Batas waktu transfer: 24 jam setelah pesanan dibuat.</div>
+        </div>
       </div>
     </div>
 
-    <!-- SUMMARY COLUMN -->
     <div class="checkout-aside-col">
       <div class="cart-summary-card">
         <h3 class="summary-title">Ringkasan Pesanan</h3>
@@ -159,7 +255,7 @@
         </div>
         <div class="summary-row">
           <span style="color: var(--text-body);">Biaya Pengiriman</span>
-          <span style="font-weight: 600;">Rp 15.000</span>
+          <span id="checkoutShippingCost" style="font-weight: 600;">Rp 15.000</span>
         </div>
         <div class="summary-row">
           <span style="color: var(--text-body);">Biaya Layanan</span>
@@ -168,10 +264,10 @@
 
         <div class="summary-row total-row">
           <span>Total Pembayaran</span>
-          <span style="color: var(--color-brown-text); font-size: 20px;">Rp 166.000</span>
+          <span id="checkoutGrandTotal" style="color: var(--color-brown-text); font-size: 20px;">Rp 166.000</span>
         </div>
 
-        <a href="riwayat.html" class="btn-primary" style="width: 100%; margin-top: 28px; text-align: center;">Bayar Pesanan Sekarang</a>
+        <button type="button" id="btnPayOrder" class="btn-primary" style="width: 100%; margin-top: 28px; text-align: center;">Bayar Pesanan Sekarang</button>
 
         <p style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 14px;">
           Dengan menekan tombol, Anda menyetujui Ketentuan Layanan Zandle Studio.
@@ -180,7 +276,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-col footer-col-brand">
@@ -227,5 +322,136 @@
     </div>
   </footer>
 
+  <div class="search-modal-backdrop" id="searchModal">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <img src="assets/icons/search.svg" alt="Search">
+        <input type="text" class="search-modal-input" id="searchInput" placeholder="Cari lilin aromaterapi, wangi, atau kategori...">
+        <button type="button" class="search-modal-close" id="searchClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="search-modal-body">
+        <div class="search-results-list" id="searchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    (function() {
+      let shippingCost = 15000;
+      const subtotalProduct = 150000;
+      const serviceCost = 1000;
+
+      function updateCheckoutTotals() {
+        const grand = subtotalProduct + shippingCost + serviceCost;
+        const shippingElem = document.getElementById('checkoutShippingCost');
+        const grandElem = document.getElementById('checkoutGrandTotal');
+        if (shippingElem) shippingElem.textContent = 'Rp ' + shippingCost.toLocaleString('id-ID');
+        if (grandElem) grandElem.textContent = 'Rp ' + grand.toLocaleString('id-ID');
+      }
+
+      const shippingBoxes = document.querySelectorAll('.shipping-option');
+      shippingBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+          shippingBoxes.forEach(b => b.classList.remove('active'));
+          box.classList.add('active');
+          const radio = box.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+          shippingCost = parseInt(box.getAttribute('data-cost'), 10) || 15000;
+          updateCheckoutTotals();
+        });
+      });
+
+      const paymentBoxes = document.querySelectorAll('.payment-choice');
+      const qrisBox = document.getElementById('qrisDetailBox');
+      const bcaBox = document.getElementById('bcaDetailBox');
+      const mandiriBox = document.getElementById('mandiriDetailBox');
+
+      function switchPayment(type) {
+        if (qrisBox) qrisBox.style.display = type === 'qris' ? 'block' : 'none';
+        if (bcaBox) bcaBox.style.display = type === 'bca' ? 'block' : 'none';
+        if (mandiriBox) mandiriBox.style.display = type === 'mandiri' ? 'block' : 'none';
+      }
+
+      paymentBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+          paymentBoxes.forEach(b => b.classList.remove('active'));
+          box.classList.add('active');
+          const radio = box.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+          const type = box.getAttribute('data-type');
+          switchPayment(type);
+        });
+      });
+
+      const copyButtons = document.querySelectorAll('.va-copy-btn');
+      copyButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const code = btn.getAttribute('data-code');
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(code).catch(() => {});
+          }
+          const prev = btn.textContent;
+          btn.textContent = '✓ Tersalin!';
+          btn.style.color = '#16a34a';
+          showToast('Nomor Virtual Account disalin ke papan klip.');
+          setTimeout(() => {
+            btn.textContent = prev;
+            btn.style.color = '';
+          }, 1800);
+        });
+      });
+
+      const btnDownloadQr = document.getElementById('btnDownloadQr');
+      if (btnDownloadQr) {
+        btnDownloadQr.addEventListener('click', () => {
+          showToast('QR Code QRIS berhasil diunduh ke perangkat.');
+        });
+      }
+
+      const btnCheckQrisPaid = document.getElementById('btnCheckQrisPaid');
+      if (btnCheckQrisPaid) {
+        btnCheckQrisPaid.addEventListener('click', () => {
+          btnCheckQrisPaid.textContent = 'Memverifikasi...';
+          setTimeout(() => {
+            btnCheckQrisPaid.textContent = '✓ Pembayaran Lunas!';
+            btnCheckQrisPaid.style.background = '#16a34a';
+            showToast('Pembayaran QRIS berhasil diverifikasi!');
+            setTimeout(() => {
+              window.location.href = 'riwayat.html';
+            }, 1200);
+          }, 800);
+        });
+      }
+
+      let secondsLeft = 14 * 60 + 59;
+      const timerElem = document.getElementById('qrisTimer');
+      if (timerElem) {
+        setInterval(() => {
+          if (secondsLeft > 0) {
+            secondsLeft--;
+            const mins = Math.floor(secondsLeft / 60);
+            const secs = secondsLeft % 60;
+            timerElem.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+          }
+        }, 1000);
+      }
+
+      const btnPayOrder = document.getElementById('btnPayOrder');
+      if (btnPayOrder) {
+        btnPayOrder.addEventListener('click', () => {
+          btnPayOrder.textContent = 'Memproses Pesanan...';
+          btnPayOrder.style.opacity = '0.8';
+          showToast('Pesanan berhasil dibuat! Menuju halaman riwayat...');
+          setTimeout(() => {
+            window.location.href = 'riwayat.html';
+          }, 1200);
+        });
+      }
+
+      updateCheckoutTotals();
+    })();
+  </script>
 </body>
 </html>
