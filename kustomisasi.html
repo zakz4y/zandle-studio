@@ -32,10 +32,11 @@
         <span class="cart-badge-count" id="navCartCount">3</span>
       </a>
       <div class="user-menu-wrapper">
-        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+        <input type="checkbox" id="profileToggle" class="profile-toggle-check" aria-hidden="true">
+        <label for="profileToggle" class="user-badge" title="Profil Akun">
           <img src="assets/icons/user.svg" alt="User">
           <span>zakz4you</span>
-        </button>
+        </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
           <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
           <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
@@ -43,9 +44,6 @@
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
       </div>
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -228,128 +226,7 @@
     </div>
   </div>
 
-  <script src="js/app.js"></script>
-  <script>
-    (function() {
-      let state = {
-        aroma: 'Lavender Bliss',
-        colorName: 'Sage Green',
-        colorHex: '#a3b18a',
-        size: '200ml',
-        sizeTime: '~45 Jam',
-        unitPrice: 75000,
-        label: 'Untuk Kamu',
-        qty: 1
-      };
-
-      const candleBody = document.getElementById('candlePreviewBody');
-      const candleLabel = document.getElementById('candlePreviewLabel');
-      const candleMeta = document.getElementById('candlePreviewMeta');
-      const totalPriceText = document.getElementById('totalPriceText');
-      const qtyVal = document.getElementById('qtyVal');
-      const valAroma = document.getElementById('valAroma');
-      const valColor = document.getElementById('valColor');
-      const valSize = document.getElementById('valSize');
-      const valLabel = document.getElementById('valLabel');
-      const labelInput = document.getElementById('labelInput');
-
-      function updatePreview() {
-        if (candleBody) candleBody.style.background = state.colorHex;
-        if (candleLabel) candleLabel.textContent = state.label || 'Zandle Studio';
-        if (candleMeta) {
-          candleMeta.textContent = 'Pratinjau Lilin ' + state.size + ' • ' + state.colorName + ' • ' + state.aroma;
-        }
-        const total = state.unitPrice * state.qty;
-        if (totalPriceText) totalPriceText.textContent = 'Rp ' + total.toLocaleString('id-ID');
-        if (qtyVal) qtyVal.textContent = state.qty;
-        if (valAroma) valAroma.textContent = state.aroma;
-        if (valColor) valColor.textContent = state.colorName;
-        if (valSize) valSize.textContent = state.size + ' (' + state.sizeTime + ')';
-        if (valLabel) valLabel.textContent = state.label || '-';
-      }
-
-      const aromaCards = document.querySelectorAll('.aroma-option');
-      aromaCards.forEach(card => {
-        card.addEventListener('click', () => {
-          aromaCards.forEach(c => c.classList.remove('active'));
-          card.classList.add('active');
-          state.aroma = card.getAttribute('data-aroma');
-          updatePreview();
-        });
-      });
-
-      const waxDots = document.querySelectorAll('.wax-dot');
-      waxDots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          waxDots.forEach(d => {
-            d.classList.remove('active');
-            d.style.outline = 'none';
-          });
-          dot.classList.add('active');
-          dot.style.outline = '2px solid #1a1a1a';
-          dot.style.outlineOffset = '2px';
-          state.colorName = dot.getAttribute('data-name');
-          state.colorHex = dot.getAttribute('data-hex');
-          updatePreview();
-        });
-      });
-
-      const sizeCards = document.querySelectorAll('.size-select-card');
-      sizeCards.forEach(card => {
-        card.addEventListener('click', () => {
-          sizeCards.forEach(c => c.classList.remove('active'));
-          card.classList.add('active');
-          state.size = card.getAttribute('data-size');
-          state.sizeTime = card.getAttribute('data-time');
-          state.unitPrice = parseInt(card.getAttribute('data-price'), 10) || 75000;
-          updatePreview();
-        });
-      });
-
-      if (labelInput) {
-        labelInput.addEventListener('input', (e) => {
-          state.label = e.target.value.trim();
-          updatePreview();
-        });
-      }
-
-      const btnMinus = document.getElementById('btnQtyMinus');
-      const btnPlus = document.getElementById('btnQtyPlus');
-      if (btnMinus) {
-        btnMinus.addEventListener('click', () => {
-          if (state.qty > 1) {
-            state.qty--;
-            updatePreview();
-          }
-        });
-      }
-      if (btnPlus) {
-        btnPlus.addEventListener('click', () => {
-          state.qty++;
-          updatePreview();
-        });
-      }
-
-      const btnAddToCart = document.getElementById('btnAddToCart');
-      if (btnAddToCart) {
-        btnAddToCart.addEventListener('click', () => {
-          const badge = document.getElementById('navCartCount');
-          if (badge) {
-            const cur = parseInt(badge.textContent, 10) || 0;
-            badge.textContent = cur + state.qty;
-          }
-          btnAddToCart.textContent = '✓ Berhasil Ditambahkan!';
-          btnAddToCart.style.background = '#2e7d32';
-          showToast('Lilin kustom (' + state.colorName + ', ' + state.size + ') masuk ke keranjang!');
-          setTimeout(() => {
-            btnAddToCart.textContent = '+ Tambah ke Keranjang';
-            btnAddToCart.style.background = '';
-          }, 1800);
-        });
-      }
-
-      updatePreview();
-    })();
-  </script>
+  
+  
 </body>
 </html>

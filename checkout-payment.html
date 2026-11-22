@@ -32,10 +32,11 @@
         <span class="cart-badge-count" id="navCartCount">3</span>
       </a>
       <div class="user-menu-wrapper">
-        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+        <input type="checkbox" id="profileToggle" class="profile-toggle-check" aria-hidden="true">
+        <label for="profileToggle" class="user-badge" title="Profil Akun">
           <img src="assets/icons/user.svg" alt="User">
           <span>zakz4you</span>
-        </button>
+        </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
           <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
           <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
@@ -43,9 +44,6 @@
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
       </div>
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -65,59 +63,11 @@
     <div class="payment-content-grid">
       <div class="payment-qr-card">
         <div class="qr-image-wrapper">
-          <svg viewBox="0 0 200 200" width="180" height="180" class="qr-svg-code">
-            <!-- QR Pattern SVG representation -->
-            <rect width="200" height="200" fill="#ffffff"/>
-            <!-- Position Detection Patterns -->
-            <rect x="20" y="20" width="40" height="40" fill="#1c1a17"/>
-            <rect x="28" y="28" width="24" height="24" fill="#ffffff"/>
-            <rect x="34" y="34" width="12" height="12" fill="#1c1a17"/>
-
-            <rect x="140" y="20" width="40" height="40" fill="#1c1a17"/>
-            <rect x="148" y="28" width="24" height="24" fill="#ffffff"/>
-            <rect x="154" y="34" width="12" height="12" fill="#1c1a17"/>
-
-            <rect x="20" y="140" width="40" height="40" fill="#1c1a17"/>
-            <rect x="28" y="148" width="24" height="24" fill="#ffffff"/>
-            <rect x="34" y="154" width="12" height="12" fill="#1c1a17"/>
-
-            <!-- Decorative data modules -->
-            <rect x="70" y="24" width="8" height="8" fill="#1c1a17"/>
-            <rect x="86" y="24" width="16" height="8" fill="#1c1a17"/>
-            <rect x="110" y="24" width="8" height="8" fill="#1c1a17"/>
-            <rect x="70" y="40" width="16" height="8" fill="#1c1a17"/>
-            <rect x="94" y="40" width="8" height="16" fill="#1c1a17"/>
-            <rect x="118" y="40" width="14" height="8" fill="#1c1a17"/>
-
-            <rect x="24" y="70" width="8" height="16" fill="#1c1a17"/>
-            <rect x="40" y="78" width="16" height="8" fill="#1c1a17"/>
-            <rect x="70" y="70" width="24" height="24" fill="#1c1a17"/>
-            <rect x="76" y="76" width="12" height="12" fill="#ffffff"/>
-            <rect x="102" y="70" width="16" height="8" fill="#1c1a17"/>
-            <rect x="126" y="70" width="8" height="24" fill="#1c1a17"/>
-            <rect x="150" y="78" width="24" height="8" fill="#1c1a17"/>
-
-            <rect x="30" y="102" width="16" height="8" fill="#1c1a17"/>
-            <rect x="54" y="94" width="8" height="24" fill="#1c1a17"/>
-            <rect x="70" y="102" width="8" height="16" fill="#1c1a17"/>
-            <rect x="86" y="110" width="24" height="8" fill="#1c1a17"/>
-            <rect x="118" y="102" width="16" height="16" fill="#1c1a17"/>
-            <rect x="142" y="110" width="8" height="8" fill="#1c1a17"/>
-            <rect x="158" y="94" width="16" height="16" fill="#1c1a17"/>
-
-            <rect x="70" y="134" width="16" height="8" fill="#1c1a17"/>
-            <rect x="94" y="142" width="8" height="24" fill="#1c1a17"/>
-            <rect x="110" y="134" width="24" height="8" fill="#1c1a17"/>
-            <rect x="142" y="142" width="16" height="8" fill="#1c1a17"/>
-            <rect x="166" y="134" width="8" height="16" fill="#1c1a17"/>
-
-            <rect x="70" y="166" width="8" height="16" fill="#1c1a17"/>
-            <rect x="86" y="174" width="16" height="8" fill="#1c1a17"/>
-            <rect x="118" y="158" width="16" height="16" fill="#1c1a17"/>
-            <rect x="142" y="166" width="32" height="8" fill="#1c1a17"/>
-          </svg>
+          <a href="assets/images/qris.jpeg" target="_blank" title="Buka Kode QRIS">
+            <img src="assets/images/qris.jpeg" alt="Kode QRIS Pembayaran" class="qr-code-img" style="width: 180px; height: 180px; object-fit: contain; display: block;">
+          </a>
         </div>
-        <a href="#" class="btn-download-qr" onclick="alert('Kode QR berhasil diunduh'); return false;">Unduh Kode Qr</a>
+        <a href="assets/images/qris.jpeg" download="QRIS-Zandle-Studio.png" class="btn-download-qr">Unduh Kode Qr</a>
       </div>
 
       <div class="payment-steps-card">
@@ -212,6 +162,6 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  
 </body>
 </html>

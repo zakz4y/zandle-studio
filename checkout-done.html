@@ -32,10 +32,11 @@
         <span class="cart-badge-count" id="navCartCount">0</span>
       </a>
       <div class="user-menu-wrapper">
-        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+        <input type="checkbox" id="profileToggle" class="profile-toggle-check" aria-hidden="true">
+        <label for="profileToggle" class="user-badge" title="Profil Akun">
           <img src="assets/icons/user.svg" alt="User">
           <span>zakz4you</span>
-        </button>
+        </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
           <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
           <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
@@ -43,9 +44,6 @@
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
       </div>
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -161,6 +159,6 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  
 </body>
 </html>

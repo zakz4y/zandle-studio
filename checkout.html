@@ -32,10 +32,11 @@
         <span class="cart-badge-count" id="navCartCount">3</span>
       </a>
       <div class="user-menu-wrapper">
-        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+        <input type="checkbox" id="profileToggle" class="profile-toggle-check" aria-hidden="true">
+        <label for="profileToggle" class="user-badge" title="Profil Akun">
           <img src="assets/icons/user.svg" alt="User">
           <span>zakz4you</span>
-        </button>
+        </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
           <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
           <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
@@ -43,9 +44,6 @@
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
       </div>
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -343,123 +341,7 @@
     </div>
   </div>
 
-  <script src="js/app.js"></script>
-  <script>
-    (function() {
-      let shippingCost = 15000;
-      const subtotalProduct = 150000;
-      const serviceCost = 1000;
-
-      function updateCheckoutTotals() {
-        const grand = subtotalProduct + shippingCost + serviceCost;
-        const shippingElem = document.getElementById('checkoutShippingCost');
-        const grandElem = document.getElementById('checkoutGrandTotal');
-        if (shippingElem) shippingElem.textContent = 'Rp ' + shippingCost.toLocaleString('id-ID');
-        if (grandElem) grandElem.textContent = 'Rp ' + grand.toLocaleString('id-ID');
-      }
-
-      const shippingBoxes = document.querySelectorAll('.shipping-option');
-      shippingBoxes.forEach(box => {
-        box.addEventListener('click', () => {
-          shippingBoxes.forEach(b => b.classList.remove('active'));
-          box.classList.add('active');
-          const radio = box.querySelector('input[type="radio"]');
-          if (radio) radio.checked = true;
-          shippingCost = parseInt(box.getAttribute('data-cost'), 10) || 15000;
-          updateCheckoutTotals();
-        });
-      });
-
-      const paymentBoxes = document.querySelectorAll('.payment-choice');
-      const qrisBox = document.getElementById('qrisDetailBox');
-      const bcaBox = document.getElementById('bcaDetailBox');
-      const mandiriBox = document.getElementById('mandiriDetailBox');
-
-      function switchPayment(type) {
-        if (qrisBox) qrisBox.style.display = type === 'qris' ? 'block' : 'none';
-        if (bcaBox) bcaBox.style.display = type === 'bca' ? 'block' : 'none';
-        if (mandiriBox) mandiriBox.style.display = type === 'mandiri' ? 'block' : 'none';
-      }
-
-      paymentBoxes.forEach(box => {
-        box.addEventListener('click', () => {
-          paymentBoxes.forEach(b => b.classList.remove('active'));
-          box.classList.add('active');
-          const radio = box.querySelector('input[type="radio"]');
-          if (radio) radio.checked = true;
-          const type = box.getAttribute('data-type');
-          switchPayment(type);
-        });
-      });
-
-      const copyButtons = document.querySelectorAll('.va-copy-btn');
-      copyButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const code = btn.getAttribute('data-code');
-          if (navigator.clipboard) {
-            navigator.clipboard.writeText(code).catch(() => {});
-          }
-          const prev = btn.textContent;
-          btn.textContent = '✓ Tersalin!';
-          btn.style.color = '#16a34a';
-          showToast('Nomor Virtual Account disalin ke papan klip.');
-          setTimeout(() => {
-            btn.textContent = prev;
-            btn.style.color = '';
-          }, 1800);
-        });
-      });
-
-      const btnDownloadQr = document.getElementById('btnDownloadQr');
-      if (btnDownloadQr) {
-        btnDownloadQr.addEventListener('click', () => {
-          showToast('QR Code QRIS berhasil diunduh ke perangkat.');
-        });
-      }
-
-      const btnCheckQrisPaid = document.getElementById('btnCheckQrisPaid');
-      if (btnCheckQrisPaid) {
-        btnCheckQrisPaid.addEventListener('click', () => {
-          btnCheckQrisPaid.textContent = 'Memverifikasi...';
-          setTimeout(() => {
-            btnCheckQrisPaid.textContent = '✓ Pembayaran Lunas!';
-            btnCheckQrisPaid.style.background = '#16a34a';
-            showToast('Pembayaran QRIS berhasil diverifikasi!');
-            setTimeout(() => {
-              window.location.href = 'riwayat.html';
-            }, 1200);
-          }, 800);
-        });
-      }
-
-      let secondsLeft = 14 * 60 + 59;
-      const timerElem = document.getElementById('qrisTimer');
-      if (timerElem) {
-        setInterval(() => {
-          if (secondsLeft > 0) {
-            secondsLeft--;
-            const mins = Math.floor(secondsLeft / 60);
-            const secs = secondsLeft % 60;
-            timerElem.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
-          }
-        }, 1000);
-      }
-
-      const btnPayOrder = document.getElementById('btnPayOrder');
-      if (btnPayOrder) {
-        btnPayOrder.addEventListener('click', () => {
-          btnPayOrder.textContent = 'Memproses Pesanan...';
-          btnPayOrder.style.opacity = '0.8';
-          showToast('Pesanan berhasil dibuat! Menuju halaman riwayat...');
-          setTimeout(() => {
-            window.location.href = 'riwayat.html';
-          }, 1200);
-        });
-      }
-
-      updateCheckoutTotals();
-    })();
-  </script>
+  
+  
 </body>
 </html>

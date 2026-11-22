@@ -32,10 +32,11 @@
         <span class="cart-badge-count" id="navCartCount">3</span>
       </a>
       <div class="user-menu-wrapper">
-        <button type="button" class="user-badge" id="profileDropdownBtn" aria-expanded="false" title="Profil Akun">
+        <input type="checkbox" id="profileToggle" class="profile-toggle-check" aria-hidden="true">
+        <label for="profileToggle" class="user-badge" title="Profil Akun">
           <img src="assets/icons/user.svg" alt="User">
           <span>zakz4you</span>
-        </button>
+        </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
           <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
           <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
@@ -43,9 +44,6 @@
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
       </div>
-      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
@@ -155,7 +153,7 @@
           <span id="discountText" style="font-weight: 600;">-Rp 15.000</span>
         </div>
 
-        <form class="promo-form" id="promoForm" action="#" onsubmit="return false;">
+        <form class="promo-form" id="promoForm" action="#">
           <input type="text" id="promoInput" placeholder="Kode Promo (Contoh: ZANDLE10)" class="promo-input">
           <button type="button" id="btnApplyPromo" class="promo-btn">Gunakan</button>
         </form>
@@ -230,183 +228,7 @@
     </div>
   </div>
 
-  <script src="js/app.js"></script>
-  <script>
-    (function() {
-      let discountAmount = 0;
-
-      function recalcCart() {
-        const rows = document.querySelectorAll('.cart-item-row');
-        let selectedCount = 0;
-        let subtotal = 0;
-        let totalQtyInCart = 0;
-
-        rows.forEach(row => {
-          const check = row.querySelector('.item-select-box');
-          const price = parseInt(row.getAttribute('data-price'), 10) || 0;
-          const qtyElem = row.querySelector('.cart-item-qty');
-          const rowTotalElem = row.querySelector('.cart-item-row-total');
-          const qty = parseInt(qtyElem.textContent, 10) || 1;
-
-          rowTotalElem.textContent = 'Rp ' + (price * qty).toLocaleString('id-ID');
-          totalQtyInCart += qty;
-
-          if (check && check.checked) {
-            selectedCount += qty;
-            subtotal += price * qty;
-          }
-        });
-
-        const badge = document.getElementById('navCartCount');
-        if (badge) badge.textContent = rows.length;
-
-        const selCountText = document.getElementById('selectedCountText');
-        if (selCountText) selCountText.textContent = selectedCount;
-
-        const summaryItemCount = document.getElementById('summaryItemCount');
-        if (summaryItemCount) summaryItemCount.textContent = selectedCount;
-
-        const subtotalText = document.getElementById('subtotalText');
-        if (subtotalText) subtotalText.textContent = 'Rp ' + subtotal.toLocaleString('id-ID');
-
-        const shippingCost = subtotal > 0 ? 15000 : 0;
-        const shippingText = document.getElementById('shippingText');
-        if (shippingText) shippingText.textContent = 'Rp ' + shippingCost.toLocaleString('id-ID');
-
-        const grand = Math.max(0, subtotal + shippingCost - discountAmount);
-        const grandTotalText = document.getElementById('grandTotalText');
-        if (grandTotalText) grandTotalText.textContent = 'Rp ' + grand.toLocaleString('id-ID');
-
-        const checkoutBtn = document.getElementById('btnGoCheckout');
-        if (checkoutBtn) {
-          if (subtotal === 0) {
-            checkoutBtn.style.opacity = '0.5';
-            checkoutBtn.style.pointerEvents = 'none';
-          } else {
-            checkoutBtn.style.opacity = '1';
-            checkoutBtn.style.pointerEvents = 'auto';
-          }
-        }
-
-        if (rows.length === 0) {
-          const col = document.getElementById('cartItemsCol');
-          if (col) {
-            col.innerHTML = `
-              <div class="cart-empty-state">
-                <h3>Keranjang Belanja Kosong</h3>
-                <p>Anda belum memiliki lilin di dalam keranjang belanja.</p>
-                <a href="katalog.html" class="btn-primary">Jelajahi Katalog Lilin</a>
-              </div>
-            `;
-          }
-        }
-      }
-
-      function attachItemEvents(row) {
-        const check = row.querySelector('.item-select-box');
-        if (check) {
-          check.addEventListener('change', () => {
-            const allChecks = document.querySelectorAll('.item-select-box');
-            const allChecked = Array.from(allChecks).every(c => c.checked);
-            const selectAll = document.getElementById('checkSelectAll');
-            if (selectAll) selectAll.checked = allChecked;
-            recalcCart();
-          });
-        }
-
-        const btnMinus = row.querySelector('.btn-cart-minus');
-        const btnPlus = row.querySelector('.btn-cart-plus');
-        const qtyElem = row.querySelector('.cart-item-qty');
-
-        if (btnMinus && qtyElem) {
-          btnMinus.addEventListener('click', () => {
-            let cur = parseInt(qtyElem.textContent, 10) || 1;
-            if (cur > 1) {
-              qtyElem.textContent = cur - 1;
-              recalcCart();
-            }
-          });
-        }
-
-        if (btnPlus && qtyElem) {
-          btnPlus.addEventListener('click', () => {
-            let cur = parseInt(qtyElem.textContent, 10) || 1;
-            qtyElem.textContent = cur + 1;
-            recalcCart();
-          });
-        }
-
-        const deleteBtn = row.querySelector('.cart-item-delete-btn');
-        if (deleteBtn) {
-          deleteBtn.addEventListener('click', () => {
-            row.classList.add('removing');
-            setTimeout(() => {
-              row.remove();
-              recalcCart();
-              showToast('Lilin dihapus dari keranjang.');
-            }, 250);
-          });
-        }
-      }
-
-      document.querySelectorAll('.cart-item-row').forEach(attachItemEvents);
-
-      const selectAll = document.getElementById('checkSelectAll');
-      if (selectAll) {
-        selectAll.addEventListener('change', () => {
-          const isChecked = selectAll.checked;
-          document.querySelectorAll('.item-select-box').forEach(cb => {
-            cb.checked = isChecked;
-          });
-          recalcCart();
-        });
-      }
-
-      const btnDeleteSelected = document.getElementById('btnDeleteSelected');
-      if (btnDeleteSelected) {
-        btnDeleteSelected.addEventListener('click', () => {
-          const checkedRows = document.querySelectorAll('.cart-item-row:has(.item-select-box:checked)');
-          if (checkedRows.length === 0) {
-            showToast('Pilih setidaknya 1 lilin untuk dihapus.');
-            return;
-          }
-          checkedRows.forEach(row => {
-            row.classList.add('removing');
-            setTimeout(() => {
-              row.remove();
-              recalcCart();
-            }, 200);
-          });
-          showToast('Pesanan terpilih berhasil dihapus.');
-        });
-      }
-
-      const btnApplyPromo = document.getElementById('btnApplyPromo');
-      const promoInput = document.getElementById('promoInput');
-      const promoFeedback = document.getElementById('promoFeedback');
-      const discountRow = document.getElementById('discountRow');
-
-      if (btnApplyPromo && promoInput) {
-        btnApplyPromo.addEventListener('click', () => {
-          const code = promoInput.value.trim().toUpperCase();
-          if (!code) {
-            promoFeedback.style.display = 'block';
-            promoFeedback.style.color = '#dc2626';
-            promoFeedback.textContent = 'Masukkan kode promo terlebih dahulu.';
-            return;
-          }
-          discountAmount = 15000;
-          if (discountRow) discountRow.style.display = 'flex';
-          promoFeedback.style.display = 'block';
-          promoFeedback.style.color = '#16a34a';
-          promoFeedback.textContent = '✓ Promo ' + code + ' berhasil digunakan (-Rp 15.000)!';
-          recalcCart();
-          showToast('Kode promo berhasil diterapkan!');
-        });
-      }
-
-      recalcCart();
-    })();
-  </script>
+  
+  
 </body>
 </html>
