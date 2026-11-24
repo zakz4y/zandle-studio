@@ -1,7 +1,7 @@
-// ==========================================
-// ZANDLE STUDIO - SPECIFICATION PAGE JAVASCRIPT
-// Interaksi Spesifikasi Produk & Toast
-// ==========================================
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const toast = document.getElementById("toast");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2500);
   }
 
-  // Interaksi tombol atau spesifikasi
+  
   const actionBtns = document.querySelectorAll(".spec-action-btn");
   actionBtns.forEach((btn) => {
     btn.addEventListener("click", () => {

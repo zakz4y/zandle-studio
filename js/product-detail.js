@@ -1,7 +1,7 @@
-// ==========================================
-// ZANDLE STUDIO - PRODUCT DETAIL PAGE JAVASCRIPT
-// Galeri Foto & Tambah ke Keranjang
-// ==========================================
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const galleryDots = document.querySelectorAll(".gallery-dot");
@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const arrowPrev = document.querySelector(".gallery-nav-arrow:first-child");
   const arrowNext = document.querySelector(".gallery-nav-arrow:last-child");
 
-  // Koleksi gambar variasi sesuai halaman detail produk
+  
   const images = [];
   if (mainProductImg) {
     const currentSrc = mainProductImg.getAttribute("src");
     images.push(currentSrc);
-    // Tambahkan variasi gambar candle
+    
     if (currentSrc.includes("white")) {
       images.push("assets/images/candle-putih1.jpeg", "assets/images/candle-putih2.jpeg");
     } else if (currentSrc.includes("green")) {
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Tambah ke Keranjang dari Halaman Produk
+  
   const btnDetailCart = document.querySelector(".btn-detail-cart");
   if (btnDetailCart) {
     btnDetailCart.addEventListener("click", () => {
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
           updateNavCartBadge();
         }
       } catch (err) {
-        // fallback
+        
       }
     });
   }

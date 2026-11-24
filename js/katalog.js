@@ -1,7 +1,7 @@
-// ==========================================
-// ZANDLE STUDIO - KATALOG PAGE JAVASCRIPT
-// Filter Kategori, Warna, Ukuran, dan Urutan
-// ==========================================
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const categoryRadios = document.querySelectorAll('input[name="kat"]');
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const catalogCards = document.querySelectorAll(".katalog-grid-3 .katalog-card-link");
   const catalogCount = document.querySelector(".katalog-count");
 
-  // Ukuran label buttons
+  
   const catalogSizeBtns = document.querySelectorAll(".size-btn");
   catalogSizeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Warna dots
+  
   const catalogColorDots = document.querySelectorAll(".color-dots-row .color-dot");
   catalogColorDots.forEach((dot) => {
     dot.addEventListener("click", () => {

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keranjang Belanja — Zandle Studio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/keranjang.css">
 </head>
 <body>
 
@@ -147,9 +148,22 @@
           <span style="color: var(--text-body);">Subtotal (<span id="summaryItemCount">3</span> Barang Terpilih)</span>
           <span id="subtotalText" style="font-weight: 600;">Rp 150.000</span>
         </div>
-        <div class="summary-row">
-          <span style="color: var(--text-body);">Estimasi Pengiriman</span>
-          <span id="shippingText" style="font-weight: 600;">Rp 15.000</span>
+        <div class="summary-row" style="flex-direction: column; align-items: stretch; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: var(--text-body);">Tujuan Pengiriman</span>
+            <select id="shippingCitySelect" style="padding: 4px 8px; border: 1px solid var(--border-main); border-radius: 6px; background: #ffffff; font-size: 12px; color: var(--text-dark); cursor: pointer;">
+              <option value="surabaya" data-km="95" data-cost="12000">Surabaya (95 km)</option>
+              <option value="jakarta" data-km="850" data-cost="22000" selected>Jakarta (850 km)</option>
+              <option value="bandung" data-km="720" data-cost="20000">Bandung (720 km)</option>
+              <option value="yogyakarta" data-km="390" data-cost="15000">Yogyakarta (390 km)</option>
+              <option value="denpasar" data-km="430" data-cost="18000">Denpasar (430 km)</option>
+              <option value="medan" data-km="2450" data-cost="36000">Medan (2.450 km)</option>
+            </select>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: var(--text-body); font-size: 13px;" id="shippingDetailLabel">Estimasi Pengiriman (Dari Malang • 3 item)</span>
+            <span id="shippingText" style="font-weight: 600;">Rp 22.000</span>
+          </div>
         </div>
         <div class="summary-row" id="discountRow" style="display: none; color: #16a34a;">
           <span>Diskon Promo</span>

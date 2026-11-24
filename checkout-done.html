@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pembayaran Selesai — Zandle Studio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/checkout-done.css">
 </head>
 <body>
 
@@ -96,15 +97,19 @@
         <div class="done-summary-lines">
           <div class="done-calc-row">
             <span>Subtotal</span>
-            <span>Rp 680.000</span>
+            <span id="doneSubtotal">Rp 150.000</span>
           </div>
           <div class="done-calc-row">
             <span>Kirim</span>
-            <span>Rp 35.000</span>
+            <span id="doneShipping">Rp 15.000</span>
+          </div>
+          <div class="done-calc-row">
+            <span>Layanan</span>
+            <span id="doneAdmin">Rp 1.000</span>
           </div>
           <div class="done-calc-row total-calc-row">
             <span>Total</span>
-            <span class="total-val">Rp 715.000</span>
+            <span class="total-val" id="doneTotal">Rp 166.000</span>
           </div>
         </div>
       </div>
@@ -161,5 +166,7 @@
       <span>Made with care in Malang</span>
     </div>
   </footer>
+  <script src="js/common.js"></script>
+  <script src="js/checkout-done.js"></script>
 </body>
 </html>

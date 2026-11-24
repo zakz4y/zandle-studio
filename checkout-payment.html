@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pembayaran — Zandle Studio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/checkout-payment.css">
 </head>
 <body>
 
@@ -99,15 +100,19 @@
         <div class="payment-summary-block">
           <div class="pay-summary-line">
             <span>Subtotal</span>
-            <span>Rp 680.000</span>
+            <span id="paySubtotal">Rp 150.000</span>
           </div>
           <div class="pay-summary-line">
             <span>Kirim</span>
-            <span>Rp 35.000</span>
+            <span id="payShipping">Rp 15.000</span>
+          </div>
+          <div class="pay-summary-line">
+            <span>Layanan</span>
+            <span id="payAdmin">Rp 1.000</span>
           </div>
           <div class="pay-summary-line total-line">
             <span>Total</span>
-            <span class="total-accent">Rp 715.000</span>
+            <span class="total-accent" id="payTotal">Rp 166.000</span>
           </div>
         </div>
       </div>
@@ -167,5 +172,6 @@
 
   
   <script src="js/common.js"></script>
+  <script src="js/checkout-payment.js"></script>
 </body>
 </html>

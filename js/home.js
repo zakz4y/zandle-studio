@@ -1,10 +1,10 @@
-// ==========================================
-// ZANDLE STUDIO - HOME PAGE JAVASCRIPT
-// Banner interaksi, newsletter toast
-// ==========================================
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Newsletter submission feedback
+  
   const newsletterForm = document.querySelector(".newsletter-form");
   if (newsletterForm) {
     newsletterForm.addEventListener("submit", (e) => {

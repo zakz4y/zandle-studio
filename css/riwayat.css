@@ -1,0 +1,113 @@
+.account-layout {
+  display: flex;
+  min-height: 800px;
+}
+
+.account-sidebar {
+  width: 240px;
+  background: var(--bg-dark);
+  color: #ffffff;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  margin-bottom: 48px;
+}
+
+.account-brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.account-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.account-menu a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #a8a29e;
+  font-size: 14px;
+}
+
+.account-content {
+  flex: 1;
+  padding: 48px 64px;
+  background: var(--bg-page);
+}
+
+.tab-filter-row {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0 32px 0;
+}
+
+.tab-pill {
+  padding: 8px 20px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-main);
+  background: transparent;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--text-body);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.order-table td {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 14px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.dibatalkan {
+  background: #fde8e8;
+  color: #c86d51;
+}
+
+.status-badge.dibuat {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.status-badge.dikirim {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.status-badge.selesai {
+  background: #dcfce7;
+  color: #16a34a;
+}

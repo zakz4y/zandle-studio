@@ -1,10 +1,5 @@
-// ==========================================
-// ZANDLE STUDIO - KERANJANG PAGE JAVASCRIPT
-// Tambah/Kurang Qty, Hapus Item, Pilih Semua,
-// Hitung Subtotal & Total, Simpan ke LocalStorage
-// ==========================================
-
 const CART_STORAGE_KEY = "zandle_cart";
+const SHIPPING_STORAGE_KEY = "zandle_shipping";
 
 const DEFAULT_CART = [
   {
@@ -46,7 +41,6 @@ function getCartItems() {
     const parsed = JSON.parse(saved);
     if (Array.isArray(parsed)) return parsed;
   } catch (e) {
-    // fallback
   }
   return DEFAULT_CART.map((item) => ({ ...item }));
 }
@@ -70,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryItemCount = document.getElementById("summaryItemCount");
   const subtotalText = document.getElementById("subtotalText");
   const shippingText = document.getElementById("shippingText");
+  const shippingCitySelect = document.getElementById("shippingCitySelect");
+  const shippingDetailLabel = document.getElementById("shippingDetailLabel");
   const discountRow = document.getElementById("discountRow");
   const discountText = document.getElementById("discountText");
   const grandTotalText = document.getElementById("grandTotalText");
@@ -81,10 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let appliedDiscount = 0;
   let cartData = getCartItems();
 
+  function calculateShipping(itemCount) {
+    if (itemCount === 0) return 0;
+    const selectedOption = shippingCitySelect?.selectedOptions[0];
+    const baseCost = parseInt(selectedOption?.dataset?.cost || "22000", 10);
+    const extraPerItem = 3000;
+    return baseCost + Math.max(0, itemCount - 1) * extraPerItem;
+  }
+
   function renderCart() {
     if (!cartItemsCol) return;
 
-    // Bersihkan item baris lama (sisakan select-all row dan back button row)
     const existingRows = cartItemsCol.querySelectorAll(".cart-item-row");
     existingRows.forEach((r) => r.remove());
 
@@ -141,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      // Event listener per row
       const checkEl = row.querySelector(".item-select-box");
       const btnMinus = row.querySelector(".btn-cart-minus");
       const btnPlus = row.querySelector(".btn-cart-plus");
@@ -158,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (item.qty > 1) {
           item.qty -= 1;
         } else {
-          // Jika 1 lalu dikurangi, konfirmasi hapus item
           if (confirm(`Hapus "${item.title}" dari keranjang?`)) {
             cartData = cartData.filter((i) => i.id !== item.id);
             saveCartItems(cartData);
@@ -214,12 +215,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const subtotal = selectedItems.reduce((sum, item) => sum + item.price * item.qty, 0);
     const totalSelectedQty = selectedItems.reduce((sum, item) => sum + item.qty, 0);
 
-    const shipping = selectedItems.length > 0 ? 15000 : 0;
+    const shipping = calculateShipping(totalSelectedQty);
     const grandTotal = Math.max(0, subtotal + shipping - appliedDiscount);
 
     if (summaryItemCount) summaryItemCount.textContent = totalSelectedQty;
     if (subtotalText) subtotalText.textContent = formatRupiah(subtotal);
     if (shippingText) shippingText.textContent = formatRupiah(shipping);
+
+    if (shippingDetailLabel && shippingCitySelect) {
+      const opt = shippingCitySelect.selectedOptions[0];
+      const cityName = opt?.text || "Jakarta";
+      shippingDetailLabel.textContent = `Estimasi (Malang ke ${cityName} • ${totalSelectedQty} item)`;
+    }
 
     if (discountRow && discountText) {
       if (appliedDiscount > 0 && selectedItems.length > 0) {
@@ -232,8 +239,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (grandTotalText) grandTotalText.textContent = formatRupiah(grandTotal);
 
-    // Update nav cart badge
     saveCartItems(cartData);
+
+    const checkoutState = {
+      subtotal,
+      shipping,
+      grandTotal,
+      selectedQty: totalSelectedQty,
+      city: shippingCitySelect?.value || "jakarta"
+    };
+    localStorage.setItem(SHIPPING_STORAGE_KEY, JSON.stringify(checkoutState));
+  }
+
+  if (shippingCitySelect) {
+    shippingCitySelect.addEventListener("change", () => {
+      updateSummary();
+    });
   }
 
   function escapeHtml(str) {
@@ -245,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/'/g, "&#039;");
   }
 
-  // Pilih Semua event
   if (checkSelectAll) {
     checkSelectAll.addEventListener("change", () => {
       const isChecked = checkSelectAll.checked;
@@ -257,7 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Hapus Pilihan
   if (btnDeleteSelected) {
     btnDeleteSelected.addEventListener("click", () => {
       const count = cartData.filter((i) => i.selected !== false).length;
@@ -273,7 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Promo code
   if (btnApplyPromo && promoInput) {
     const handlePromo = () => {
       const code = promoInput.value.trim().toUpperCase();
@@ -307,6 +325,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Render awal
   renderCart();
 });

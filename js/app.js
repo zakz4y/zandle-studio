@@ -1,11 +1,11 @@
-// ==========================================
-// ZANDLE STUDIO - SIMPLE JAVASCRIPT
-// Kode mudah dibaca dan langsung berfungsi
-// ==========================================
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 1. DROPDOWN MENU PROFIL
+  
   const profileBtn = document.getElementById("profileDropdownBtn");
   const profileMenu = document.getElementById("profileDropdownMenu");
 
@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
       profileMenu.classList.toggle("show");
     });
 
-    // Tutup dropdown jika klik di luar
+    
     document.addEventListener("click", () => {
       profileMenu.classList.remove("show");
     });
   }
 
 
-  // 2. MENU HAMBURGER (RESPONSIF MOBILE / TABLET)
+  
   const mobileBtn = document.getElementById("mobileMenuBtn");
   const navCenter = document.getElementById("navCenter");
 
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // 3. STUDIO KUSTOMISASI (PILIH AROMA, WARNA, UKURAN, DAN JUMLAH)
-  // Aroma
+  
+  
   const aromaOptions = document.querySelectorAll(".aroma-option");
   const valAromaText = document.getElementById("valAroma");
 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Warna Lilin
+  
   const waxDots = document.querySelectorAll(".wax-dot");
   const valColorText = document.getElementById("valColor");
   const candlePreview = document.getElementById("candlePreviewBody");
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Ukuran Wadah
+  
   const sizeCards = document.querySelectorAll(".size-select-card");
   const valSizeText = document.getElementById("valSize");
   const totalPriceText = document.getElementById("totalPriceText");
@@ -74,14 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.add("active");
       if (valSizeText) valSizeText.textContent = card.textContent.trim();
       
-      // Update perkiraan harga sederhana
+      
       if (card.textContent.includes("100ml") && totalPriceText) totalPriceText.textContent = "Rp 45.000";
       if (card.textContent.includes("150ml") && totalPriceText) totalPriceText.textContent = "Rp 60.000";
       if (card.textContent.includes("200ml") && totalPriceText) totalPriceText.textContent = "Rp 75.000";
     });
   });
 
-  // Input Label Personal (Langsung update tampilan lilin)
+  
   const labelInput = document.getElementById("labelInput");
   const previewLabel = document.getElementById("candlePreviewLabel");
 
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Tombol Jumlah (+ / -)
+  
   const qtyMinus = document.getElementById("btnQtyMinus");
   const qtyPlus = document.getElementById("btnQtyPlus");
   const qtyVal = document.getElementById("qtyVal");
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // 4. FILTER KATALOG (UKURAN & WARNA)
+  
   const catalogSizeBtns = document.querySelectorAll(".size-btn");
   catalogSizeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // 5. DETAIL PRODUK - GALERI FOTO (1, 2, 3)
+  
   const galleryDots = document.querySelectorAll(".gallery-dot");
   const mainProductImg = document.getElementById("mainProductImg");
 

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masuk — Zandle Studio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/auth.css">
 </head>
 <body style="background: #ffffff;">
 
@@ -61,6 +62,15 @@
       <p class="auth-footer-prompt">
         Belum punya akun? <a href="register.html">Daftar sekarang</a>
       </p>
+    </div>
+  </div>
+
+  <div class="auth-modal-backdrop" id="authModal">
+    <div class="auth-modal-card">
+      <div class="auth-modal-icon">!</div>
+      <h3 class="auth-modal-title" id="authModalTitle">Perhatian</h3>
+      <p class="auth-modal-message" id="authModalMsg"></p>
+      <button type="button" class="auth-modal-btn" id="authModalClose">Mengerti</button>
     </div>
   </div>
 

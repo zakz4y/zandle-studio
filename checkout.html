@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout — Zandle Studio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
 
@@ -119,89 +120,9 @@
               <span>QRIS Instan (GoPay, OVO, ShopeePay, BCA, Dana)</span>
               <span class="qris-tag-badge">Rekomendasi</span>
             </div>
-            <div style="font-size: 12px; color: var(--text-body);">Pindai langsung dengan semua aplikasi m-banking & e-wallet</div>
+            <div style="font-size: 12px; color: var(--text-body);">Pindai langsung dengan semua aplikasi m-banking & e-wallet pada halaman pembayaran</div>
           </div>
         </label>
-
-        <div class="qris-detail-box" id="qrisDetailBox">
-          <div class="qris-header-row">
-            <div>
-              <span class="qris-brand-title">QRIS</span>
-              <span style="font-size: 11px; color: var(--text-body); margin-left: 8px;">Quick Response Code Indonesian Standard</span>
-            </div>
-            <span class="qris-tag-badge">Verifikasi Otomatis</span>
-          </div>
-
-          <div class="qris-content-grid">
-            <div class="qris-code-wrap">
-              <svg viewBox="0 0 160 160" width="100%" height="100%">
-                <rect width="160" height="160" fill="#ffffff"/>
-                <rect x="10" y="10" width="40" height="40" fill="#000000"/>
-                <rect x="16" y="16" width="28" height="28" fill="#ffffff"/>
-                <rect x="22" y="22" width="16" height="16" fill="#000000"/>
-
-                <rect x="110" y="10" width="40" height="40" fill="#000000"/>
-                <rect x="116" y="16" width="28" height="28" fill="#ffffff"/>
-                <rect x="122" y="22" width="16" height="16" fill="#000000"/>
-
-                <rect x="10" y="110" width="40" height="40" fill="#000000"/>
-                <rect x="16" y="116" width="28" height="28" fill="#ffffff"/>
-                <rect x="22" y="22" width="16" height="16" fill="#000000"/>
-
-                <rect x="60" y="15" width="8" height="8" fill="#000000"/>
-                <rect x="75" y="15" width="8" height="8" fill="#000000"/>
-                <rect x="90" y="15" width="8" height="8" fill="#000000"/>
-                <rect x="60" y="30" width="16" height="8" fill="#000000"/>
-                <rect x="85" y="30" width="12" height="12" fill="#000000"/>
-
-                <rect x="15" y="60" width="8" height="16" fill="#000000"/>
-                <rect x="30" y="60" width="16" height="8" fill="#000000"/>
-                <rect x="30" y="75" width="8" height="16" fill="#000000"/>
-
-                <rect x="60" y="60" width="40" height="40" rx="8" fill="#582f0e"/>
-                <circle cx="80" cy="80" r="12" fill="#ffffff"/>
-                <text x="80" y="84" font-size="10" font-family="sans-serif" font-weight="bold" fill="#582f0e" text-anchor="middle">ZS</text>
-
-                <rect x="110" y="60" width="10" height="10" fill="#000000"/>
-                <rect x="130" y="60" width="15" height="8" fill="#000000"/>
-                <rect x="115" y="80" width="15" height="15" fill="#000000"/>
-                <rect x="140" y="80" width="10" height="10" fill="#000000"/>
-
-                <rect x="60" y="110" width="12" height="12" fill="#000000"/>
-                <rect x="80" y="115" width="16" height="8" fill="#000000"/>
-                <rect x="105" y="110" width="8" height="20" fill="#000000"/>
-                <rect x="120" y="115" width="15" height="8" fill="#000000"/>
-                <rect x="140" y="110" width="10" height="10" fill="#000000"/>
-                <rect x="60" y="135" width="20" height="8" fill="#000000"/>
-                <rect x="90" y="130" width="10" height="15" fill="#000000"/>
-                <rect x="115" y="135" width="30" height="10" fill="#000000"/>
-              </svg>
-            </div>
-
-            <div class="qris-instructions">
-              <div class="qris-merchant-info">
-                <h4>ZANDLE STUDIO MALANG</h4>
-                <p>NMID: ID1024589201928</p>
-              </div>
-
-              <div class="qris-timer-box">
-                <span>⏱</span>
-                <span>Bayar dalam <strong id="qrisTimer">14:59</strong></span>
-              </div>
-
-              <ol class="qris-steps-list">
-                <li>Buka aplikasi BCA Mobile, GoPay, OVO, Dana, ShopeePay, atau m-Banking Anda.</li>
-                <li>Pilih menu <strong>Scan / Bayar QRIS</strong>.</li>
-                <li>Arahkan kamera ke QR code di atas, pastikan nominal sesuai.</li>
-              </ol>
-
-              <div class="qris-actions-row">
-                <button type="button" class="qris-btn-sm" id="btnDownloadQr">Unduh QR Code</button>
-                <button type="button" class="qris-btn-sm primary" id="btnCheckQrisPaid">Saya Sudah Bayar</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <label class="payment-method-box payment-choice" data-type="bca">
           <input type="radio" name="payment" value="bca">

@@ -1,0 +1,161 @@
+.btn-payment-outline,
+.btn-payment-solid {
+  flex: 1;
+  height: 50px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn-payment-outline {
+  border: 1px solid var(--border-main);
+  color: var(--text-dark);
+  background: #ffffff;
+}
+
+.btn-payment-outline:hover {
+  background: var(--bg-main);
+}
+
+.btn-payment-solid {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-payment-solid:hover {
+  opacity: 0.92;
+}
+
+.payment-done-container {
+  max-width: 640px;
+  margin: 60px auto 100px auto;
+  padding: 0 24px;
+}
+
+.payment-done-card {
+  background: #ffffff;
+  border: 1px solid var(--border-main);
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+.done-check-icon {
+  margin-bottom: 20px;
+}
+
+.done-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.done-order-num-box {
+  background: var(--bg-main);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.done-order-label {
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+.done-order-id {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.done-order-details-block {
+  text-align: left;
+  border: 1px solid var(--border-main);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.done-details-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-main);
+  padding-bottom: 10px;
+}
+
+.done-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.done-item-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.done-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.done-item-spec {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.done-item-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.done-summary-lines {
+  border-top: 1px dashed var(--border-main);
+  padding-top: 14px;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.done-calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-body);
+}
+
+.done-calc-row.total-calc-row {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  border-top: 1px solid var(--border-main);
+  padding-top: 8px;
+}
+
+.done-calc-row .total-val {
+  color: var(--color-primary);
+}
+
+.done-action-buttons {
+  display: flex;
+  gap: 16px;
+}

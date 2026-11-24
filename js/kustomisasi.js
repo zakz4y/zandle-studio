@@ -1,10 +1,10 @@
-// ==========================================
-// ZANDLE STUDIO - KUSTOMISASI PAGE JAVASCRIPT
-// Pemilihan Aroma, Warna Lilin, Ukuran Wadah, Label Personal, Qty
-// ==========================================
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Aroma
+  
   const aromaOptions = document.querySelectorAll(".aroma-option");
   const valAromaText = document.getElementById("valAroma");
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 2. Warna Lilin
+  
   const waxDots = document.querySelectorAll(".wax-dot");
   const valColorText = document.getElementById("valColor");
   const candlePreview = document.getElementById("candlePreviewBody");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 3. Ukuran Wadah
+  
   const sizeCards = document.querySelectorAll(".size-select-card");
   const valSizeText = document.getElementById("valSize");
   const totalPriceText = document.getElementById("totalPriceText");
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 4. Input Label Personal
+  
   const labelInput = document.getElementById("labelInput");
   const previewLabel = document.getElementById("candlePreviewLabel");
 
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 5. Tombol Jumlah (+ / -)
+  
   const qtyMinus = document.getElementById("btnQtyMinus");
   const qtyPlus = document.getElementById("btnQtyPlus");
   const qtyVal = document.getElementById("qtyVal");
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Tombol Tambah ke Keranjang
+  
   const btnAddToCartCustom = document.querySelector(".btn-custom-cart");
   if (btnAddToCartCustom) {
     btnAddToCartCustom.addEventListener("click", (e) => {
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const label = labelInput?.value.trim() || "Zandle Studio";
       const qty = parseInt(qtyVal?.textContent, 10) || 1;
 
-      // Simpan item custom ke cart localStorage
+      
       try {
         const saved = localStorage.getItem("zandle_cart");
         let cart = saved ? JSON.parse(saved) : [];
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
           updateNavCartBadge();
         }
       } catch (err) {
-        // fallback
+        
       }
     });
   }

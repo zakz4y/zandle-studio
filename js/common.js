@@ -1,7 +1,7 @@
-// ==========================================
-// ZANDLE STUDIO - COMMON / GLOBAL JAVASCRIPT
-// Navbar, Hamburger, Dropdown Profil, Search Modal
-// ==========================================
+
+
+
+
 
 const ZANDLE_PRODUCTS = [
   {
@@ -74,13 +74,13 @@ function updateNavCartBadge() {
         return;
       }
     } catch (e) {
-      // fallback
+      
     }
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. DROPDOWN MENU PROFIL
+  
   const profileToggle = document.getElementById("profileToggle");
   const profileMenu = document.getElementById("profileDropdownMenu");
   const profileBadge = document.querySelector(".user-badge");
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. MENU HAMBURGER (RESPONSIF MOBILE / TABLET)
+  
   const mobileBtn = document.getElementById("mobileMenuBtn");
   const navCenter = document.getElementById("navCenter");
 
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. SEARCH MODAL & CLIENT-SIDE SEARCH
+  
   const searchBtn = document.getElementById("searchBtn");
   const searchModal = document.getElementById("searchModal");
   const searchClose = document.getElementById("searchClose");
@@ -223,6 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Sinkronkan badge cart
+  
   updateNavCartBadge();
 });
