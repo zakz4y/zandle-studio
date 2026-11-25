@@ -126,7 +126,7 @@
         </div>
 
         <div style="overflow-x: auto; width: 100%;">
-          <table class="order-table" style="min-width: 600px;">
+          <table class="order-table" id="ordersTable" style="min-width: 600px;">
             <thead>
               <tr>
                 <th>KODE PESANAN</th>
@@ -137,64 +137,19 @@
                 <th style="text-align: right;">TINDAKAN</th>
               </tr>
             </thead>
-            <tbody>
-              <tr data-status="dibuat">
-                <td><strong style="font-family: var(--font-mono);">#ZS-8921</strong></td>
-                <td>18 Nov 2024</td>
-                <td>
-                  <strong>1x Lilin Custom (Sage Green)</strong><br>
-                  <span style="font-size: 12px; color: var(--text-body);">Lavender Bliss • 200ml • "Untuk Kamu"</span>
-                </td>
-                <td><strong>Rp 75.000</strong></td>
-                <td><span class="status-badge dibuat">Sedang Dibuat</span></td>
-                <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Detail</button></td>
-              </tr>
-
-              <tr data-status="dikirim">
-                <td><strong style="font-family: var(--font-mono);">#ZS-8402</strong></td>
-                <td>10 Nov 2024</td>
-                <td>
-                  <strong>1x Matcha Breeze, 1x Pure Soy</strong><br>
-                  <span style="font-size: 12px; color: var(--text-body);">Paket Relaksasi Sore</span>
-                </td>
-                <td><strong>Rp 75.000</strong></td>
-                <td><span class="status-badge dikirim">Dikirim</span></td>
-                <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Lacak Resi</button></td>
-              </tr>
-
-              <tr data-status="selesai">
-                <td><strong style="font-family: var(--font-mono);">#ZS-7890</strong></td>
-                <td>25 Okt 2024</td>
-                <td>
-                  <strong>2x Citrus Therapy</strong><br>
-                  <span style="font-size: 12px; color: var(--text-body);">Ukuran 200ml Glass Jar</span>
-                </td>
-                <td><strong>Rp 140.000</strong></td>
-                <td><span class="status-badge selesai">Selesai</span></td>
-                <td style="text-align: right;"><a href="kustomisasi.html" class="btn-outline" style="padding: 6px 14px; font-size: 12px; text-decoration: none;">Beli Lagi</a></td>
-              </tr>
-
-              <tr data-status="dibatalkan">
-                <td><strong style="font-family: var(--font-mono);">#ZS-6540</strong></td>
-                <td>14 Okt 2024</td>
-                <td>
-                  <strong>1x Lilin Custom (Natural White)</strong><br>
-                  <span style="font-size: 12px; color: var(--text-body);">Warm Vanilla • 100ml</span>
-                </td>
-                <td><strong>Rp 55.000</strong></td>
-                <td><span class="status-badge dibatalkan">Dibatalkan</span></td>
-                <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Detail</button></td>
-              </tr>
+            <tbody id="ordersTableBody">
             </tbody>
           </table>
+          <div id="ordersEmptyState" style="display: none; padding: 48px 16px; text-align: center;">
+            <p style="font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 6px;">Belum Ada Riwayat Pesanan</p>
+            <p style="font-size: 13px; color: var(--text-body); margin-bottom: 18px;">Pesanan yang baru saja Anda checkout akan otomatis tercatat dan tersimpan di sini.</p>
+            <a href="katalog.html" class="btn-primary" style="text-decoration: none; display: inline-flex;">Mulai Belanja</a>
+          </div>
         </div>
 
-        <div class="pagination">
+        <div class="pagination" id="ordersPagination" style="display: flex; justify-content: center; margin-top: 32px;">
           <button type="button" class="page-btn" disabled aria-label="Sebelumnya">← Prev</button>
           <button type="button" class="page-btn active">1</button>
-          <button type="button" class="page-btn">2</button>
-          <button type="button" class="page-btn">3</button>
-          <span class="page-ellipsis">…</span>
           <button type="button" class="page-btn" aria-label="Selanjutnya">Next →</button>
         </div>
       </div>
@@ -313,6 +268,20 @@
       </div>
       <div class="search-modal-body">
         <div class="search-results-list" id="searchResults"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-detail-modal-backdrop" id="orderModal">
+    <div class="order-detail-modal-box">
+      <div class="order-modal-header">
+        <h3 id="modalOrderTitle" style="font-family: var(--font-serif); font-size: 20px; margin: 0; color: var(--text-dark);">Detail Pesanan</h3>
+        <button type="button" class="order-modal-close" id="orderModalClose" aria-label="Tutup Detail">✕</button>
+      </div>
+      <div class="order-modal-body" id="modalOrderBody">
+      </div>
+      <div class="order-modal-footer">
+        <button type="button" class="btn-outline" id="orderModalDismiss" style="padding: 8px 20px; font-size: 13px;">Tutup</button>
       </div>
     </div>
   </div>

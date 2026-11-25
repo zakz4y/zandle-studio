@@ -200,6 +200,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateTotal();
 
+  const btnPayOrder = document.getElementById("btnPayOrder");
+  if (btnPayOrder) {
+    btnPayOrder.addEventListener("click", () => {
+      if (checkoutItems.length > 0) {
+        const orderIdNumber = Math.floor(1000 + Math.random() * 9000);
+        const orderCode = `ZS-${orderIdNumber}`;
+        const today = new Date();
+        const dateStr = today.toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "short",
+          year: "numeric"
+        });
+
+        const newOrder = {
+          code: orderCode,
+          date: dateStr,
+          status: "dibuat",
+          statusLabel: "Sedang Dibuat",
+          items: checkoutItems.map((item) => ({
+            title: item.title,
+            qty: item.qty || 1,
+            price: item.price,
+            options: item.options || ""
+          })),
+          subtotal: baseSubtotal,
+          shipping: currentShippingCost,
+          adminFee: adminFee,
+          total: baseSubtotal + currentShippingCost + adminFee,
+          shippingAddress: {
+            receiver: receiverNameInput?.value || "Zacky Achmad",
+            phone: receiverPhoneInput?.value || "081234567890",
+            postal: receiverPostalInput?.value || "65141",
+            address: receiverAddressInput?.value || "",
+            city: targetCityLabel
+          }
+        };
+
+        let existingOrders = [];
+        try {
+          const raw = localStorage.getItem("zandle_orders");
+          if (raw) existingOrders = JSON.parse(raw);
+          if (!Array.isArray(existingOrders)) existingOrders = [];
+        } catch (e) {
+          existingOrders = [];
+        }
+
+        existingOrders.unshift(newOrder);
+        localStorage.setItem("zandle_orders", JSON.stringify(existingOrders));
+        localStorage.setItem("zandle_latest_order_code", orderCode);
+      }
+    });
+  }
+
   const vaCopyBtns = document.querySelectorAll(".va-copy-btn");
   vaCopyBtns.forEach((btn) => {
     btn.addEventListener("click", () => {

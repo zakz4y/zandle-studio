@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const shippingEl = document.getElementById("payShipping");
   const adminEl = document.getElementById("payAdmin");
   const totalEl = document.getElementById("payTotal");
+  const paymentOrderCodeEl = document.getElementById("paymentOrderCode");
+
+  const latestCode = localStorage.getItem("zandle_latest_order_code");
+  if (latestCode && paymentOrderCodeEl) {
+    paymentOrderCodeEl.textContent = `Pesanan #${latestCode}`;
+  }
 
   function formatRupiah(num) {
     return "Rp " + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

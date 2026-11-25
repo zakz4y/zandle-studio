@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const shippingEl = document.getElementById("doneShipping");
   const adminEl = document.getElementById("doneAdmin");
   const totalEl = document.getElementById("doneTotal");
+  const doneOrderCodeEl = document.getElementById("doneOrderCode");
+
+  const latestCode = localStorage.getItem("zandle_latest_order_code");
+  if (latestCode && doneOrderCodeEl) {
+    doneOrderCodeEl.textContent = `#${latestCode}`;
+  }
+
+  localStorage.removeItem("zandle_direct_checkout");
 
   function formatRupiah(num) {
     return "Rp " + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
