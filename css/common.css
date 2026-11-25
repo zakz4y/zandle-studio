@@ -104,12 +104,35 @@ input, button, select, textarea {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-dark);
-  transition: color 0.15s ease;
+  transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
   white-space: nowrap;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-link:hover {
   color: var(--color-accent);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-link.active {
@@ -214,11 +237,19 @@ input, button, select, textarea {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
 }
 
 .btn-primary:hover {
-  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(61, 75, 57, 0.25);
+  opacity: 0.96;
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline {
@@ -233,11 +264,17 @@ input, button, select, textarea {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease;
 }
 
 .btn-outline:hover {
   border-color: var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.btn-outline:active {
+  transform: scale(0.96);
 }
 
 .site-footer {
@@ -1000,5 +1037,130 @@ input, button, select, textarea {
     gap: 12px;
     width: 100%;
     text-align: center;
+  }
+}
+
+.page-enter-reveal {
+  animation: pageFadeInUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pageFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-icon,
+.btn-cart-sm,
+.btn-detail-cart,
+.btn-detail-buy,
+.btn-auth-submit,
+.btn-social,
+.newsletter-btn,
+.tab-pill,
+.shipping-option,
+.payment-choice,
+.step-btn,
+.size-btn,
+.action-btn,
+.va-copy-btn {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-icon:hover,
+.btn-cart-sm:hover,
+.btn-auth-submit:hover,
+.btn-social:hover,
+.newsletter-btn:hover,
+.action-btn:hover,
+.va-copy-btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-icon:active,
+.btn-cart-sm:active,
+.btn-auth-submit:active,
+.btn-social:active,
+.newsletter-btn:active,
+.tab-pill:active,
+.step-btn:active,
+.size-btn:active,
+.action-btn:active,
+.va-copy-btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary svg,
+.btn-outline svg,
+.btn-social svg,
+.newsletter-btn,
+.nav-link svg,
+.account-menu a svg,
+.account-menu button svg,
+.cart-summary-card a svg {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-primary:hover svg,
+.btn-outline:hover svg,
+.btn-social:hover svg,
+.newsletter-btn:hover,
+.account-menu a:hover svg,
+.account-menu button:hover svg,
+.cart-summary-card a:hover svg {
+  transform: translateX(4px);
+}
+
+.product-card,
+.katalog-card,
+.feature-box,
+.review-card,
+.about-photo-card,
+.value-card,
+.custom-step-card,
+.cart-summary-card,
+.checkout-card,
+.profile-section-card,
+.account-sidebar {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease;
+}
+
+.product-card:hover,
+.katalog-card:hover,
+.feature-box:hover,
+.review-card:hover,
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

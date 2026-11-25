@@ -226,4 +226,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   updateNavCartBadge();
+
+  
+  const mainContent = document.querySelector("main") ||
+    document.querySelector(".hero-section") ||
+    document.querySelector(".about-hero") ||
+    document.querySelector(".custom-layout") ||
+    document.querySelector(".katalog-layout") ||
+    document.querySelector(".cart-layout") ||
+    document.querySelector(".checkout-layout") ||
+    document.querySelector(".account-layout") ||
+    document.querySelector(".auth-card") ||
+    document.querySelector(".katalog-header-block");
+  if (mainContent) {
+    mainContent.classList.add("page-enter-reveal");
+  }
+
+  const revealTargets = document.querySelectorAll(
+    "section, .product-card, .katalog-card, .feature-box, .review-card, .about-photo-card, .value-card, .custom-step-card, .custom-preview-col, .cart-item-row, .order-table, .checkout-card, .profile-section-card, .katalog-topbar, .cart-summary-card"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      }
+    );
+
+    revealTargets.forEach((el, index) => {
+      el.classList.add("scroll-reveal");
+      if (index < 3 && window.scrollY < 100) {
+        el.classList.add("revealed");
+      } else {
+        revealObserver.observe(el);
+      }
+    });
+  }
 });
