@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   
-  const btnAddToCartCustom = document.querySelector(".btn-custom-cart");
+  const btnAddToCartCustom = document.getElementById("btnAddToCart") || document.querySelector(".btn-custom-cart");
   if (btnAddToCartCustom) {
     btnAddToCartCustom.addEventListener("click", (e) => {
       const aroma = valAromaText?.textContent.trim() || "Lavender";
@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
       try {
+        localStorage.removeItem("zandle_direct_checkout");
         const saved = localStorage.getItem("zandle_cart");
         let cart = saved ? JSON.parse(saved) : [];
         if (!Array.isArray(cart)) cart = [];

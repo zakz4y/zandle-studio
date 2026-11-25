@@ -58,81 +58,12 @@
 
   <div class="cart-layout">
     <div class="cart-items-col" id="cartItemsCol">
-      <div class="cart-select-all-row">
+      <div class="cart-select-all-row" style="display: none;">
         <label class="cart-select-all-label">
           <input type="checkbox" id="checkSelectAll" class="cart-item-check" checked>
-          <span>Pilih Semua Lilin (<span id="selectedCountText">3</span>)</span>
+          <span>Pilih Semua Lilin (<span id="selectedCountText">0</span>)</span>
         </label>
         <button type="button" class="btn-outline" id="btnDeleteSelected" style="padding: 4px 14px; font-size: 12px;">Hapus Pilihan</button>
-      </div>
-
-      <div class="cart-item-row" data-id="1" data-price="75000">
-        <div class="cart-item-info">
-          <input type="checkbox" class="cart-item-check item-select-box" checked>
-          <div class="cart-item-thumb">
-            <img src="assets/images/candle-green.png" alt="Custom Candle">
-          </div>
-          <div class="cart-item-meta">
-            <h4>Lilin Custom — Sage Green</h4>
-            <p>Aroma: Lavender Bliss • 200ml • Label: "Untuk Kamu"</p>
-            <p style="font-weight: 600; color: var(--text-dark); margin-top: 4px;">Rp 75.000</p>
-          </div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-          <div class="quantity-stepper">
-            <button type="button" class="step-btn btn-cart-minus">-</button>
-            <span class="cart-item-qty" style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
-            <button type="button" class="step-btn btn-cart-plus">+</button>
-          </div>
-          <span class="cart-item-row-total" style="font-weight: 600; font-size: 15px; min-width: 90px; text-align: right;">Rp 75.000</span>
-          <button type="button" class="cart-item-delete-btn" title="Hapus pesanan">✕</button>
-        </div>
-      </div>
-
-      <div class="cart-item-row" data-id="2" data-price="50000">
-        <div class="cart-item-info">
-          <input type="checkbox" class="cart-item-check item-select-box" checked>
-          <div class="cart-item-thumb">
-            <img src="assets/images/candle-green.png" alt="Matcha Candle">
-          </div>
-          <div class="cart-item-meta">
-            <h4>Matcha Breeze</h4>
-            <p>Signature Daily Fresh • 150ml</p>
-            <p style="font-weight: 600; color: var(--text-dark); margin-top: 4px;">Rp 50.000</p>
-          </div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-          <div class="quantity-stepper">
-            <button type="button" class="step-btn btn-cart-minus">-</button>
-            <span class="cart-item-qty" style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
-            <button type="button" class="step-btn btn-cart-plus">+</button>
-          </div>
-          <span class="cart-item-row-total" style="font-weight: 600; font-size: 15px; min-width: 90px; text-align: right;">Rp 50.000</span>
-          <button type="button" class="cart-item-delete-btn" title="Hapus pesanan">✕</button>
-        </div>
-      </div>
-
-      <div class="cart-item-row" data-id="3" data-price="25000">
-        <div class="cart-item-info">
-          <input type="checkbox" class="cart-item-check item-select-box" checked>
-          <div class="cart-item-thumb">
-            <img src="assets/images/candle-white.png" alt="Lavender Candle">
-          </div>
-          <div class="cart-item-meta">
-            <h4>Pure Soy Signature</h4>
-            <p>Natural White • 200ml</p>
-            <p style="font-weight: 600; color: var(--text-dark); margin-top: 4px;">Rp 25.000</p>
-          </div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-          <div class="quantity-stepper">
-            <button type="button" class="step-btn btn-cart-minus">-</button>
-            <span class="cart-item-qty" style="font-weight: 600; min-width: 16px; text-align: center;">1</span>
-            <button type="button" class="step-btn btn-cart-plus">+</button>
-          </div>
-          <span class="cart-item-row-total" style="font-weight: 600; font-size: 15px; min-width: 90px; text-align: right;">Rp 25.000</span>
-          <button type="button" class="cart-item-delete-btn" title="Hapus pesanan">✕</button>
-        </div>
       </div>
 
       <div style="margin-top: 28px;">
@@ -145,8 +76,8 @@
         <h3 class="summary-title">Ringkasan Pesanan</h3>
 
         <div class="summary-row">
-          <span style="color: var(--text-body);">Subtotal (<span id="summaryItemCount">3</span> Barang Terpilih)</span>
-          <span id="subtotalText" style="font-weight: 600;">Rp 150.000</span>
+          <span style="color: var(--text-body);">Subtotal (<span id="summaryItemCount">0</span> Barang Terpilih)</span>
+          <span id="subtotalText" style="font-weight: 600;">Rp 0</span>
         </div>
         <div class="summary-row" style="flex-direction: column; align-items: stretch; gap: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -178,7 +109,7 @@
 
         <div class="summary-row total-row">
           <span>Total Akhir</span>
-          <span id="grandTotalText" style="color: var(--color-brown-text);">Rp 165.000</span>
+          <span id="grandTotalText" style="color: var(--color-brown-text);">Rp 0</span>
         </div>
 
         <a href="checkout.html" id="btnGoCheckout" class="btn-primary" style="width: 100%; margin-top: 24px; text-align: center;">Lanjut ke Checkout →</a>

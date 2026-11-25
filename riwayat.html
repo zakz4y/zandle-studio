@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pesanan Saya — Zandle Studio</title>
+  <title>Dashboard Akun — Zandle Studio</title>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/riwayat.css">
 </head>
@@ -30,17 +30,17 @@
       </button>
       <a href="keranjang.html" class="btn-icon cart-icon-wrap" title="Keranjang">
         <img src="assets/icons/cart.svg" alt="Cart">
-        <span class="cart-badge-count" id="navCartCount">3</span>
+        <span class="cart-badge-count" id="navCartCount">0</span>
       </a>
       <div class="user-menu-wrapper">
         <input type="checkbox" id="profileToggle" class="profile-toggle-check" aria-hidden="true">
         <label for="profileToggle" class="user-badge" title="Profil Akun">
           <img src="assets/icons/user.svg" alt="User">
-          <span>zakz4you</span>
+          <span id="navUsername">zakz4you</span>
         </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
-          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
-          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <a href="riwayat.html#profil" class="dropdown-item" id="dropdownProfileLink">Edit Profil & Alamat</a>
+          <a href="riwayat.html#pesanan" class="dropdown-item" id="dropdownOrderLink">Pesanan Saya</a>
           <div class="dropdown-divider"></div>
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
@@ -53,100 +53,207 @@
 
   <div class="account-layout">
     <aside class="account-sidebar">
-      <div class="account-brand">
-        <img src="assets/icons/logo.png" alt="Logo">
-        <span>Dashboard Akun</span>
+      <div class="account-user-card">
+        <div class="account-avatar">
+          <img src="assets/icons/user.svg" alt="Avatar User">
+        </div>
+        <div class="account-user-meta">
+          <div class="account-user-name" id="sidebarUserName">Zacky Achmad</div>
+          <div class="account-user-phone" id="sidebarUserPhone">0812-3456-7890</div>
+        </div>
       </div>
 
-      <ul class="account-menu">
-        <li><a href="riwayat.html" class="active">Pesanan Saya</a></li>
-        <li><a href="katalog.html">Katalog Produk</a></li>
-        <li><a href="kustomisasi.html">Kustomisasi Lilin</a></li>
-        <li><a href="keranjang.html">Keranjang Belanja</a></li>
-        <li><a href="login.html" style="margin-top: 40px; color: #f87171;">Keluar (Logout)</a></li>
-      </ul>
+      <div>
+        <div class="account-nav-group-title">Aktivitas Saya</div>
+        <ul class="account-menu">
+          <li>
+            <button type="button" class="nav-view-btn active" data-target="panelOrders">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Pesanan Saya</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-view-btn" data-target="panelProfile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profil & Alamat</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="account-nav-group-title">Jelajahi Toko</div>
+        <ul class="account-menu">
+          <li>
+            <a href="katalog.html">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Katalog Produk</span>
+            </a>
+          </li>
+          <li>
+            <a href="kustomisasi.html">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              <span>Kustomisasi Lilin</span>
+            </a>
+          </li>
+          <li>
+            <a href="keranjang.html">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M1 1h3l2.6 13.4a2 2 0 0 0 2 1.6h9.4a2 2 0 0 0 2-1.6L21 6H5"/></svg>
+              <span>Keranjang Belanja</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html" class="menu-danger">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span>Keluar (Logout)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </aside>
 
     <main class="account-content">
-      <h1 class="page-big-title" style="font-size: 42px;">Riwayat Pesanan</h1>
-      <p class="page-subtitle">Pantau status pembuatan lilin buatan tangan dan pengiriman ke rumah Anda</p>
+      <div id="panelOrders" class="dashboard-view-panel active">
+        <h1 class="page-big-title" style="font-size: 32px; margin-bottom: 6px;">Riwayat Pesanan</h1>
+        <p class="page-subtitle">Pantau status pembuatan lilin buatan tangan dan pengiriman ke alamat Anda</p>
 
-      <div class="tab-filter-row">
-        <button type="button" class="tab-pill active" data-tab="all">Semua</button>
-        <button type="button" class="tab-pill" data-tab="dibuat">Sedang Dibuat</button>
-        <button type="button" class="tab-pill" data-tab="dikirim">Dikirim</button>
-        <button type="button" class="tab-pill" data-tab="selesai">Selesai</button>
-        <button type="button" class="tab-pill" data-tab="dibatalkan">Dibatalkan</button>
+        <div class="tab-filter-row">
+          <button type="button" class="tab-pill active" data-tab="all">Semua Pesanan</button>
+          <button type="button" class="tab-pill" data-tab="dibuat">Sedang Dibuat</button>
+          <button type="button" class="tab-pill" data-tab="dikirim">Dalam Pengiriman</button>
+          <button type="button" class="tab-pill" data-tab="selesai">Selesai</button>
+          <button type="button" class="tab-pill" data-tab="dibatalkan">Dibatalkan</button>
+        </div>
+
+        <div style="overflow-x: auto; width: 100%;">
+          <table class="order-table" style="min-width: 600px;">
+            <thead>
+              <tr>
+                <th>KODE PESANAN</th>
+                <th>TANGGAL</th>
+                <th>RINCIAN ITEM</th>
+                <th>TOTAL</th>
+                <th>STATUS</th>
+                <th style="text-align: right;">TINDAKAN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-status="dibuat">
+                <td><strong style="font-family: var(--font-mono);">#ZS-8921</strong></td>
+                <td>18 Nov 2024</td>
+                <td>
+                  <strong>1x Lilin Custom (Sage Green)</strong><br>
+                  <span style="font-size: 12px; color: var(--text-body);">Lavender Bliss • 200ml • "Untuk Kamu"</span>
+                </td>
+                <td><strong>Rp 75.000</strong></td>
+                <td><span class="status-badge dibuat">Sedang Dibuat</span></td>
+                <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Detail</button></td>
+              </tr>
+
+              <tr data-status="dikirim">
+                <td><strong style="font-family: var(--font-mono);">#ZS-8402</strong></td>
+                <td>10 Nov 2024</td>
+                <td>
+                  <strong>1x Matcha Breeze, 1x Pure Soy</strong><br>
+                  <span style="font-size: 12px; color: var(--text-body);">Paket Relaksasi Sore</span>
+                </td>
+                <td><strong>Rp 75.000</strong></td>
+                <td><span class="status-badge dikirim">Dikirim</span></td>
+                <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Lacak Resi</button></td>
+              </tr>
+
+              <tr data-status="selesai">
+                <td><strong style="font-family: var(--font-mono);">#ZS-7890</strong></td>
+                <td>25 Okt 2024</td>
+                <td>
+                  <strong>2x Citrus Therapy</strong><br>
+                  <span style="font-size: 12px; color: var(--text-body);">Ukuran 200ml Glass Jar</span>
+                </td>
+                <td><strong>Rp 140.000</strong></td>
+                <td><span class="status-badge selesai">Selesai</span></td>
+                <td style="text-align: right;"><a href="kustomisasi.html" class="btn-outline" style="padding: 6px 14px; font-size: 12px; text-decoration: none;">Beli Lagi</a></td>
+              </tr>
+
+              <tr data-status="dibatalkan">
+                <td><strong style="font-family: var(--font-mono);">#ZS-6540</strong></td>
+                <td>14 Okt 2024</td>
+                <td>
+                  <strong>1x Lilin Custom (Natural White)</strong><br>
+                  <span style="font-size: 12px; color: var(--text-body);">Warm Vanilla • 100ml</span>
+                </td>
+                <td><strong>Rp 55.000</strong></td>
+                <td><span class="status-badge dibatalkan">Dibatalkan</span></td>
+                <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Detail</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button type="button" class="page-btn" disabled aria-label="Sebelumnya">← Prev</button>
+          <button type="button" class="page-btn active">1</button>
+          <button type="button" class="page-btn">2</button>
+          <button type="button" class="page-btn">3</button>
+          <span class="page-ellipsis">…</span>
+          <button type="button" class="page-btn" aria-label="Selanjutnya">Next →</button>
+        </div>
       </div>
 
-      <div style="overflow-x: auto; width: 100%;">
-        <table class="order-table" style="min-width: 600px;">
-          <thead>
-            <tr>
-              <th>KODE PESANAN</th>
-              <th>TANGGAL</th>
-              <th>RINCIAN ITEM</th>
-              <th>TOTAL</th>
-              <th>STATUS</th>
-              <th style="text-align: right;">TINDAKAN</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-status="dibuat">
-              <td><strong style="font-family: var(--font-mono);">#ZS-8921</strong></td>
-              <td>18 Nov 2024</td>
-              <td>
-                <strong>1x Lilin Custom (Sage Green)</strong><br>
-                <span style="font-size: 12px; color: var(--text-body);">Lavender Bliss • 200ml • "Untuk Kamu"</span>
-              </td>
-              <td><strong>Rp 75.000</strong></td>
-              <td><span class="status-badge dibuat">Sedang Dibuat</span></td>
-              <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Detail</button></td>
-            </tr>
+      <div id="panelProfile" class="dashboard-view-panel">
+        <h1 class="page-big-title" style="font-size: 32px; margin-bottom: 6px;">Profil & Alamat Pengiriman</h1>
+        <p class="page-subtitle">Atur nomor telepon, nama penerima, dan kota tujuan pengiriman agar otomatis sinkron saat checkout</p>
 
-            <tr data-status="dikirim">
-              <td><strong style="font-family: var(--font-mono);">#ZS-8402</strong></td>
-              <td>10 Nov 2024</td>
-              <td>
-                <strong>1x Matcha Breeze, 1x Pure Soy</strong><br>
-                <span style="font-size: 12px; color: var(--text-body);">Paket Relaksasi Sore</span>
-              </td>
-              <td><strong>Rp 75.000</strong></td>
-              <td><span class="status-badge dikirim">Dikirim</span></td>
-              <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Lacak Resi</button></td>
-            </tr>
+        <form id="profileAddressForm" style="margin-top: 24px;">
+          <div class="profile-section-card">
+            <div class="profile-card-header">
+              <h3>Kontak Utama</h3>
+              <span style="font-size: 12px; color: #16a34a; font-weight: 600;">● Data Terhubung ke Checkout</span>
+            </div>
+            <div class="profile-field-grid">
+              <div class="form-group">
+                <label class="form-label" for="profileName">Nama Lengkap</label>
+                <input type="text" id="profileName" class="form-input" value="Zacky Achmad" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profilePhone">Nomor WhatsApp / HP</label>
+                <input type="tel" id="profilePhone" class="form-input" value="081234567890" required>
+              </div>
+            </div>
+          </div>
 
-            <tr data-status="selesai">
-              <td><strong style="font-family: var(--font-mono);">#ZS-7890</strong></td>
-              <td>25 Okt 2024</td>
-              <td>
-                <strong>2x Citrus Therapy</strong><br>
-                <span style="font-size: 12px; color: var(--text-body);">Ukuran 200ml Glass Jar</span>
-              </td>
-              <td><strong>Rp 140.000</strong></td>
-              <td><span class="status-badge selesai">Selesai</span></td>
-              <td style="text-align: right;"><a href="kustomisasi.html" class="btn-outline" style="padding: 6px 14px; font-size: 12px;">Beli Lagi</a></td>
-            </tr>
+          <div class="profile-section-card">
+            <div class="profile-card-header">
+              <h3>Alamat & Lokasi Pengiriman</h3>
+              <span style="font-size: 12px; color: var(--text-muted);">Menentukan tarif ongkos kirim</span>
+            </div>
+            <div class="profile-field-grid" style="margin-bottom: 20px;">
+              <div class="form-group">
+                <label class="form-label" for="profileCity">Kota / Wilayah Tujuan</label>
+                <select id="profileCity" class="form-input" style="cursor: pointer;">
+                  <option value="surabaya" data-cost="12000" data-label="Surabaya">Surabaya (Jawa Timur) — Rp 12.000</option>
+                  <option value="yogyakarta" data-cost="15000" data-label="Yogyakarta">Yogyakarta (DIY) — Rp 15.000</option>
+                  <option value="denpasar" data-cost="18000" data-label="Denpasar">Denpasar (Bali) — Rp 18.000</option>
+                  <option value="bandung" data-cost="20000" data-label="Bandung">Bandung (Jawa Barat) — Rp 20.000</option>
+                  <option value="jakarta" data-cost="22000" data-label="Jakarta">Jakarta (DKI Jakarta) — Rp 22.000</option>
+                  <option value="medan" data-cost="36000" data-label="Medan">Medan (Sumatera Utara) — Rp 36.000</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profilePostalCode">Kode Pos</label>
+                <input type="text" id="profilePostalCode" class="form-input" value="65141" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="profileAddress">Alamat Lengkap</label>
+              <textarea id="profileAddress" class="form-textarea" rows="3" required>Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur</textarea>
+            </div>
+          </div>
 
-            <tr data-status="dibatalkan">
-              <td><strong style="font-family: var(--font-mono);">#ZS-6540</strong></td>
-              <td>14 Okt 2024</td>
-              <td>
-                <strong>1x Lilin Custom (Natural White)</strong><br>
-                <span style="font-size: 12px; color: var(--text-body);">Warm Vanilla • 100ml</span>
-              </td>
-              <td><strong>Rp 55.000</strong></td>
-              <td><span class="status-badge dibatalkan">Dibatalkan</span></td>
-              <td style="text-align: right;"><button type="button" class="btn-outline action-btn" style="padding: 6px 14px; font-size: 12px;">Detail</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="pagination" style="margin-top: 32px; justify-content: flex-start;">
-        <button type="button" class="page-btn active">1</button>
-        <button type="button" class="page-btn">2</button>
-        <button type="button" class="page-btn">→</button>
+          <div style="display: flex; gap: 14px; align-items: center; justify-content: flex-end;">
+            <span id="profileSaveNotice" style="font-size: 13px; color: #16a34a; font-weight: 600; display: none;">Tersimpan & tersinkronisasi ke checkout!</span>
+            <button type="submit" class="btn-primary" style="padding: 12px 28px;">Simpan Perubahan</button>
+          </div>
+        </form>
       </div>
     </main>
   </div>
@@ -210,8 +317,6 @@
     </div>
   </div>
 
-  
-  
   <script src="js/common.js"></script>
   <script src="js/riwayat.js"></script>
 </body>

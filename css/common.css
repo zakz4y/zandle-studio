@@ -466,10 +466,47 @@ input, button, select, textarea {
   font-weight: 600;
 }
 
+.page-btn {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-main);
+  background: #ffffff;
+  color: var(--text-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--text-dark);
+  background: #faf8f5;
+  transform: translateY(-1px);
+}
+
 .page-btn.active {
   background: var(--bg-dark);
   color: #ffffff;
   border-color: var(--bg-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--border-subtle);
+}
+
+.page-ellipsis {
+  padding: 0 6px;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .about-two-boxes {

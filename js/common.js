@@ -77,6 +77,7 @@ function updateNavCartBadge() {
       
     }
   }
+  badge.textContent = "0";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

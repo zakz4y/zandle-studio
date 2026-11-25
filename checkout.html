@@ -59,27 +59,30 @@
   <div class="checkout-layout">
     <div class="checkout-forms-col">
       <div class="checkout-card">
-        <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">1. Alamat Pengiriman</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-family: var(--font-serif); font-size: 22px; margin: 0;">1. Alamat Pengiriman</h3>
+          <a href="riwayat.html#profil" style="font-size: 13px; font-weight: 600; color: var(--color-brown-text); text-decoration: none;">Ubah di Dashboard ⚙</a>
+        </div>
 
         <div class="form-group">
-          <label class="form-label">Nama Penerima</label>
-          <input type="text" class="form-input" value="Zacky Achmad" required>
+          <label class="form-label" for="checkoutReceiverName">Nama Penerima</label>
+          <input type="text" id="checkoutReceiverName" class="form-input" value="Zacky Achmad" required>
         </div>
 
         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
           <div class="form-group" style="flex: 1; min-width: 220px;">
-            <label class="form-label">Nomor WhatsApp / HP</label>
-            <input type="tel" class="form-input" value="081234567890" required>
+            <label class="form-label" for="checkoutReceiverPhone">Nomor WhatsApp / HP</label>
+            <input type="tel" id="checkoutReceiverPhone" class="form-input" value="081234567890" required>
           </div>
           <div class="form-group" style="flex: 1; min-width: 140px;">
-            <label class="form-label">Kode Pos</label>
-            <input type="text" class="form-input" value="65141" required>
+            <label class="form-label" for="checkoutReceiverPostal">Kode Pos</label>
+            <input type="text" id="checkoutReceiverPostal" class="form-input" value="65141" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Alamat Lengkap</label>
-          <textarea class="form-textarea" placeholder="Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur">Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur</textarea>
+          <label class="form-label" for="checkoutReceiverAddress">Alamat Lengkap</label>
+          <textarea id="checkoutReceiverAddress" class="form-textarea" placeholder="Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur">Jl. Terusan Ijen No. 12, Klojen, Kota Malang, Jawa Timur</textarea>
         </div>
 
         <div class="form-group">
@@ -91,22 +94,22 @@
       <div class="checkout-card">
         <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 24px;">2. Opsi Pengiriman</h3>
 
-        <label class="payment-method-box active shipping-option" data-cost="15000">
-          <input type="radio" name="shipping" value="15000" checked>
+        <label class="payment-method-box active shipping-option" id="shipOptReguler" data-cost="22000">
+          <input type="radio" name="shipping" value="22000" checked>
           <div style="flex: 1;">
             <div style="font-weight: 600;">Reguler (JNE / J&T Express)</div>
-            <div style="font-size: 12px; color: var(--text-body);">Estimasi sampai 2 - 3 hari kerja</div>
+            <div style="font-size: 12px; color: var(--text-body);" id="shipDescReguler">Tujuan: Jakarta • Estimasi 2 - 3 hari kerja</div>
           </div>
-          <div style="font-weight: 600;">Rp 15.000</div>
+          <div style="font-weight: 600;" id="shipCostReguler">Rp 22.000</div>
         </label>
 
-        <label class="payment-method-box shipping-option" data-cost="25000">
-          <input type="radio" name="shipping" value="25000">
+        <label class="payment-method-box shipping-option" id="shipOptExpress" data-cost="32000">
+          <input type="radio" name="shipping" value="32000">
           <div style="flex: 1;">
             <div style="font-weight: 600;">Next Day (SiCepat BEST)</div>
-            <div style="font-size: 12px; color: var(--text-body);">Estimasi sampai 1 hari kerja</div>
+            <div style="font-size: 12px; color: var(--text-body);" id="shipDescExpress">Tujuan: Jakarta • Estimasi 1 hari kerja</div>
           </div>
-          <div style="font-weight: 600;">Rp 25.000</div>
+          <div style="font-weight: 600;" id="shipCostExpress">Rp 32.000</div>
         </label>
       </div>
 
@@ -164,24 +167,12 @@
       <div class="cart-summary-card">
         <h3 class="summary-title">Ringkasan Pesanan</h3>
 
-        <div style="margin-bottom: 20px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-            <span>1x Lilin Custom (Sage Green)</span>
-            <span style="font-weight: 600;">Rp 75.000</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-            <span>1x Matcha Breeze (150ml)</span>
-            <span style="font-weight: 600;">Rp 50.000</span>
-          </div>
-          <div style="display: flex; justify-content: space-between;">
-            <span>1x Pure Soy Signature (200ml)</span>
-            <span style="font-weight: 600;">Rp 25.000</span>
-          </div>
+        <div id="checkoutItemsList" style="margin-bottom: 20px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;">
         </div>
 
         <div class="summary-row">
           <span style="color: var(--text-body);">Subtotal Produk</span>
-          <span style="font-weight: 600;">Rp 150.000</span>
+          <span id="checkoutSubtotal" style="font-weight: 600;">Rp 0</span>
         </div>
         <div class="summary-row">
           <span style="color: var(--text-body);">Biaya Pengiriman</span>
@@ -194,7 +185,7 @@
 
         <div class="summary-row total-row">
           <span>Total Pembayaran</span>
-          <span id="checkoutGrandTotal" style="color: var(--color-brown-text); font-size: 20px;">Rp 166.000</span>
+          <span id="checkoutGrandTotal" style="color: var(--color-brown-text); font-size: 20px;">Rp 16.000</span>
         </div>
 
         <a href="checkout-payment.html" id="btnPayOrder" class="btn-primary" style="width: 100%; margin-top: 28px; text-align: center; text-decoration: none;">Bayar Pesanan Sekarang</a>

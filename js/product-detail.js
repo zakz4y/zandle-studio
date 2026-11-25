@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const imgSrc = mainProductImg?.getAttribute("src") || "assets/images/candle-white.png";
 
       try {
+        localStorage.removeItem("zandle_direct_checkout");
         const saved = localStorage.getItem("zandle_cart");
         let cart = saved ? JSON.parse(saved) : [];
         if (!Array.isArray(cart)) cart = [];
@@ -99,4 +100,74 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  const btnDetailBuy = document.querySelector(".btn-detail-buy");
+  if (btnDetailBuy) {
+    btnDetailBuy.addEventListener("click", () => {
+      const title = document.querySelector(".product-detail-title")?.textContent.trim() || "Lilin Aromaterapi";
+      const priceText = document.querySelector(".product-detail-price")?.textContent.trim() || "Rp 45.000";
+      const price = parseInt(priceText.replace(/[^0-9]/g, ""), 10) || 45000;
+      const imgSrc = mainProductImg?.getAttribute("src") || "assets/images/candle-white.png";
+
+      const directItem = {
+        id: Date.now(),
+        title: title,
+        desc: "Natural Soy Candle • Pure Essential Oil",
+        price: price,
+        qty: 1,
+        img: imgSrc,
+        selected: true
+      };
+
+      try {
+        localStorage.setItem("zandle_direct_checkout", JSON.stringify(directItem));
+      } catch (err) {
+        
+      }
+    });
+  }
+
+  const relatedCartBtns = document.querySelectorAll(".related-section .btn-cart-sm");
+  relatedCartBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const card = btn.closest(".product-card");
+      if (!card) return;
+      const title = card.querySelector(".product-title")?.textContent.trim() || "Lilin Aromaterapi";
+      const priceText = card.querySelector(".product-price")?.textContent.trim() || "Rp 45.000";
+      const price = parseInt(priceText.replace(/[^0-9]/g, ""), 10) || 45000;
+      const img = card.querySelector(".product-thumb img")?.getAttribute("src") || "assets/images/candle-white.png";
+      const tags = Array.from(card.querySelectorAll(".tag-pill")).map((t) => t.textContent.trim()).join(" • ");
+
+      try {
+        localStorage.removeItem("zandle_direct_checkout");
+        const saved = localStorage.getItem("zandle_cart");
+        let cart = saved ? JSON.parse(saved) : [];
+        if (!Array.isArray(cart)) cart = [];
+
+        const existing = cart.find((i) => i.title === title);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({
+            id: Date.now(),
+            title: title,
+            desc: tags || "Signature Soy Candle",
+            price: price,
+            qty: 1,
+            img: img,
+            selected: true
+          });
+        }
+
+        localStorage.setItem("zandle_cart", JSON.stringify(cart));
+        if (typeof updateNavCartBadge === "function") {
+          updateNavCartBadge();
+        }
+        window.location.href = "keranjang.html";
+      } catch (err) {
+      }
+    });
+  });
 });

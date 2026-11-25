@@ -1,48 +1,17 @@
 const CART_STORAGE_KEY = "zandle_cart";
 const SHIPPING_STORAGE_KEY = "zandle_shipping";
 
-const DEFAULT_CART = [
-  {
-    id: 1,
-    title: "Lilin Custom — Sage Green",
-    desc: 'Aroma: Lavender Bliss • 200ml • Label: "Untuk Kamu"',
-    price: 75000,
-    qty: 1,
-    img: "assets/images/candle-green.png",
-    selected: true
-  },
-  {
-    id: 2,
-    title: "Matcha Breeze",
-    desc: "Signature Daily Fresh • 150ml",
-    price: 50000,
-    qty: 1,
-    img: "assets/images/candle-green.png",
-    selected: true
-  },
-  {
-    id: 3,
-    title: "Pure Soy Signature",
-    desc: "Natural White • 200ml",
-    price: 25000,
-    qty: 1,
-    img: "assets/images/candle-white.png",
-    selected: true
-  }
-];
-
 function getCartItems() {
   const saved = localStorage.getItem(CART_STORAGE_KEY);
   if (!saved) {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(DEFAULT_CART));
-    return DEFAULT_CART.map((item) => ({ ...item }));
+    return [];
   }
   try {
     const parsed = JSON.parse(saved);
     if (Array.isArray(parsed)) return parsed;
   } catch (e) {
   }
-  return DEFAULT_CART.map((item) => ({ ...item }));
+  return [];
 }
 
 function saveCartItems(items) {
@@ -249,6 +218,13 @@ document.addEventListener("DOMContentLoaded", () => {
       city: shippingCitySelect?.value || "jakarta"
     };
     localStorage.setItem(SHIPPING_STORAGE_KEY, JSON.stringify(checkoutState));
+  }
+
+  const btnGoCheckout = document.getElementById("btnGoCheckout");
+  if (btnGoCheckout) {
+    btnGoCheckout.addEventListener("click", () => {
+      localStorage.removeItem("zandle_direct_checkout");
+    });
   }
 
   if (shippingCitySelect) {
