@@ -40,8 +40,8 @@
           <span id="navUsername">zakz4you</span>
         </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
-          <a href="riwayat.html#profil" class="dropdown-item" id="dropdownProfileLink">Edit Profil & Alamat</a>
-          <a href="riwayat.html#pesanan" class="dropdown-item" id="dropdownOrderLink">Pesanan Saya</a>
+          <a href="dashboard-akun.html#profil" class="dropdown-item" id="dropdownProfileLink">Edit Profil & Alamat</a>
+          <a href="dashboard-akun.html#pesanan" class="dropdown-item" id="dropdownOrderLink">Pesanan Saya</a>
           <div class="dropdown-divider"></div>
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
@@ -283,6 +283,30 @@
       </div>
       <div class="order-modal-footer">
         <button type="button" class="btn-outline" id="orderModalDismiss" style="padding: 8px 20px; font-size: 13px;">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-detail-modal-backdrop" id="cancelConfirmModal">
+    <div class="order-detail-modal-box" style="max-width: 440px;">
+      <div class="order-modal-header" style="border-bottom: none; padding-bottom: 0;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 36px; height: 36px; border-radius: 50%; background: #fee2e2; color: #dc2626; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px;">!</div>
+          <h3 style="font-family: var(--font-serif); font-size: 18px; margin: 0; color: var(--text-dark);">Batalkan Pesanan?</h3>
+        </div>
+        <button type="button" class="order-modal-close" id="cancelModalClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="order-modal-body" style="padding: 16px 24px 20px 24px;">
+        <p style="font-size: 13px; color: var(--text-body); line-height: 1.6; margin-bottom: 8px;">
+          Anda yakin ingin membatalkan pesanan <strong id="cancelTargetOrderCode" style="color: var(--text-dark); font-family: var(--font-mono);">#ZS-1023</strong>?
+        </p>
+        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+          Tindakan ini tidak dapat dibatalkan. Status pesanan akan diperbarui menjadi Dibatalkan.
+        </p>
+      </div>
+      <div class="order-modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; padding: 14px 24px; background: #fafaf9; border-top: 1px solid var(--border-subtle);">
+        <button type="button" class="btn-outline" id="cancelModalDismiss" style="padding: 8px 18px; font-size: 13px;">Kembali</button>
+        <button type="button" class="btn-primary" id="btnConfirmCancelOrder" style="padding: 8px 18px; font-size: 13px; background: #dc2626; border-color: #dc2626; color: #ffffff;">Ya, Batalkan Pesanan</button>
       </div>
     </div>
   </div>

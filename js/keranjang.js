@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryItemCount = document.getElementById("summaryItemCount");
   const subtotalText = document.getElementById("subtotalText");
   const shippingText = document.getElementById("shippingText");
-  const shippingCitySelect = document.getElementById("shippingCitySelect");
+  const cartTargetCityName = document.getElementById("cartTargetCityName");
   const shippingDetailLabel = document.getElementById("shippingDetailLabel");
   const discountRow = document.getElementById("discountRow");
   const discountText = document.getElementById("discountText");
@@ -42,14 +42,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const promoInput = document.getElementById("promoInput");
   const btnApplyPromo = document.getElementById("btnApplyPromo");
   const promoFeedback = document.getElementById("promoFeedback");
+  const btnGoCheckout = document.getElementById("btnGoCheckout");
+  const checkoutNotice = document.getElementById("checkoutNotice");
 
   let appliedDiscount = 0;
   let cartData = getCartItems();
 
+  function getUserCityInfo() {
+    const raw = localStorage.getItem("zandle_user_profile");
+    if (raw) {
+      try {
+        const p = JSON.parse(raw);
+        if (p && typeof p === "object") {
+          return {
+            city: p.city || "jakarta",
+            cityLabel: p.cityLabel || (p.city ? p.city.toUpperCase() : "Jakarta (DKI Jakarta)"),
+            cost: typeof p.cost === "number" ? p.cost : 22000
+          };
+        }
+      } catch (e) {
+      }
+    }
+    return {
+      city: "jakarta",
+      cityLabel: "Jakarta (DKI Jakarta)",
+      cost: 22000
+    };
+  }
+
+  const userCity = getUserCityInfo();
+  if (cartTargetCityName) {
+    cartTargetCityName.textContent = userCity.cityLabel;
+  }
+
   function calculateShipping(itemCount) {
     if (itemCount === 0) return 0;
-    const selectedOption = shippingCitySelect?.selectedOptions[0];
-    const baseCost = parseInt(selectedOption?.dataset?.cost || "22000", 10);
+    const baseCost = userCity.cost;
     const extraPerItem = 3000;
     return baseCost + Math.max(0, itemCount - 1) * extraPerItem;
   }
@@ -191,10 +219,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (subtotalText) subtotalText.textContent = formatRupiah(subtotal);
     if (shippingText) shippingText.textContent = formatRupiah(shipping);
 
-    if (shippingDetailLabel && shippingCitySelect) {
-      const opt = shippingCitySelect.selectedOptions[0];
-      const cityName = opt?.text || "Jakarta";
-      shippingDetailLabel.textContent = `Estimasi (Malang ke ${cityName} • ${totalSelectedQty} item)`;
+    if (shippingDetailLabel) {
+      shippingDetailLabel.textContent = `Estimasi (Malang ke ${userCity.cityLabel} • ${totalSelectedQty} item)`;
     }
 
     if (discountRow && discountText) {
@@ -208,6 +234,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (grandTotalText) grandTotalText.textContent = formatRupiah(grandTotal);
 
+    if (btnGoCheckout) {
+      if (selectedItems.length === 0) {
+        btnGoCheckout.style.opacity = "0.5";
+        btnGoCheckout.style.cursor = "not-allowed";
+        btnGoCheckout.setAttribute("aria-disabled", "true");
+      } else {
+        btnGoCheckout.style.opacity = "1";
+        btnGoCheckout.style.cursor = "pointer";
+        btnGoCheckout.removeAttribute("aria-disabled");
+        if (checkoutNotice) checkoutNotice.style.display = "none";
+      }
+    }
+
     saveCartItems(cartData);
 
     const checkoutState = {
@@ -215,21 +254,23 @@ document.addEventListener("DOMContentLoaded", () => {
       shipping,
       grandTotal,
       selectedQty: totalSelectedQty,
-      city: shippingCitySelect?.value || "jakarta"
+      city: userCity.city,
+      cityLabel: userCity.cityLabel
     };
     localStorage.setItem(SHIPPING_STORAGE_KEY, JSON.stringify(checkoutState));
   }
 
-  const btnGoCheckout = document.getElementById("btnGoCheckout");
   if (btnGoCheckout) {
-    btnGoCheckout.addEventListener("click", () => {
+    btnGoCheckout.addEventListener("click", (e) => {
+      const selectedItems = cartData.filter((item) => item.selected !== false);
+      if (selectedItems.length === 0) {
+        e.preventDefault();
+        if (checkoutNotice) {
+          checkoutNotice.style.display = "block";
+        }
+        return false;
+      }
       localStorage.removeItem("zandle_direct_checkout");
-    });
-  }
-
-  if (shippingCitySelect) {
-    shippingCitySelect.addEventListener("change", () => {
-      updateSummary();
     });
   }
 

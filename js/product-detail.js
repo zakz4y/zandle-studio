@@ -7,17 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const images = [];
   if (mainProductImg) {
-    const currentSrc = mainProductImg.getAttribute("src");
+    const currentSrc = mainProductImg.getAttribute("src") || "";
     images.push(currentSrc);
-    
+
     if (currentSrc.includes("white")) {
-      images.push("assets/images/candle-putih1.jpeg", "assets/images/candle-putih2.jpeg");
+      images.push("assets/images/katalog-candle1.png", "assets/images/katalog-candle4.png");
     } else if (currentSrc.includes("green")) {
-      images.push("assets/images/candle-kuning1.jpeg", "assets/images/candle-kuning2.jpeg");
+      images.push("assets/images/katalog-candle2.png", "assets/images/katalog-candle4.png");
     } else if (currentSrc.includes("yellow")) {
-      images.push("assets/images/candle-ungu1.jpeg", "assets/images/candle-ungu2.jpeg");
+      images.push("assets/images/katalog-candle3.png", "assets/images/katalog-candle5.png");
     } else {
-      images.push(currentSrc, currentSrc);
+      images.push("assets/images/katalog-candle4.png", "assets/images/katalog-candle5.png");
     }
   }
 

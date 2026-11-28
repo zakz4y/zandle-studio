@@ -78,6 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderModalClose = document.getElementById("orderModalClose");
   const orderModalDismiss = document.getElementById("orderModalDismiss");
 
+  const cancelConfirmModal = document.getElementById("cancelConfirmModal");
+  const cancelTargetOrderCode = document.getElementById("cancelTargetOrderCode");
+  const cancelModalClose = document.getElementById("cancelModalClose");
+  const cancelModalDismiss = document.getElementById("cancelModalDismiss");
+  const btnConfirmCancelOrder = document.getElementById("btnConfirmCancelOrder");
+
+  let pendingCancelOrderCode = null;
+
   function openOrderModal(title, htmlContent) {
     if (!orderModal) return;
     if (modalOrderTitle) modalOrderTitle.textContent = title;
@@ -90,6 +98,23 @@ document.addEventListener("DOMContentLoaded", () => {
     orderModal.classList.remove("open");
   }
 
+  function openCancelModal(code) {
+    pendingCancelOrderCode = code;
+    if (cancelTargetOrderCode) {
+      cancelTargetOrderCode.textContent = `#${code}`;
+    }
+    if (cancelConfirmModal) {
+      cancelConfirmModal.classList.add("open");
+    }
+  }
+
+  function closeCancelModal() {
+    pendingCancelOrderCode = null;
+    if (cancelConfirmModal) {
+      cancelConfirmModal.classList.remove("open");
+    }
+  }
+
   if (orderModalClose) orderModalClose.addEventListener("click", closeOrderModal);
   if (orderModalDismiss) orderModalDismiss.addEventListener("click", closeOrderModal);
   if (orderModal) {
@@ -97,9 +122,37 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target === orderModal) closeOrderModal();
     });
   }
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && orderModal && orderModal.classList.contains("open")) {
+
+  if (cancelModalClose) cancelModalClose.addEventListener("click", closeCancelModal);
+  if (cancelModalDismiss) cancelModalDismiss.addEventListener("click", closeCancelModal);
+  if (cancelConfirmModal) {
+    cancelConfirmModal.addEventListener("click", (e) => {
+      if (e.target === cancelConfirmModal) closeCancelModal();
+    });
+  }
+
+  if (btnConfirmCancelOrder) {
+    btnConfirmCancelOrder.addEventListener("click", () => {
+      if (!pendingCancelOrderCode) return;
+      const order = userOrders.find((o) => o.code === pendingCancelOrderCode);
+      if (order) {
+        order.status = "dibatalkan";
+        order.statusLabel = "Dibatalkan";
+        localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(userOrders));
+      }
+      closeCancelModal();
       closeOrderModal();
+      renderOrders();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      if (cancelConfirmModal && cancelConfirmModal.classList.contains("open")) {
+        closeCancelModal();
+      } else if (orderModal && orderModal.classList.contains("open")) {
+        closeOrderModal();
+      }
     }
   });
 
@@ -141,8 +194,15 @@ document.addEventListener("DOMContentLoaded", () => {
         actionButtonHtml = `<button type="button" class="btn-outline action-btn" data-action="resi" data-code="${order.code}" style="padding: 6px 14px; font-size: 12px;">Lacak Resi</button>`;
       } else if (order.status === "selesai") {
         actionButtonHtml = `<a href="kustomisasi.html" class="btn-outline" style="padding: 6px 14px; font-size: 12px; text-decoration: none;">Beli Lagi</a>`;
-      } else {
+      } else if (order.status === "dibatalkan") {
         actionButtonHtml = `<button type="button" class="btn-outline action-btn" data-action="detail" data-code="${order.code}" style="padding: 6px 14px; font-size: 12px;">Detail</button>`;
+      } else {
+        actionButtonHtml = `
+          <div style="display: flex; gap: 6px; justify-content: flex-end; align-items: center;">
+            <button type="button" class="btn-outline action-btn" data-action="detail" data-code="${order.code}" style="padding: 6px 12px; font-size: 12px;">Detail</button>
+            <button type="button" class="btn-outline action-btn" data-action="cancel" data-code="${order.code}" style="padding: 6px 10px; font-size: 12px; color: #dc2626; border-color: #fca5a5;">Batalkan</button>
+          </div>
+        `;
       }
 
       tr.innerHTML = `
@@ -171,6 +231,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const action = btn.dataset.action;
         const order = userOrders.find((o) => o.code === code);
         if (!order) return;
+
+        if (action === "cancel") {
+          handleCancelOrder(code);
+          return;
+        }
 
         if (action === "resi") {
           const resiHtml = `
@@ -251,11 +316,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span style="color: var(--color-brown-text);">${formatRupiah(order.total || 0)}</span>
               </div>
             </div>
+            ${order.status === "dibuat" ? `
+              <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--text-muted);">Pesanan belum diproses kurir</span>
+                <button type="button" class="btn-outline modal-cancel-btn" data-code="${order.code}" style="color: #dc2626; border-color: #fca5a5; font-size: 12px; padding: 6px 14px; cursor: pointer;">Batalkan Pesanan Ini</button>
+              </div>
+            ` : ""}
           `;
           openOrderModal(`Rincian Pesanan #${order.code}`, detailHtml);
+
+          const modalCancelBtn = modalOrderBody?.querySelector(".modal-cancel-btn");
+          if (modalCancelBtn) {
+            modalCancelBtn.addEventListener("click", () => {
+              handleCancelOrder(order.code);
+            });
+          }
         }
       });
     });
+  }
+
+  function handleCancelOrder(code) {
+    openCancelModal(code);
   }
 
   renderOrders();

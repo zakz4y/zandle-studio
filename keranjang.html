@@ -40,8 +40,8 @@
           <span>zakz4you</span>
         </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
-          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
-          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <a href="dashboard-akun.html" class="dropdown-item">Edit Profil</a>
+          <a href="dashboard-akun.html" class="dropdown-item">Pesanan Saya</a>
           <div class="dropdown-divider"></div>
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
@@ -80,20 +80,17 @@
           <span style="color: var(--text-body);">Subtotal (<span id="summaryItemCount">0</span> Barang Terpilih)</span>
           <span id="subtotalText" style="font-weight: 600;">Rp 0</span>
         </div>
-        <div class="summary-row" style="flex-direction: column; align-items: stretch; gap: 6px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="color: var(--text-body);">Tujuan Pengiriman</span>
-            <select id="shippingCitySelect" style="padding: 4px 8px; border: 1px solid var(--border-main); border-radius: 6px; background: #ffffff; font-size: 12px; color: var(--text-dark); cursor: pointer;">
-              <option value="surabaya" data-km="95" data-cost="12000">Surabaya (95 km)</option>
-              <option value="jakarta" data-km="850" data-cost="22000" selected>Jakarta (850 km)</option>
-              <option value="bandung" data-km="720" data-cost="20000">Bandung (720 km)</option>
-              <option value="yogyakarta" data-km="390" data-cost="15000">Yogyakarta (390 km)</option>
-              <option value="denpasar" data-km="430" data-cost="18000">Denpasar (430 km)</option>
-              <option value="medan" data-km="2450" data-cost="36000">Medan (2.450 km)</option>
-            </select>
+        <div class="summary-row" style="flex-direction: column; align-items: stretch; gap: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+              <span style="color: var(--text-body); font-size: 13px; display: block;">Tujuan Pengiriman:</span>
+              <strong id="cartTargetCityName" style="color: var(--text-dark); font-size: 13px;">Jakarta (DKI Jakarta)</strong>
+              <div style="font-size: 11px; color: var(--text-muted);">Sesuai profil akun & alamat tersimpan</div>
+            </div>
+            <a href="dashboard-akun.html#profil" style="font-size: 12px; color: var(--color-brown-text); text-decoration: underline; font-weight: 600;">Ubah Alamat</a>
           </div>
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="color: var(--text-body); font-size: 13px;" id="shippingDetailLabel">Estimasi Pengiriman (Dari Malang • 3 item)</span>
+            <span style="color: var(--text-body); font-size: 13px;" id="shippingDetailLabel">Estimasi Pengiriman (Dari Malang)</span>
             <span id="shippingText" style="font-weight: 600;">Rp 22.000</span>
           </div>
         </div>
@@ -114,6 +111,7 @@
         </div>
 
         <a href="checkout.html" id="btnGoCheckout" class="btn-primary" style="width: 100%; margin-top: 24px; text-align: center;">Lanjut ke Checkout →</a>
+        <div id="checkoutNotice" style="font-size: 12px; color: #dc2626; text-align: center; margin-top: 8px; display: none;">Pilih minimal 1 barang di keranjang untuk lanjut ke checkout.</div>
       </div>
     </div>
   </div>

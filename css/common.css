@@ -17,7 +17,7 @@
   --border-main: #d6d3d1;
   --border-subtle: #e7e5e4;
   
-  --font-serif: system-ui, -apple-system, BlinkMacSystemFont, "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-serif: "Didot", "Bodoni MT", "Bodoni 72", "Cinzel", "Baskerville", "Baskerville Old Face", "Palatino Linotype", "Palatino", "Georgia", "Times New Roman", serif;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "JetBrains Mono", "Liberation Mono", "Courier New", monospace;
 }
@@ -905,8 +905,6 @@ input, button, select, textarea {
 }
 
 .profile-toggle-check:checked ~ .user-dropdown-menu,
-.user-menu-wrapper:hover .user-dropdown-menu,
-.user-menu-wrapper:focus-within .user-dropdown-menu,
 .user-dropdown-menu.show {
   display: block;
 }

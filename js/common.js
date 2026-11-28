@@ -52,6 +52,24 @@ const ZANDLE_PRODUCTS = [
     url: "product03.html",
     img: "assets/images/katalog-candle3.png",
     desc: "Aroma kayu manis lembut menentramkan"
+  },
+  {
+    name: "Amber Honey Glow",
+    category: "Citrus & Fresh",
+    price: 80000,
+    priceFormatted: "Rp 80.000",
+    url: "product02.html",
+    img: "assets/images/katalog-candle4.png",
+    desc: "Hangat manis madu dan aroma sitrun"
+  },
+  {
+    name: "Midnight Bloom",
+    category: "Floral",
+    price: 85000,
+    priceFormatted: "Rp 85.000",
+    url: "product01.html",
+    img: "assets/images/katalog-candle5.png",
+    desc: "Bunga malam eksotis penuh keanggunan"
   }
 ];
 

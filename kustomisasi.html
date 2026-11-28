@@ -40,8 +40,8 @@
           <span>zakz4you</span>
         </label>
         <div class="user-dropdown-menu" id="profileDropdownMenu">
-          <a href="riwayat.html" class="dropdown-item">Edit Profil</a>
-          <a href="riwayat.html" class="dropdown-item">Pesanan Saya</a>
+          <a href="dashboard-akun.html" class="dropdown-item">Edit Profil</a>
+          <a href="dashboard-akun.html" class="dropdown-item">Pesanan Saya</a>
           <div class="dropdown-divider"></div>
           <a href="login.html" class="dropdown-item text-danger">Keluar</a>
         </div>
@@ -56,16 +56,14 @@
     <div class="custom-preview-col">
       <h2 class="preview-title">Studio Kustomisasi</h2>
       <div class="preview-box">
-        <div class="candle-mockup-wrap">
-          <div class="candle-mockup-flame"></div>
-          <div class="candle-mockup-body" id="candlePreviewBody" style="background: #a3b18a; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; transition: background 0.3s ease;">
-            <div style="background: rgba(255,255,255,0.92); padding: 12px 24px; border-radius: 6px; text-align: center; border: 1px solid rgba(0,0,0,0.1); width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);">
-              <span style="display: block; font-size: 9px; letter-spacing: 1px; color: #78716c;">ZANDLE STUDIO</span>
-              <strong id="candlePreviewLabel" style="display: block; font-family: var(--font-serif); font-size: 14px; margin-top: 4px; color: #1a1a1a; word-break: break-word;">Untuk Kamu</strong>
-            </div>
-          </div>
+        <div class="candle-preview-image-wrap" style="position: relative; width: 220px; height: 260px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+          <img id="candlePreviewImg" src="assets/images/candle-green.png" alt="Pratinjau Lilin" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 12px 24px rgba(0,0,0,0.12)); transition: opacity 0.25s ease, transform 0.25s ease;">
         </div>
-        <p id="candlePreviewMeta" style="margin-top: 24px; font-size: 12px; color: var(--text-body); text-align: center;">Pratinjau Lilin 200ml • Sage Green • Lavender Bliss</p>
+        <div class="candle-personal-label-box" id="candlePreviewLabelBox" style="margin-top: 18px; padding: 10px 20px; background: #ffffff; border: 1.5px solid var(--border-main); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); text-align: center; max-width: 260px; margin-left: auto; margin-right: auto;">
+          <span style="display: block; font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">ZANDLE STUDIO • PERSONAL LABEL</span>
+          <strong id="candlePreviewLabel" style="display: block; font-family: var(--font-serif); font-size: 16px; margin-top: 4px; color: var(--color-primary); word-break: break-word;">Untuk Kamu</strong>
+        </div>
+        <p id="candlePreviewMeta" style="margin-top: 14px; font-size: 12px; color: var(--text-body); text-align: center;">Pratinjau Lilin 200ml • Sage Green • Lavender Bliss</p>
       </div>
     </div>
 
@@ -129,19 +127,19 @@
         </div>
         <div class="wax-color-dots" id="colorOptions">
           <input type="radio" name="color" id="color-cream" class="custom-radio">
-          <label for="color-cream" class="wax-dot" style="background: #f4ece1;" title="Cream Natural"></label>
+          <label for="color-cream" class="wax-dot" style="background: #f4ece1;" title="Cream Natural" data-img="assets/images/candle-white.png"></label>
 
           <input type="radio" name="color" id="color-sage" class="custom-radio" checked>
-          <label for="color-sage" class="wax-dot" style="background: #a3b18a;" title="Sage Green"></label>
+          <label for="color-sage" class="wax-dot active" style="background: #a3b18a;" title="Sage Green" data-img="assets/images/candle-green.png"></label>
 
           <input type="radio" name="color" id="color-ochre" class="custom-radio">
-          <label for="color-ochre" class="wax-dot" style="background: #e4c278;" title="Ochre Yellow"></label>
+          <label for="color-ochre" class="wax-dot" style="background: #e4c278;" title="Ochre Yellow" data-img="assets/images/candle-yellow.png"></label>
 
           <input type="radio" name="color" id="color-terracotta" class="custom-radio">
-          <label for="color-terracotta" class="wax-dot" style="background: #e07a5f;" title="Terracotta Warm"></label>
+          <label for="color-terracotta" class="wax-dot" style="background: #e07a5f;" title="Terracotta Warm" data-img="assets/images/katalog-candle4.png"></label>
 
           <input type="radio" name="color" id="color-indigo" class="custom-radio">
-          <label for="color-indigo" class="wax-dot" style="background: #3d405b;" title="Deep Indigo"></label>
+          <label for="color-indigo" class="wax-dot" style="background: #3d405b;" title="Deep Indigo" data-img="assets/images/katalog-candle5.png"></label>
         </div>
       </div>
 

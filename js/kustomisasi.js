@@ -2,6 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const aromaOptions = document.querySelectorAll(".aroma-option");
   const valAromaText = document.getElementById("valAroma");
+  const candlePreviewMeta = document.getElementById("candlePreviewMeta");
+
+  function updateMeta() {
+    if (!candlePreviewMeta) return;
+    const aroma = valAromaText?.textContent.trim() || "Lavender Bliss";
+    const color = valColorText?.textContent.trim() || "Sage Green";
+    const size = valSizeText?.textContent.trim().split(" ")[0] || "200ml";
+    candlePreviewMeta.textContent = `Pratinjau Lilin ${size} • ${color} • ${aroma}`;
+  }
 
   aromaOptions.forEach((option) => {
     option.addEventListener("click", () => {
@@ -9,26 +18,46 @@ document.addEventListener("DOMContentLoaded", () => {
       option.classList.add("active");
       const name = option.querySelector(".aroma-name");
       if (name && valAromaText) valAromaText.textContent = name.textContent;
+      updateMeta();
     });
   });
 
-  
   const waxDots = document.querySelectorAll(".wax-dot");
   const valColorText = document.getElementById("valColor");
-  const candlePreview = document.getElementById("candlePreviewBody");
+  const candlePreviewImg = document.getElementById("candlePreviewImg");
+  let selectedCandleImg = "assets/images/candle-green.png";
+
+  const colorImgMap = {
+    "sage green": "assets/images/candle-green.png",
+    "cream natural": "assets/images/candle-white.png",
+    "ochre yellow": "assets/images/candle-yellow.png",
+    "terracotta warm": "assets/images/katalog-candle4.png",
+    "deep indigo": "assets/images/katalog-candle5.png"
+  };
 
   waxDots.forEach((dot) => {
     dot.addEventListener("click", () => {
       waxDots.forEach((el) => el.classList.remove("active"));
       dot.classList.add("active");
-      const colorName = dot.getAttribute("title") || dot.dataset.name;
-      const colorHex = dot.style.backgroundColor || dot.dataset.hex;
+      const colorName = dot.getAttribute("title") || dot.dataset.name || "";
       if (colorName && valColorText) valColorText.textContent = colorName;
-      if (colorHex && candlePreview) candlePreview.style.backgroundColor = colorHex;
+
+      const matchedImg = dot.dataset.img || colorImgMap[colorName.toLowerCase()] || "assets/images/candle-green.png";
+      selectedCandleImg = matchedImg;
+
+      if (candlePreviewImg) {
+        candlePreviewImg.style.opacity = "0.4";
+        candlePreviewImg.style.transform = "scale(0.96)";
+        setTimeout(() => {
+          candlePreviewImg.src = matchedImg;
+          candlePreviewImg.style.opacity = "1";
+          candlePreviewImg.style.transform = "scale(1)";
+        }, 150);
+      }
+      updateMeta();
     });
   });
 
-  
   const sizeCards = document.querySelectorAll(".size-select-card");
   const valSizeText = document.getElementById("valSize");
   const totalPriceText = document.getElementById("totalPriceText");
@@ -46,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (card.textContent.includes("200ml")) basePrice = 75000;
 
       updateTotalCustomPrice();
+      updateMeta();
     });
   });
 
@@ -111,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
           desc: `Aroma: ${aroma} • ${size} • Label: "${label}"`,
           price: basePrice,
           qty: qty,
-          img: "assets/images/candle-green.png",
+          img: selectedCandleImg,
           selected: true
         });
 
