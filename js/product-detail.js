@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const galleryDots = document.querySelectorAll(".gallery-dot");
   const mainProductImg = document.getElementById("mainProductImg");

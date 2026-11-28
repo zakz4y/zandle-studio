@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/white-logo.svg">
+  <link rel="stylesheet" href="css/admin-common.css">
+  <link rel="stylesheet" href="css/dashboard-admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div>
+        <div class="admin-brand">
+          <div class="admin-brand-logo">
+            <img src="../assets/icons/white-logo.svg" alt="Zandle Studio Logo">
+          </div>
+          <span class="admin-brand-title">Zandle Studio</span>
+        </div>
+        <nav class="admin-nav">
+          <a href="dashboard-admin.html" class="admin-nav-item active">
+            <img src="../assets/icons/admin-dashboard.svg" alt="" aria-hidden="true">
+            <span>Dashboard</span>
+          </a>
+          <a href="pesanan-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-orders.svg" alt="" aria-hidden="true">
+            <span>Pesanan</span>
+          </a>
+          <a href="product-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-products.svg" alt="" aria-hidden="true">
+            <span>Produk</span>
+          </a>
+          <a href="laporan-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-reports.svg" alt="" aria-hidden="true">
+            <span>Laporan</span>
+          </a>
+          <a href="profile-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-profile.svg" alt="" aria-hidden="true">
+            <span>Profil</span>
+          </a>
+        </nav>
+      </div>
+      <div class="admin-sidebar-bottom">
+        <a href="#">
+          <img src="../assets/icons/admin-settings.svg" alt="" aria-hidden="true">
+          <span>Pengaturan Sistem</span>
+        </a>
+        <a href="login-admin.html">
+          <img src="../assets/icons/admin-logout.svg" alt="" aria-hidden="true">
+          <span>Keluar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1 class="admin-header-title">Dashboard</h1>
+        <div class="admin-header-actions">
+          <div class="admin-search-wrapper">
+            <input type="text" class="admin-search-input" placeholder="Cari pesanan, produk...">
+          </div>
+          <a href="profile-admin.html" class="admin-avatar-btn" title="Profil Admin">
+            <img src="../assets/icons/admin-avatar.svg" alt="Admin Avatar">
+          </a>
+        </div>
+      </header>
+
+      <section class="admin-content">
+        <div class="dashboard-kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-label">Total Penjualan</span>
+            <div class="kpi-value">Rp 12.450.000</div>
+            <div class="kpi-trend">↑ 12.5% dari bulan lalu</div>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Pesanan</span>
+            <div class="kpi-value">128</div>
+            <div class="kpi-trend">↑ 8.2% dari bulan lalu</div>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Produk</span>
+            <div class="kpi-value">24</div>
+            <div class="kpi-subtext">6 custom · 18 signature</div>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Pelanggan Baru</span>
+            <div class="kpi-value">42</div>
+            <div class="kpi-trend">↑ 4.1% dari bulan lalu</div>
+          </div>
+        </div>
+
+        <div class="dashboard-main-grid">
+          <div class="admin-card chart-card">
+            <div class="chart-card-header">
+              <h2 class="chart-card-title">Penjualan 30 Hari</h2>
+              <span class="chart-card-date">Jan 2026</span>
+            </div>
+            <div class="sales-bar-chart">
+              <div class="bar-col" style="height: 96px;"></div>
+              <div class="bar-col" style="height: 128px;"></div>
+              <div class="bar-col" style="height: 80px;"></div>
+              <div class="bar-col highlight-mid" style="height: 160px;"></div>
+              <div class="bar-col highlight-mid" style="height: 144px;"></div>
+              <div class="bar-col highlight-peak" style="height: 208px;"></div>
+              <div class="bar-col highlight-mid" style="height: 176px;"></div>
+              <div class="bar-col" style="height: 112px;"></div>
+              <div class="bar-col highlight-mid" style="height: 192px;"></div>
+              <div class="bar-col highlight-peak" style="height: 224px;"></div>
+              <div class="bar-col highlight-mid" style="height: 160px;"></div>
+              <div class="bar-col" style="height: 128px;"></div>
+            </div>
+          </div>
+
+          <div class="admin-card recent-orders-card">
+            <h2 class="chart-card-title">Pesanan Terbaru</h2>
+            <div class="recent-orders-list">
+              <div class="recent-order-row">
+                <span class="recent-order-id">#1023 · Arna W.</span>
+                <span class="recent-order-amount">Rp 120.000</span>
+              </div>
+              <div class="recent-order-row">
+                <span class="recent-order-id">#1022 · James P.</span>
+                <span class="recent-order-amount">Rp 340.000</span>
+              </div>
+              <div class="recent-order-row">
+                <span class="recent-order-id">#1021 · Sarah C.</span>
+                <span class="recent-order-amount">Rp 95.000</span>
+              </div>
+              <div class="recent-order-row">
+                <span class="recent-order-id">#1020 · Michael T.</span>
+                <span class="recent-order-amount">Rp 210.000</span>
+              </div>
+              <div class="recent-order-row">
+                <span class="recent-order-id">#1019 · Lisa A.</span>
+                <span class="recent-order-amount">Rp 150.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/admin-common.js"></script>
+  <script src="js/dashboard-admin.js"></script>
+</body>
+</html>

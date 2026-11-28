@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const categoryRadios = document.querySelectorAll('input[name="kat"]');
   const sizeRadios = document.querySelectorAll('input[name="f-size"]');

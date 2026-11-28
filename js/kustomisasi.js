@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   
   const aromaOptions = document.querySelectorAll(".aroma-option");

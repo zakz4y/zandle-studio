@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
 :root {
   --bg-page: #fdfbf7;
   --bg-dark: #1a1a1a;
@@ -19,9 +17,9 @@
   --border-main: #d6d3d1;
   --border-subtle: #e7e5e4;
   
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: system-ui, -apple-system, BlinkMacSystemFont, "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "JetBrains Mono", "Liberation Mono", "Courier New", monospace;
 }
 
 * {
@@ -1067,6 +1065,9 @@ input, button, select, textarea {
   transform: translateY(0);
 }
 
+.btn-primary,
+.btn-outline,
+.btn-secondary,
 .btn-icon,
 .btn-cart-sm,
 .btn-detail-cart,
@@ -1080,22 +1081,35 @@ input, button, select, textarea {
 .step-btn,
 .size-btn,
 .action-btn,
-.va-copy-btn {
+.va-copy-btn,
+.page-btn {
   transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, background-color 0.2s ease;
 }
 
+.btn-primary:hover,
+.btn-outline:hover,
+.btn-secondary:hover,
 .btn-icon:hover,
 .btn-cart-sm:hover,
+.btn-detail-cart:hover,
+.btn-detail-buy:hover,
 .btn-auth-submit:hover,
 .btn-social:hover,
 .newsletter-btn:hover,
 .action-btn:hover,
-.va-copy-btn:hover {
+.va-copy-btn:hover,
+.page-btn:hover:not(:disabled) {
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
+.btn-primary:active,
+.btn-outline:active,
+.btn-secondary:active,
 .btn-icon:active,
 .btn-cart-sm:active,
+.btn-detail-cart:active,
+.btn-detail-buy:active,
 .btn-auth-submit:active,
 .btn-social:active,
 .newsletter-btn:active,
@@ -1103,29 +1117,77 @@ input, button, select, textarea {
 .step-btn:active,
 .size-btn:active,
 .action-btn:active,
-.va-copy-btn:active {
+.va-copy-btn:active,
+.page-btn:active {
   transform: scale(0.96);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn-primary svg,
+.btn-primary img,
 .btn-outline svg,
+.btn-outline img,
+.btn-secondary svg,
+.btn-secondary img,
 .btn-social svg,
-.newsletter-btn,
-.nav-link svg,
+.btn-social img,
+.action-link svg,
+.action-link img,
+.cart-summary-card a svg,
 .account-menu a svg,
 .account-menu button svg,
-.cart-summary-card a svg {
+.newsletter-btn svg,
+.back-to-store svg {
+  display: inline-block;
   transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .btn-primary:hover svg,
+.btn-primary:hover img,
 .btn-outline:hover svg,
+.btn-outline:hover img,
+.btn-secondary:hover svg,
+.btn-secondary:hover img,
 .btn-social:hover svg,
-.newsletter-btn:hover,
+.btn-social:hover img,
+.action-link:hover svg,
+.action-link:hover img,
+.cart-summary-card a:hover svg,
 .account-menu a:hover svg,
 .account-menu button:hover svg,
-.cart-summary-card a:hover svg {
+.newsletter-btn:hover svg,
+.back-to-store:hover svg {
   transform: translateX(4px);
+}
+
+.slide-underline,
+.footer-links a,
+.action-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-underline::after,
+.footer-links a::after,
+.action-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-underline:hover::after,
+.footer-links a:hover::after,
+.action-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .product-card,
@@ -1146,9 +1208,11 @@ input, button, select, textarea {
 .katalog-card:hover,
 .feature-box:hover,
 .review-card:hover,
-.value-card:hover {
+.value-card:hover,
+.about-photo-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1162,5 +1226,8 @@ input, button, select, textarea {
   .scroll-reveal {
     opacity: 1 !important;
     transform: none !important;
+  }
+  .page-enter-reveal {
+    animation: none !important;
   }
 }

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produk Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/white-logo.svg">
+  <link rel="stylesheet" href="css/admin-common.css">
+  <link rel="stylesheet" href="css/product-admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div>
+        <div class="admin-brand">
+          <div class="admin-brand-logo">
+            <img src="../assets/icons/white-logo.svg" alt="Zandle Studio Logo">
+          </div>
+          <span class="admin-brand-title">Zandle Studio</span>
+        </div>
+        <nav class="admin-nav">
+          <a href="dashboard-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-dashboard.svg" alt="" aria-hidden="true">
+            <span>Dashboard</span>
+          </a>
+          <a href="pesanan-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-orders.svg" alt="" aria-hidden="true">
+            <span>Pesanan</span>
+          </a>
+          <a href="product-admin.html" class="admin-nav-item active">
+            <img src="../assets/icons/admin-products.svg" alt="" aria-hidden="true">
+            <span>Produk</span>
+          </a>
+          <a href="laporan-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-reports.svg" alt="" aria-hidden="true">
+            <span>Laporan</span>
+          </a>
+          <a href="profile-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-profile.svg" alt="" aria-hidden="true">
+            <span>Profil</span>
+          </a>
+        </nav>
+      </div>
+      <div class="admin-sidebar-bottom">
+        <a href="#">
+          <img src="../assets/icons/admin-settings.svg" alt="" aria-hidden="true">
+          <span>Pengaturan Sistem</span>
+        </a>
+        <a href="login-admin.html">
+          <img src="../assets/icons/admin-logout.svg" alt="" aria-hidden="true">
+          <span>Keluar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1 class="admin-header-title">Produk</h1>
+        <div class="admin-header-actions">
+          <div class="admin-search-wrapper">
+            <input type="text" class="admin-search-input" placeholder="Cari produk...">
+          </div>
+          <a href="profile-admin.html" class="admin-avatar-btn" title="Profil Admin">
+            <img src="../assets/icons/admin-avatar.svg" alt="Admin Avatar">
+          </a>
+        </div>
+      </header>
+
+      <section class="admin-content">
+        <div class="product-admin-toolbar">
+          <div class="product-stats">
+            Menampilkan <strong>8</strong> dari <strong>24</strong> total produk
+          </div>
+          <button type="button" class="btn-add-product" id="addProductBtn">
+            <span>+</span> Tambah Produk
+          </button>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/katalog-candle1.png" alt="Calm Lavender">
+              <span class="product-badge-stock">24 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Calm Lavender</h2>
+                <p class="product-card-meta">Rp 45.000 · Signature</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/katalog-candle2.png" alt="Citrus Garden">
+              <span class="product-badge-stock">30 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Citrus Garden</h2>
+                <p class="product-card-meta">Rp 75.000 · Signature</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/katalog-candle3.png" alt="Warm Vanilla Coffee">
+              <span class="product-badge-stock product-badge-low">7 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Warm Vanilla Coffee</h2>
+                <p class="product-card-meta">Rp 120.000 · Limited Edition</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/candle-ungu1.jpeg" alt="Sandalwood Serenity">
+              <span class="product-badge-stock">18 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Sandalwood Serenity</h2>
+                <p class="product-card-meta">Rp 55.000 · Signature</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/candle-kuning1.jpeg" alt="Morning Breeze">
+              <span class="product-badge-stock">12 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Morning Breeze</h2>
+                <p class="product-card-meta">Rp 45.000 · Custom Base</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/candle-putih1.jpeg" alt="Rose Petal Dew">
+              <span class="product-badge-stock product-badge-low">9 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Rose Petal Dew</h2>
+                <p class="product-card-meta">Rp 50.000 · Signature</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/candle-birutua1.jpeg" alt="Spice & Amber">
+              <span class="product-badge-stock">22 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Spice &amp; Amber</h2>
+                <p class="product-card-meta">Rp 75.000 · Signature</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card-media">
+              <img src="../assets/images/candle-green.png" alt="Eucalyptus Rain">
+              <span class="product-badge-stock">15 stok</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h2 class="product-card-title">Eucalyptus Rain</h2>
+                <p class="product-card-meta">Rp 65.000 · Limited Edition</p>
+              </div>
+              <div class="product-card-actions">
+                <button type="button" class="product-action-btn product-btn-edit">Edit</button>
+                <button type="button" class="product-action-btn product-btn-delete">Hapus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-pagination">
+          <button type="button" class="admin-page-btn" aria-label="Halaman Sebelumnya">‹</button>
+          <button type="button" class="admin-page-btn active">1</button>
+          <button type="button" class="admin-page-btn">2</button>
+          <button type="button" class="admin-page-btn">3</button>
+          <button type="button" class="admin-page-btn" aria-label="Halaman Berikutnya">›</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="admin-modal-overlay" id="productModal">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modalTitle">Tambah Produk Baru</h3>
+        <button type="button" style="font-size: 20px; color: var(--admin-text-muted);" id="cancelProductBtn">✕</button>
+      </div>
+      <form id="productForm">
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="productNameInput">Nama Produk</label>
+          <input type="text" id="productNameInput" class="admin-form-input" required placeholder="Contoh: Calm Lavender">
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="productCategorySelect">Kategori</label>
+          <select id="productCategorySelect" class="admin-form-select">
+            <option value="signature">Signature</option>
+            <option value="custom">Custom Scent</option>
+            <option value="limited">Limited Edition</option>
+          </select>
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="productPriceInput">Harga (Rp)</label>
+          <input type="number" id="productPriceInput" class="admin-form-input" required placeholder="50000">
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="productStockInput">Jumlah Stok</label>
+          <input type="number" id="productStockInput" class="admin-form-input" required placeholder="20">
+        </div>
+        <div class="admin-modal-actions">
+          <button type="button" class="btn-secondary" onclick="document.getElementById('productModal').classList.remove('active')">Batal</button>
+          <button type="submit" class="btn-primary">Simpan Produk</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin-common.js"></script>
+  <script src="js/product-admin.js"></script>
+</body>
+</html>

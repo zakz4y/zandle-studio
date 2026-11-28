@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   
   const newsletterForm = document.querySelector(".newsletter-form");

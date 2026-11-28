@@ -1,0 +1,74 @@
+.order-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filter-pill {
+  padding: 6px 18px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--admin-border);
+  background-color: var(--admin-surface);
+  color: var(--admin-text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-pill:hover {
+  border-color: #582f0e;
+  color: #582f0e;
+}
+
+.filter-pill.active {
+  background-color: #582f0e;
+  color: #ffffff;
+  border-color: #582f0e;
+  font-weight: 600;
+}
+
+.admin-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #a8a29e;
+  border-radius: 4px;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #ffffff;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.admin-checkbox:checked {
+  background-color: #582f0e;
+  border-color: #582f0e;
+}
+
+.admin-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.action-link {
+  color: #c86d51;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+.action-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}

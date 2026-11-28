@@ -1,0 +1,139 @@
+.dashboard-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.kpi-card {
+  background-color: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kpi-label {
+  font-size: 12px;
+  color: var(--admin-text-muted);
+  font-weight: 500;
+}
+
+.kpi-value {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--admin-text-main);
+  line-height: 1.2;
+}
+
+.kpi-trend {
+  font-size: 12px;
+  color: var(--admin-badge-green);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.kpi-subtext {
+  font-size: 12px;
+  color: var(--admin-text-muted);
+}
+
+.dashboard-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.chart-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chart-card-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--admin-text-main);
+}
+
+.chart-card-date {
+  font-size: 12px;
+  color: var(--admin-text-muted);
+}
+
+.sales-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 224px;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.bar-col {
+  flex: 1;
+  background: rgba(200, 109, 81, 0.4);
+  border-radius: 4px 4px 0 0;
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.bar-col:hover {
+  filter: brightness(0.95);
+}
+
+.bar-col.highlight-mid {
+  background: rgba(200, 109, 81, 0.6);
+}
+
+.bar-col.highlight-peak {
+  background: var(--admin-accent);
+}
+
+.recent-orders-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.recent-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recent-order-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.recent-order-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.recent-order-id {
+  font-weight: 500;
+  color: var(--admin-text-main);
+}
+
+.recent-order-amount {
+  font-size: 12px;
+  color: var(--admin-text-muted);
+}

@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   
   const anchorLinks = document.querySelectorAll('a[href^="#"]');

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesanan Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/white-logo.svg">
+  <link rel="stylesheet" href="css/admin-common.css">
+  <link rel="stylesheet" href="css/pesanan-admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div>
+        <div class="admin-brand">
+          <div class="admin-brand-logo">
+            <img src="../assets/icons/white-logo.svg" alt="Zandle Studio Logo">
+          </div>
+          <span class="admin-brand-title">Zandle Studio</span>
+        </div>
+        <nav class="admin-nav">
+          <a href="dashboard-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-dashboard.svg" alt="" aria-hidden="true">
+            <span>Dashboard</span>
+          </a>
+          <a href="pesanan-admin.html" class="admin-nav-item active">
+            <img src="../assets/icons/admin-orders.svg" alt="" aria-hidden="true">
+            <span>Pesanan</span>
+          </a>
+          <a href="product-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-products.svg" alt="" aria-hidden="true">
+            <span>Produk</span>
+          </a>
+          <a href="laporan-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-reports.svg" alt="" aria-hidden="true">
+            <span>Laporan</span>
+          </a>
+          <a href="profile-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-profile.svg" alt="" aria-hidden="true">
+            <span>Profil</span>
+          </a>
+        </nav>
+      </div>
+      <div class="admin-sidebar-bottom">
+        <a href="#">
+          <img src="../assets/icons/admin-settings.svg" alt="" aria-hidden="true">
+          <span>Pengaturan Sistem</span>
+        </a>
+        <a href="login-admin.html">
+          <img src="../assets/icons/admin-logout.svg" alt="" aria-hidden="true">
+          <span>Keluar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1 class="admin-header-title">Pesanan</h1>
+        <div class="admin-header-actions">
+          <div class="admin-search-wrapper">
+            <input type="text" class="admin-search-input" placeholder="Cari pesanan...">
+          </div>
+          <a href="profile-admin.html" class="admin-avatar-btn" title="Profil Admin">
+            <img src="../assets/icons/admin-avatar.svg" alt="Admin Avatar">
+          </a>
+        </div>
+      </header>
+
+      <section class="admin-content">
+        <div class="order-filters">
+          <button type="button" class="filter-pill active" data-status="semua">Semua</button>
+          <button type="button" class="filter-pill" data-status="dibuat">Baru</button>
+          <button type="button" class="filter-pill" data-status="diproses">Diproses</button>
+          <button type="button" class="filter-pill" data-status="dikirim">Dikirim</button>
+          <button type="button" class="filter-pill" data-status="selesai">Selesai</button>
+        </div>
+
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th style="width: 48px;">
+                  <input type="checkbox" id="checkAll" class="admin-checkbox" aria-label="Pilih semua pesanan">
+                </th>
+                <th>ORDER ID</th>
+                <th>PELANGGAN</th>
+                <th>TOTAL</th>
+                <th>STATUS</th>
+                <th>TANGGAL</th>
+                <th>AKSI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="admin-checkbox row-checkbox" aria-label="Pilih #1023"></td>
+                <td style="font-weight: 600;">#1023</td>
+                <td>Arna Wilson</td>
+                <td>Rp 120.000</td>
+                <td><span class="admin-badge admin-badge-dibuat">Dibuat</span></td>
+                <td style="color: var(--admin-text-muted);">Hari ini, 14:20</td>
+                <td><a href="pesanan-detail-admin.html" class="action-link">Detail</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="admin-checkbox row-checkbox" aria-label="Pilih #1022"></td>
+                <td style="font-weight: 600;">#1022</td>
+                <td>James Park</td>
+                <td>Rp 340.000</td>
+                <td><span class="admin-badge admin-badge-dikirim">Dikirim</span></td>
+                <td style="color: var(--admin-text-muted);">Hari ini, 11:05</td>
+                <td><a href="pesanan-detail-admin.html" class="action-link">Detail</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="admin-checkbox row-checkbox" aria-label="Pilih #1021"></td>
+                <td style="font-weight: 600;">#1021</td>
+                <td>Sarah Chen</td>
+                <td>Rp 95.000</td>
+                <td><span class="admin-badge admin-badge-selesai">Selesai</span></td>
+                <td style="color: var(--admin-text-muted);">Kemarin, 18:30</td>
+                <td><a href="pesanan-detail-admin.html" class="action-link">Detail</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="admin-checkbox row-checkbox" aria-label="Pilih #1020"></td>
+                <td style="font-weight: 600;">#1020</td>
+                <td>Michael Torres</td>
+                <td>Rp 210.000</td>
+                <td><span class="admin-badge admin-badge-dibuat">Dibuat</span></td>
+                <td style="color: var(--admin-text-muted);">24 Jan, 09:15</td>
+                <td><a href="pesanan-detail-admin.html" class="action-link">Detail</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="admin-checkbox row-checkbox" aria-label="Pilih #1019"></td>
+                <td style="font-weight: 600;">#1019</td>
+                <td>Lisa Anderson</td>
+                <td>Rp 150.000</td>
+                <td><span class="admin-badge admin-badge-selesai">Selesai</span></td>
+                <td style="color: var(--admin-text-muted);">23 Jan, 16:45</td>
+                <td><a href="pesanan-detail-admin.html" class="action-link">Detail</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="admin-checkbox row-checkbox" aria-label="Pilih #1018"></td>
+                <td style="font-weight: 600;">#1018</td>
+                <td>Pam Beesley</td>
+                <td>Rp 180.000</td>
+                <td><span class="admin-badge admin-badge-dikirim">Dikirim</span></td>
+                <td style="color: var(--admin-text-muted);">22 Jan, 11:20</td>
+                <td><a href="pesanan-detail-admin.html" class="action-link">Detail</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="admin-pagination">
+          <button type="button" class="admin-page-btn" aria-label="Halaman Sebelumnya">‹</button>
+          <button type="button" class="admin-page-btn active">1</button>
+          <button type="button" class="admin-page-btn">2</button>
+          <button type="button" class="admin-page-btn">3</button>
+          <button type="button" class="admin-page-btn" aria-label="Halaman Berikutnya">›</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/admin-common.js"></script>
+  <script src="js/pesanan-admin.js"></script>
+</body>
+</html>

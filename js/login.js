@@ -29,9 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const togglePassBtn = document.getElementById("togglePassword");
+  const passInputEl = document.getElementById("passwordInput");
+
+  if (togglePassBtn && passInputEl) {
+    togglePassBtn.addEventListener("click", () => {
+      const isPassword = passInputEl.getAttribute("type") === "password";
+      passInputEl.setAttribute("type", isPassword ? "text" : "password");
+      const eyeOpen = togglePassBtn.querySelector(".eye-open");
+      const eyeClosed = togglePassBtn.querySelector(".eye-closed");
+      if (eyeOpen && eyeClosed) {
+        eyeOpen.style.display = isPassword ? "none" : "block";
+        eyeClosed.style.display = isPassword ? "block" : "none";
+      }
+    });
+  }
+
   function validate(e) {
     const emailInput = document.querySelector('.auth-form-side input[type="email"]');
-    const passInput = document.querySelector('.auth-form-side input[type="password"]');
+    const passInput = document.getElementById("passwordInput") || document.querySelector('.auth-form-side input[type="password"]') || document.querySelector('.auth-form-side input[type="text"]');
 
     if (!emailInput || !emailInput.value.trim()) {
       if (e) e.preventDefault();

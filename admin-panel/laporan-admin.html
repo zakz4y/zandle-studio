@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/white-logo.svg">
+  <link rel="stylesheet" href="css/admin-common.css">
+  <link rel="stylesheet" href="css/product-admin.css">
+  <link rel="stylesheet" href="css/laporan-admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div>
+        <div class="admin-brand">
+          <div class="admin-brand-logo">
+            <img src="../assets/icons/white-logo.svg" alt="Zandle Studio Logo">
+          </div>
+          <span class="admin-brand-title">Zandle Studio</span>
+        </div>
+        <nav class="admin-nav">
+          <a href="dashboard-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-dashboard.svg" alt="" aria-hidden="true">
+            <span>Dashboard</span>
+          </a>
+          <a href="pesanan-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-orders.svg" alt="" aria-hidden="true">
+            <span>Pesanan</span>
+          </a>
+          <a href="product-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-products.svg" alt="" aria-hidden="true">
+            <span>Produk</span>
+          </a>
+          <a href="laporan-admin.html" class="admin-nav-item active">
+            <img src="../assets/icons/admin-reports.svg" alt="" aria-hidden="true">
+            <span>Laporan</span>
+          </a>
+          <a href="profile-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-profile.svg" alt="" aria-hidden="true">
+            <span>Profil</span>
+          </a>
+        </nav>
+      </div>
+      <div class="admin-sidebar-bottom">
+        <a href="#">
+          <img src="../assets/icons/admin-settings.svg" alt="" aria-hidden="true">
+          <span>Pengaturan Sistem</span>
+        </a>
+        <a href="login-admin.html">
+          <img src="../assets/icons/admin-logout.svg" alt="" aria-hidden="true">
+          <span>Keluar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1 class="admin-header-title">Laporan</h1>
+        <div class="admin-header-actions">
+          <div class="admin-search-wrapper">
+            <input type="text" class="admin-search-input" placeholder="Cari laporan...">
+          </div>
+          <a href="profile-admin.html" class="admin-avatar-btn" title="Profil Admin">
+            <img src="../assets/icons/admin-avatar.svg" alt="Admin Avatar">
+          </a>
+        </div>
+      </header>
+
+      <section class="admin-content">
+        <div class="laporan-toolbar">
+          <div class="laporan-filters">
+            <select class="laporan-select" id="filterKategori" aria-label="Filter Berdasarkan Kategori">
+              <option value="all">Semua Kategori</option>
+              <option value="keuangan">Keuangan</option>
+              <option value="gudang">Gudang</option>
+              <option value="log sistem">Log Sistem</option>
+              <option value="operasional">Operasional</option>
+            </select>
+            <div class="date-picker-wrapper" style="position: relative; display: inline-flex;">
+              <button type="button" class="btn-date-picker" id="datePickerBtn">
+                <img src="../assets/icons/calendar.svg" alt="" aria-hidden="true" style="width: 16px; height: 16px; opacity: 0.7;">
+                <span id="datePickerLabel">Pilih Tanggal</span>
+              </button>
+              <input type="date" id="datePickerInput" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;" aria-label="Pilih tanggal laporan">
+            </div>
+          </div>
+          <button type="button" class="btn-add-laporan" id="openAddLaporanBtn">
+            <span>+</span> Tambah Laporan
+          </button>
+        </div>
+
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th style="width: 60px;">NO</th>
+                <th>JUDUL LAPORAN</th>
+                <th>KATEGORI</th>
+                <th>TANGGAL</th>
+                <th>STATUS</th>
+                <th>AKSI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: var(--admin-text-muted); font-weight: 500;">1</td>
+                <td style="font-weight: 600;">Laporan Penjualan Q1 2026</td>
+                <td>Keuangan</td>
+                <td style="color: var(--admin-text-muted);" data-date="2026-03-01">01 Mar 2026</td>
+                <td><span class="admin-badge admin-badge-selesai">Selesai</span></td>
+                <td>
+                  <a href="#" class="action-link btn-edit-laporan" style="margin-right: 12px;">Edit</a>
+                  <button type="button" class="btn-delete-laporan" style="color: #dc2626; font-size: 13px; font-weight: 600;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--admin-text-muted); font-weight: 500;">2</td>
+                <td style="font-weight: 600;">Laporan Inventori Barang Baru</td>
+                <td>Gudang</td>
+                <td style="color: var(--admin-text-muted);" data-date="2026-02-28">28 Feb 2026</td>
+                <td><span class="admin-badge admin-badge-draft">Draft</span></td>
+                <td>
+                  <a href="#" class="action-link btn-edit-laporan" style="margin-right: 12px;">Edit</a>
+                  <button type="button" class="btn-delete-laporan" style="color: #dc2626; font-size: 13px; font-weight: 600;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--admin-text-muted); font-weight: 500;">3</td>
+                <td style="font-weight: 600;">Laporan Aktivitas User Bulanan</td>
+                <td>Log Sistem</td>
+                <td style="color: var(--admin-text-muted);" data-date="2026-02-25">25 Feb 2026</td>
+                <td><span class="admin-badge admin-badge-selesai">Selesai</span></td>
+                <td>
+                  <a href="#" class="action-link btn-edit-laporan" style="margin-right: 12px;">Edit</a>
+                  <button type="button" class="btn-delete-laporan" style="color: #dc2626; font-size: 13px; font-weight: 600;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--admin-text-muted); font-weight: 500;">4</td>
+                <td style="font-weight: 600;">Laporan Pengembalian Produk</td>
+                <td>Operasional</td>
+                <td style="color: var(--admin-text-muted);" data-date="2026-02-20">20 Feb 2026</td>
+                <td><span class="admin-badge admin-badge-selesai">Selesai</span></td>
+                <td>
+                  <a href="#" class="action-link btn-edit-laporan" style="margin-right: 12px;">Edit</a>
+                  <button type="button" class="btn-delete-laporan" style="color: #dc2626; font-size: 13px; font-weight: 600;">Hapus</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--admin-text-muted); font-weight: 500;">5</td>
+                <td style="font-weight: 600;">Laporan Pajak Tahunan — Draft Awal</td>
+                <td>Keuangan</td>
+                <td style="color: var(--admin-text-muted);" data-date="2026-02-15">15 Feb 2026</td>
+                <td><span class="admin-badge admin-badge-draft">Draft</span></td>
+                <td>
+                  <a href="#" class="action-link btn-edit-laporan" style="margin-right: 12px;">Edit</a>
+                  <button type="button" class="btn-delete-laporan" style="color: #dc2626; font-size: 13px; font-weight: 600;">Hapus</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="admin-pagination">
+          <button type="button" class="admin-page-btn" aria-label="Halaman Sebelumnya">‹</button>
+          <button type="button" class="admin-page-btn active">1</button>
+          <button type="button" class="admin-page-btn">2</button>
+          <button type="button" class="admin-page-btn">3</button>
+          <button type="button" class="admin-page-btn" aria-label="Halaman Berikutnya">›</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="admin-modal-overlay" id="addLaporanModal">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">Tambah Laporan</h3>
+        <button type="button" style="font-size: 20px; color: var(--admin-text-muted);" data-close-modal>✕</button>
+      </div>
+      <form id="formLaporan">
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="laporanJudul">Judul Laporan</label>
+          <input type="text" id="laporanJudul" class="admin-form-input" required placeholder="Contoh: Laporan Penjualan Q1 2026">
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="laporanKategori">Kategori</label>
+          <select id="laporanKategori" class="admin-form-select">
+            <option value="Keuangan">Keuangan</option>
+            <option value="Gudang">Gudang</option>
+            <option value="Log Sistem">Log Sistem</option>
+            <option value="Operasional">Operasional</option>
+          </select>
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="laporanTanggal">Tanggal</label>
+          <input type="date" id="laporanTanggal" class="admin-form-input" required value="2026-03-01">
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="laporanCatatan">Catatan</label>
+          <textarea id="laporanCatatan" class="admin-form-textarea" rows="3" placeholder="Deskripsi ringkas isi laporan..."></textarea>
+        </div>
+        <div class="admin-modal-actions">
+          <button type="button" class="btn-secondary" data-close-modal>Batal</button>
+          <button type="submit" class="btn-primary">Simpan Laporan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="admin-modal-overlay" id="deleteConfirmModal">
+    <div class="admin-modal" style="max-width: 440px;">
+      <div class="modal-danger-icon">!</div>
+      <h3 class="admin-modal-title" style="margin-bottom: 8px;">Hapus Data Ini?</h3>
+      <p style="font-size: 14px; color: var(--admin-text-muted); line-height: 1.6; margin-bottom: 24px;">
+        Tindakan ini tidak dapat dibatalkan. Data laporan akan dihapus secara permanen dari sistem.
+      </p>
+      <div class="admin-modal-actions">
+        <button type="button" class="btn-secondary" data-close-modal>Batal</button>
+        <button type="button" class="btn-danger" id="confirmDeleteBtn">Ya, Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin-common.js"></script>
+  <script src="js/laporan-admin.js"></script>
+</body>
+</html>

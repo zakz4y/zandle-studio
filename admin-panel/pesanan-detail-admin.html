@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Pesanan #1023</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/white-logo.svg">
+  <link rel="stylesheet" href="css/admin-common.css">
+  <link rel="stylesheet" href="css/pesanan-detail-admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div>
+        <div class="admin-brand">
+          <div class="admin-brand-logo">
+            <img src="../assets/icons/white-logo.svg" alt="Zandle Studio Logo">
+          </div>
+          <span class="admin-brand-title">Zandle Studio</span>
+        </div>
+        <nav class="admin-nav">
+          <a href="dashboard-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-dashboard.svg" alt="" aria-hidden="true">
+            <span>Dashboard</span>
+          </a>
+          <a href="pesanan-admin.html" class="admin-nav-item active">
+            <img src="../assets/icons/admin-orders.svg" alt="" aria-hidden="true">
+            <span>Pesanan</span>
+          </a>
+          <a href="product-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-products.svg" alt="" aria-hidden="true">
+            <span>Produk</span>
+          </a>
+          <a href="laporan-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-reports.svg" alt="" aria-hidden="true">
+            <span>Laporan</span>
+          </a>
+          <a href="profile-admin.html" class="admin-nav-item">
+            <img src="../assets/icons/admin-profile.svg" alt="" aria-hidden="true">
+            <span>Profil</span>
+          </a>
+        </nav>
+      </div>
+      <div class="admin-sidebar-bottom">
+        <a href="#">
+          <img src="../assets/icons/admin-settings.svg" alt="" aria-hidden="true">
+          <span>Pengaturan Sistem</span>
+        </a>
+        <a href="login-admin.html">
+          <img src="../assets/icons/admin-logout.svg" alt="" aria-hidden="true">
+          <span>Keluar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1 class="admin-header-title">Detail Pesanan</h1>
+        <div class="admin-header-actions">
+          <div class="admin-search-wrapper">
+            <input type="text" class="admin-search-input" placeholder="Cari pesanan...">
+          </div>
+          <a href="profile-admin.html" class="admin-avatar-btn" title="Profil Admin">
+            <img src="../assets/icons/admin-avatar.svg" alt="Admin Avatar">
+          </a>
+        </div>
+      </header>
+
+      <section class="admin-content">
+        <div class="admin-breadcrumb">
+          <a href="pesanan-admin.html">Pesanan</a>
+          <span>/</span>
+          <span>#1023</span>
+        </div>
+
+        <div class="order-detail-header">
+          <h2 class="order-detail-title">Pesanan #1023</h2>
+          <div class="order-actions">
+            <button type="button" class="btn-secondary" id="printInvoiceBtn">Cetak Invoice</button>
+            <button type="button" class="btn-primary" id="changeStatusBtn">Ubah Status</button>
+          </div>
+        </div>
+
+        <div class="order-detail-grid">
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="admin-card">
+              <h3 class="detail-section-title">Item Pesanan</h3>
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>PRODUK</th>
+                    <th style="text-align: center;">QTY</th>
+                    <th style="text-align: right;">HARGA</th>
+                    <th style="text-align: right;">SUBTOTAL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 500;">Kopi Gula Aren Candle</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: right;">Rp 65.000</td>
+                    <td style="text-align: right; font-weight: 600;">Rp 65.000</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 500;">Sereh &amp; Jahe Aromaterapi</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: right;">Rp 55.000</td>
+                    <td style="text-align: right; font-weight: 600;">Rp 55.000</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="summary-rows">
+                <div class="summary-row">
+                  <span>Subtotal</span>
+                  <span>Rp 120.000</span>
+                </div>
+                <div class="summary-row">
+                  <span>Pengiriman</span>
+                  <span>Rp 15.000</span>
+                </div>
+                <div class="summary-row total-row">
+                  <span>Total</span>
+                  <span style="color: var(--admin-accent);">Rp 135.000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card">
+              <h3 class="detail-section-title">Info Pengiriman</h3>
+              <div class="shipping-info-grid">
+                <div class="info-item">
+                  <span class="info-label">Penerima</span>
+                  <span class="info-value">Dike Dwi</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">No. HP</span>
+                  <span class="info-value">+62 815 7258 4174</span>
+                </div>
+                <div class="info-item" style="grid-column: span 2;">
+                  <span class="info-label">Alamat Pengiriman</span>
+                  <span class="info-value">Jl. Braga No. 45, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40115</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="admin-card">
+              <h3 class="detail-section-title">Timeline Pesanan</h3>
+              <div class="status-timeline">
+                <div class="timeline-step completed">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Pesanan Dibuat</div>
+                  <div class="timeline-time">24 Jan 2026, 14:20</div>
+                </div>
+                <div class="timeline-step completed">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Pembayaran Diterima</div>
+                  <div class="timeline-time">24 Jan 2026, 14:25</div>
+                </div>
+                <div class="timeline-step current">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Sedang Dikemas</div>
+                  <div class="timeline-time">Proses saat ini</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Dikirim ke Kurir</div>
+                  <div class="timeline-time">Menunggu penjemputan</div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Selesai</div>
+                  <div class="timeline-time">-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/admin-common.js"></script>
+  <script src="js/pesanan-detail-admin.js"></script>
+</body>
+</html>

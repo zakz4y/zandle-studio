@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const toast = document.getElementById("toast");
   const toastMsg = document.getElementById("toastMsg");

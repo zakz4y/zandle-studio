@@ -1,8 +1,3 @@
-
-
-
-
-
 const ZANDLE_PRODUCTS = [
   {
     name: "Calm Lavender",
@@ -227,7 +222,10 @@ document.addEventListener("DOMContentLoaded", () => {
   
   updateNavCartBadge();
 
-  
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
   const mainContent = document.querySelector("main") ||
     document.querySelector(".hero-section") ||
     document.querySelector(".about-hero") ||
@@ -243,10 +241,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const revealTargets = document.querySelectorAll(
-    "section, .product-card, .katalog-card, .feature-box, .review-card, .about-photo-card, .value-card, .custom-step-card, .custom-preview-col, .cart-item-row, .order-table, .checkout-card, .profile-section-card, .katalog-topbar, .cart-summary-card"
+    "section, .product-card, .katalog-card, .feature-box, .review-card, .about-photo-card, .value-card, .custom-step-card, .custom-preview-col, .cart-item-row, .order-table, .checkout-card, .profile-section-card, .katalog-topbar, .cart-summary-card, .banner-box"
   );
 
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window && revealTargets.length > 0) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
