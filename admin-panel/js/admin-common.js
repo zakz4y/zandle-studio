@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmText: "Keluar",
         onConfirm: () => {
           sessionStorage.removeItem("zandle_admin_auth");
-          window.location.href = "login-admin.html";
+          window.location.href = "index.html";
         }
       });
     });
